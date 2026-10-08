@@ -31,13 +31,25 @@ def main():
     used = json.loads(state_path.read_text())["used_mints"] if state_path.exists() else []
     client = Client(os.environ.get("SOLANATRACKER_API_KEY"), budget=a.budget,
                     archive_dir=ROOT / "data" / "raw" / run)
+    diag = {"run": run}
+    runs_dir = ROOT / "data" / "runs"
+    runs_dir.mkdir(parents=True, exist_ok=True)
+
+    def save_diag(status):
+        diag.update(status=status, api_requests=client.used)
+        (runs_dir / f"{run}.json").write_text(json.dumps(diag, ensure_ascii=False, indent=1),
+                                               encoding="utf-8")
+
     try:
-        case = build_case(client, max_candidates=a.candidates, exclude=used)
+        case = build_case(client, max_candidates=a.candidates, exclude=used, diag=diag)
     except (ApiError, BudgetExceeded) as e:
+        diag["error"] = str(e)
+        save_diag("error")
         print(f"FEHLER: {e} (Requests: {client.used})", file=sys.stderr)
         return 1
     print(f"API-Requests: {client.used}")
     if not case:
+        save_diag("no_case")
         print("Heute kein Fall, der alle Kriterien erfüllt. Kein Video.")
         return 3
 
@@ -52,9 +64,12 @@ def main():
     try:
         validate(case)
     except DataError as e:
+        diag["error"] = str(e)
+        save_diag("invalid")
         print(f"FEHLER: Daten aus der API sind inkonsistent: {e}", file=sys.stderr)
         return 1
 
+    save_diag("case")
     out = Path(a.out_dir) / f"{run[:10]}_{case['token']['symbol']}.json"
     out.write_text(json.dumps(case, ensure_ascii=False, indent=1), encoding="utf-8")
     state_path.write_text(json.dumps(state, indent=1), encoding="utf-8")

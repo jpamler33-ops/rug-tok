@@ -183,16 +183,24 @@ def say_symbol(sym):
 # -------------------------------------------------------------- pipeline --
 
 
-def discover(c, now_ms, hours_back=36, min_age_h=3, min_volume=20000, limit=50, exclude=()):
+def discover(c, now_ms, hours_back=36, min_age_h=3, min_volume=20000, limit=50, exclude=(),
+             diag=None):
     body = c.get("/search", {
         "minCreatedAt": now_ms - hours_back * 3600_000, "maxCreatedAt": now_ms - min_age_h * 3600_000,
         "minVolume_24h": min_volume, "sortBy": "volume_24h", "sortOrder": "desc", "limit": limit})
-    out = []
-    for r in rows(body, "data"):
+    out, raw = [], rows(body, "data")
+    if diag is not None:
+        diag["search_rows"] = len(raw)
+        diag["search_top_keys"] = sorted(body.keys()) if isinstance(body, dict) else "list"
+        diag["search_row_keys"] = sorted(raw[0].keys()) if raw else []
+        diag["skipped"] = []
+    for r in raw:
         mint = r.get("mint") or (r.get("token") or {}).get("mint")
         sym = str(r.get("symbol") or (r.get("token") or {}).get("symbol") or "")
         if (not mint or mint in exclude or not BASE58.match(mint) or not sym.isascii()
                 or not sym.isalnum() or len(sym) > 12):
+            if diag is not None:
+                diag["skipped"].append({"mint": mint, "symbol": sym, "reason": "symbol/mint/used"})
             continue
         out.append({"mint": mint, "symbol": sym.upper(), "createdAt": to_ms(r.get("createdAt")),
                     "deployer": r.get("deployer"), "volume": r.get("volume_24h") or r.get("volume") or 0})
@@ -278,19 +286,44 @@ def prior_flag(c, creator, mint):
     return None
 
 
-def build_case(c, now=None, max_candidates=12, exclude=(), log=print):
+def _why_not(ser):
+    if len(ser) < 5:
+        return f"zu wenig Kerzen ({len(ser)})"
+    st = series_stats(ser)
+    r = []
+    if st["peak_gain_pct"] < MIN_GAIN_PCT:
+        r.append(f"Anstieg nur {st['peak_gain_pct']:.0f} %")
+    if st["drawdown_pct"] < MIN_DRAWDOWN_PCT:
+        r.append(f"Absturz nur {st['drawdown_pct']:.0f} %")
+    if not 0 < st["minutes_to_peak"] <= MAX_MIN_TO_PEAK:
+        r.append(f"Hoch nach {st['minutes_to_peak']:.0f} min")
+    if not 0 < st["minutes_peak_to_dead"] <= MAX_MIN_PEAK_TO_DEAD:
+        r.append(f"Absturz dauerte {st['minutes_peak_to_dead']:.0f} min")
+    return ", ".join(r) or "?"
+
+
+def build_case(c, now=None, max_candidates=12, exclude=(), log=print, diag=None):
     now = now or datetime.now(TZ)
     now_ms = int(now.timestamp() * 1000)
-    cands = discover(c, now_ms, exclude=set(exclude))
-    log(f"Kandidaten: {len(cands)}")
+    diag = diag if diag is not None else {}
+    cands = discover(c, now_ms, exclude=set(exclude), diag=diag)
+    log(f"Kandidaten: {len(cands)} (Suchtreffer: {diag.get('search_rows')})")
+    diag["candidates"] = []
     best = None
     for cand in cands[:max_candidates]:
+        entry = {"symbol": cand["symbol"], "mint": cand["mint"], "createdAt": cand["createdAt"]}
+        diag["candidates"].append(entry)
         if not cand["createdAt"]:
+            entry["result"] = "kein createdAt"
             continue
         ser, _ = chart(c, cand["mint"], cand["createdAt"])
+        entry["candles"] = len(ser)
         st = evaluate(ser)
         if not st:
+            entry["result"] = _why_not(ser)
+            log(f"  ✗ {cand['symbol']}: {entry['result']}")
             continue
+        entry["result"] = "qualifiziert"
         sc = score(st, cand["volume"])
         log(f"  ✓ {cand['symbol']}: +{st['peak_gain_pct']:.0f} % / −{st['drawdown_pct']:.1f} % "
             f"in {st['minutes_peak_to_dead']:.1f} min  score {sc:.2f}")
