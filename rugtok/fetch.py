@@ -33,6 +33,10 @@ MAX_MIN_PEAK_TO_DEAD = 60
 MIN_BUYERS = 100
 PRIOR_THRESHOLD_PCT = 90
 MAX_PRIOR_CHECKS = 8
+MIN_INVESTED_USD = 10_000          # real money: sum of all buys (creator excluded)
+MAX_CREATOR_LAUNCHES_48H = 10      # more = launch-bot farm, not a story
+MAX_TRADER_PAGES = 10              # API returns <= 200 traders per page
+MAX_ENRICH_TRIES = 3
 # A crash = many real holders left behind, but almost no market cap left now.
 # Sorting by volume is useless: the top of that list is bot wash-trading
 # (millions in volume, 10-40 holders) – seen in the first live runs.
@@ -226,22 +230,25 @@ def chart(c, mint, created_ms, hours=6, interval="1m"):
     return candles_to_series(body)
 
 
-def traders(c, mint, max_pages=6):
-    """All traders (wallets that bought) with PnL. Returns (rows, total_reported)."""
-    out, cursor, total = [], None, None
+def traders(c, mint, max_pages=MAX_TRADER_PAGES):
+    """All wallets that traded the token, with PnL. Returns (rows, complete).
+    The API pages with nextCursor/hasMore; its 'total' is only the page count."""
+    out, cursor, seen = [], None, set()
     for _ in range(max_pages):
         params = {"limit": 500, "sort": "first_trade", "direction": "asc"}
         if cursor:
             params["cursor"] = cursor
         body = c.get(f"/v2/pnl/tokens/{mint}/traders", params)
-        page = rows(body, "traders")
-        out += page
+        for t in rows(body, "traders"):
+            if t.get("wallet") not in seen:
+                seen.add(t.get("wallet"))
+                out.append(t)
         pag = body.get("pagination", {}) if isinstance(body, dict) else {}
-        total = pag.get("total", total)
-        cursor = pag.get("nextCursor") or pag.get("cursor") or pag.get("next")
-        if not page or not cursor or (total and len(out) >= total):
-            break
-    return out, (total or len(out))
+        cursor = pag.get("nextCursor")
+        more = pag.get("hasMore", bool(cursor))
+        if not more or not cursor:
+            return out, True
+    return out, False
 
 
 def _num(x, *path, default=0.0):
@@ -252,8 +259,7 @@ def _num(x, *path, default=0.0):
 
 def creator_crash(trs, creator, peak_ms):
     """Did the creator wallet sell everything, around the peak?"""
-    row = next((t for t in trs if t.get("wallet") == creator
-                or "developer" in ((t.get("identity") or {}).get("tags") or [])), None)
+    row = next((t for t in trs if _is_creator(t, creator)), None)
     if not row:
         return {}
     bal = _num(row, "position", "balance", default=-1)
@@ -263,10 +269,16 @@ def creator_crash(trs, creator, peak_ms):
     return {"by_creator": bool(sold_all and near_peak), "sold_all": sold_all}
 
 
+def _is_creator(t, creator):
+    ident = t.get("identity") or {}
+    return t.get("wallet") == creator or "developer" in (ident.get("tags") or []) \
+        or bool(ident.get("developer"))
+
+
 def buyer_loss(trs, creator):
     loss = 0.0
     for t in trs:
-        if t.get("wallet") == creator or "developer" in ((t.get("identity") or {}).get("tags") or []):
+        if _is_creator(t, creator):
             continue
         total = _num(t, "pnl", "token", "total", default=0.0)
         if total < 0:
@@ -274,17 +286,37 @@ def buyer_loss(trs, creator):
     return loss
 
 
-def prior_flag(c, creator, mint):
-    """How many earlier coins of the same creator wallet fell > threshold from their high."""
+def buyer_stats(trs, creator):
+    """(number of buying wallets, USD they invested) - creator excluded."""
+    n, inv = 0, 0.0
+    for t in trs:
+        if _is_creator(t, creator):
+            continue
+        usd = t.get("buyUsd", t.get("invested"))
+        usd = float(usd) if isinstance(usd, (int, float)) else _num(t, "volume", "buyUsd")
+        if usd > 0 or (t.get("counts") or {}).get("buys"):
+            n += 1
+            inv += max(0.0, usd)
+    return n, inv
+
+
+def creator_history(c, creator, mint, now_ms):
+    """Unique other tokens of the creator wallet -> (launches_48h, prior_flag or None)."""
     if not creator:
-        return None
-    body = c.get(f"/deployer/{creator}", {"limit": 50})
-    others = [r for r in rows(body, "data") if (r.get("mint") or "") not in ("", mint)]
+        return 0, None
+    body = c.get(f"/deployer/{creator}", {"limit": 100})
+    uniq = {}
+    for r in rows(body, "data"):
+        m = r.get("mint")
+        if m and m != mint and m not in uniq:
+            uniq[m] = r
+    launches = sum(1 for r in uniq.values()
+                   if (to_ms(r.get("createdAt")) or 0) >= now_ms - 48 * 3600_000) + 1
     bad = tot = 0
-    for r in others[:MAX_PRIOR_CHECKS]:
-        ath = c.get(f"/tokens/{r['mint']}/ath")
+    for m in list(uniq)[:MAX_PRIOR_CHECKS]:
+        ath = c.get(f"/tokens/{m}/ath")
         hi = ath.get("highest_price") if isinstance(ath, dict) else None
-        info = c.get(f"/tokens/{r['mint']}")
+        info = c.get(f"/tokens/{m}")
         pools = (info or {}).get("pools") or []
         cur = _num(pools[0], "price", "usd", default=-1) if pools else -1
         if not hi or cur < 0:
@@ -292,9 +324,10 @@ def prior_flag(c, creator, mint):
         tot += 1
         if cur <= hi * (1 - PRIOR_THRESHOLD_PCT / 100):
             bad += 1
+    flag = None
     if tot >= 2 and bad >= 2:
-        return {"kind": "prior", "bad": bad, "total": tot, "threshold_pct": PRIOR_THRESHOLD_PCT}
-    return None
+        flag = {"kind": "prior", "bad": bad, "total": tot, "threshold_pct": PRIOR_THRESHOLD_PCT}
+    return launches, flag
 
 
 def _why_not(ser):
@@ -320,7 +353,7 @@ def build_case(c, now=None, max_candidates=25, exclude=(), log=print, diag=None)
     cands = discover(c, now_ms, exclude=set(exclude), diag=diag)
     log(f"Kandidaten: {len(cands)} (Suchtreffer: {diag.get('search_rows')})")
     diag["candidates"] = []
-    best = None
+    qualified = []
     for cand in cands[:max_candidates]:
         entry = {"symbol": cand["symbol"], "mint": cand["mint"], "createdAt": cand["createdAt"]}
         diag["candidates"].append(entry)
@@ -338,11 +371,20 @@ def build_case(c, now=None, max_candidates=25, exclude=(), log=print, diag=None)
         sc = score(st, cand["volume"])
         log(f"  ✓ {cand['symbol']}: +{st['peak_gain_pct']:.0f} % / −{st['drawdown_pct']:.1f} % "
             f"in {st['minutes_peak_to_dead']:.1f} min  score {sc:.2f}")
-        if not best or sc > best[0]:
-            best = (sc, cand, st)
-    if not best:
-        return None
-    _, cand, st = best
+        entry["score"] = round(sc, 3)
+        qualified.append((sc, cand, st, entry))
+    qualified.sort(key=lambda x: -x[0])
+    for sc, cand, st, entry in qualified[:MAX_ENRICH_TRIES]:
+        case, why = enrich(c, cand, st, now, now_ms, log)
+        entry["result"] = "gewählt" if case else f"verworfen: {why}"
+        if case:
+            return case
+        log(f"  ✗ {cand['symbol']} verworfen: {why}")
+    return None
+
+
+def enrich(c, cand, st, now, now_ms, log=print):
+    """Collect everything the video states. Returns (case, None) or (None, reason)."""
     mint = cand["mint"]
 
     info = c.get(f"/tokens/{mint}")
@@ -361,14 +403,19 @@ def build_case(c, now=None, max_candidates=25, exclude=(), log=print, diag=None)
         coarse, t0 = chart(c, mint, created_ms)
         ser = trim_series(coarse) if evaluate(coarse) else []
     if len(ser) < 20:
-        log("  Preisreihe zu kurz – Fall verworfen")
-        return None
+        return None, "Preisreihe zu kurz"
     st = series_stats(ser)
 
-    trs, total = traders(c, mint)
-    if total < MIN_BUYERS:
-        log(f"  nur {total} Käufer – Fall verworfen")
-        return None
+    launches, prior = creator_history(c, creator, mint, now_ms)
+    if launches >= MAX_CREATOR_LAUNCHES_48H:
+        return None, f"Bot-Farm: Ersteller-Wallet startete {launches} Coins in 48 h"
+
+    trs, complete = traders(c, mint)
+    n_buyers, invested = buyer_stats(trs, creator)
+    if n_buyers < MIN_BUYERS:
+        return None, f"nur {n_buyers} Käufer"
+    if invested < MIN_INVESTED_USD:
+        return None, f"nur {invested:.0f} $ echtes Kaufvolumen"
     peak_ms = t0 + st["minutes_to_peak"] * 60000 if t0 else None
     crash = creator_crash(trs, creator, peak_ms)
     loss = buyer_loss(trs, creator)
@@ -385,29 +432,22 @@ def build_case(c, now=None, max_candidates=25, exclude=(), log=print, diag=None)
             flags.append(f)
     except ApiError as e:
         log(f"  Bundler-Daten fehlen ({e}) – Signal wird weggelassen")
-    try:
-        pf = prior_flag(c, creator, mint)
-        if pf:
-            flags.append(pf)
-    except (ApiError, BudgetExceeded) as e:
-        log(f"  Ersteller-Historie fehlt ({e}) – Signal wird weggelassen")
+    if prior:
+        flags.append(prior)
 
     ath = c.get(f"/tokens/{mint}/ath")
     peak_mcap = ath.get("highest_market_cap") if isinstance(ath, dict) else None
     if not peak_mcap:
-        log("  kein Marktwert-Hoch – Fall verworfen")
-        return None
+        return None, "kein Marktwert-Hoch"
 
     day, hhmm = launch_words(created_ms, now)
     if not day:
-        log("  Start liegt zu weit zurück – Fall verworfen")
-        return None
+        return None, "Start liegt zu weit zurück"
     sources = [f"https://solscan.io/token/{mint}"]
     if creator:
         sources.append(f"https://solscan.io/account/{creator}")
     if pool_id:
         sources.append(f"https://dexscreener.com/solana/{pool_id}")
-    covered = len(trs)
     stamp = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
     return {
         "demo": False,
@@ -421,19 +461,23 @@ def build_case(c, now=None, max_candidates=25, exclude=(), log=print, diag=None)
         "peak_gain_pct": int(round(st["peak_gain_pct"])),
         "minutes_peak_to_dead": max(1, int(round(st["minutes_peak_to_dead"]))),
         "drawdown_pct": round(st["drawdown_pct"], 1),
-        "buyers": int(total),
+        "buyers": int(n_buyers),
+        "buyers_is_lower_bound": not complete,
+        "buyer_invested_usd": int(round(invested)),
         "crash": crash,
         "flags": flags[:3],
         "buyer_loss_usd": int(round(loss)),
-        "loss_is_lower_bound": covered < total,
+        "loss_is_lower_bound": not complete,
         "loss_method": (f"Summe der negativen Gewinne/Verluste (realisiert + unrealisiert) aller "
-                        f"Käufer-Wallets ohne Ersteller-Wallet; {covered} von {total} Wallets "
-                        f"erfasst; Quelle Solana Tracker PnL-API, Stand {stamp}"),
+                        f"Käufer-Wallets ohne Ersteller-Wallet; {len(trs)} Wallets erfasst"
+                        f"{'' if complete else ' (nicht alle – Untergrenze)'}; "
+                        f"Quelle Solana Tracker PnL-API, Stand {stamp}"),
         "price_series": ser,
         "sources": sources,
         "fetched_at": stamp,
         "api_requests": c.used,
-    }
+        "creator_launches_48h": launches,
+    }, None
 
 
 def next_episode(state_path: Path, mint: str):

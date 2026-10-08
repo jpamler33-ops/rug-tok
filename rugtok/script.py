@@ -189,7 +189,9 @@ def rug_des_tages(d: dict) -> list:
             S(M("liq"), "Höchster Marktwert:", *A(d["peak_market_cap_usd"], "$", ".")),
         ]),
         SceneScript("chart", [
-            S(M("rise"), "In", *MIN(d["minutes_to_peak"], dat=True), "kauften", *A(d["buyers"]),
+            S(M("rise"), "In", *MIN(d["minutes_to_peak"], dat=True), "kauften",
+              *(["mehr als", N(approx(d["buyers"]))] if d.get("buyers_is_lower_bound")
+                else A(d["buyers"])),
               X("Wallets.", "Wollets.")),
             *dump,
         ], hold=0.3),

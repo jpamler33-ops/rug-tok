@@ -353,7 +353,8 @@ class Chart(Scene):
         buyers = d["buyers"] * e_out(clamp(reveal / ms[pk]))
         place(cv, text_sprite("Käufer", "Text-Medium", 34, COL["muted"]), 120, top + 150,
               anchor="lm", alpha=al)
-        place(cv, text_sprite(fmt_int(buyers), "Bold", 64, COL["white"], fixed_digits=True), 120,
+        btxt = fmt_int(buyers) + ("+" if d.get("buyers_is_lower_bound") else "")
+        place(cv, text_sprite(btxt, "Bold", 64, COL["white"], fixed_digits=True), 120,
               top + 210, anchor="lm", alpha=al)
         if lt < dump:
             gain = (cur - 1) * 100

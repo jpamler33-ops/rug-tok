@@ -52,8 +52,9 @@ STEP = {"5s": 5, "15s": 15, "1m": 60, "3m": 180, "5m": 300, "15m": 900}
 
 
 class FakeAPI:
-    def __init__(self, fail_first=0):
+    def __init__(self, fail_first=0, farm=False, more_pages=False):
         self.calls, self.fail_first = [], fail_first
+        self.farm, self.more_pages = farm, more_pages
 
     def __call__(self, req, timeout=None):
         u = urllib.parse.urlparse(req.full_url)
@@ -79,16 +80,20 @@ class FakeAPI:
             fn = price_rug if p[2] == RUG else price_ok
             return {"oclhv": candles(fn, int(q["time_from"]), int(q["time_to"]), STEP[q["type"]])}
         if path.endswith("/traders"):
+            # real API: <= 200 per page, 'total' == page count, paging via hasMore/nextCursor
             if q.get("cursor") == "p2":
-                rows = [{"wallet": f"w{i}", "pnl": {"token": {"total": -100.0}},
+                rows = [{"wallet": f"w{i}", "pnl": {"token": {"total": -100.0}}, "buyUsd": 100,
                          "position": {"balance": 0}} for i in range(150)]
-                return {"traders": rows, "pagination": {"total": 350}}
-            rows = [{"wallet": CREATOR, "identity": {"tags": ["developer"]},
+                return {"traders": rows, "pagination": {"hasMore": self.more_pages,
+                                                        "nextCursor": "p2" if self.more_pages else None,
+                                                        "count": 150, "total": 150}}
+            rows = [{"wallet": CREATOR, "identity": {"developer": {"via": ["token_creator"]}},
                      "pnl": {"token": {"total": 9000.0}}, "position": {"balance": 0},
-                     "timing": {"lastTrade": (CREATED_S + 12 * 60 + 20) * 1000}}]
+                     "buyUsd": 2, "timing": {"lastTrade": (CREATED_S + 12 * 60 + 20) * 1000}}]
             rows += [{"wallet": f"v{i}", "pnl": {"token": {"total": -50.0 if i % 2 else 20.0}},
-                      "position": {"balance": 1}} for i in range(199)]
-            return {"traders": rows, "pagination": {"total": 350, "nextCursor": "p2"}}
+                      "buyUsd": 60, "position": {"balance": 1}} for i in range(199)]
+            return {"traders": rows, "pagination": {"hasMore": True, "nextCursor": "p2",
+                                                    "count": 200, "total": 200}}
         if path.endswith("/bundlers"):
             return {"total": 14, "initialPercentage": 27.4, "wallets": []}
         if path.endswith("/ath"):
@@ -96,8 +101,13 @@ class FakeAPI:
                 return {"highest_price": 5e-5, "highest_market_cap": 51234.7, "timestamp": 0}
             return {"highest_price": 1.0, "highest_market_cap": 1e6}
         if p[1] == "deployer":
-            return {"status": "success", "total": 4, "data": [{"mint": RUG}] +
-                    [{"mint": m} for m in PRIORS]}
+            old = (CREATED_S - 5 * 86400) * 1000
+            data = [{"mint": RUG, "createdAt": CREATED_S * 1000}]
+            data += [{"mint": m, "createdAt": old} for m in PRIORS for _ in range(3)]  # API repeats
+            if self.farm:
+                data += [{"mint": f"FaRm{i:02d}" + "6" * 38, "createdAt": CREATED_S * 1000}
+                         for i in range(12)]
+            return {"status": "success", "total": len(data), "data": data}
         if p[1] == "tokens":
             if p[2] == RUG:
                 return {"token": {"symbol": "GLIMMR", "creation": {
@@ -124,14 +134,16 @@ def test_full_case():
     assert abs(st["peak_gain_pct"] - case["peak_gain_pct"]) < 1
     assert case["minutes_to_peak"] == 12, case["minutes_to_peak"]
     assert 1 <= case["minutes_peak_to_dead"] <= 3
-    assert case["buyers"] == 350
+    assert case["buyers"] == 349, case["buyers"]          # 199 + 150, creator excluded
+    assert case["buyers_is_lower_bound"] is False
+    assert case["buyer_invested_usd"] == 199 * 60 + 150 * 100
     assert case["crash"] == {"by_creator": True, "sold_all": True}
-    # loss: 100 losers * 50 (page 1, odd i) + 150 * 100 (page 2); creator profit excluded
+    # loss: 99 losers * 50 (page 1, odd i) + 150 * 100 (page 2); creator profit excluded
     assert case["buyer_loss_usd"] == 99 * 50 + 150 * 100, case["buyer_loss_usd"]
     assert case["loss_is_lower_bound"] is False
     kinds = {f["kind"]: f for f in case["flags"]}
     assert kinds["bundle"] == {"kind": "bundle", "wallets": 14, "pct": 27}
-    assert kinds["prior"]["bad"] == 2 and kinds["prior"]["total"] == 3
+    assert kinds["prior"]["bad"] == 2 and kinds["prior"]["total"] == 3   # duplicates removed
     assert case["peak_market_cap_usd"] == 51235
     assert "https://dexscreener.com/solana/PooL1" in case["sources"]
     assert len(case["price_series"]) >= 20
@@ -170,18 +182,33 @@ def test_units():
     assert t0 == 100000 and ser[0] == [0.0, 1.0] and len(ser) == 3
 
 
-def test_partial_traders_marks_lower_bound():
-    class Short(FakeAPI):
-        def route(self, path, q):
-            b = super().route(path, q)
-            if path.endswith("/traders"):
-                b["pagination"].pop("nextCursor", None)   # API gives only one page
-            return b
-    case = fetch.build_case(client(Short()), now=NOW, log=lambda *a: None)
-    assert case["loss_is_lower_bound"] is True
-    assert "200 von 350" in case["loss_method"]
-    assert "mindestens" in " ".join(w.show for sc in rug_des_tages(case)
-                                     for s in sc.sentences for w in s.words)
+def test_page_total_is_not_overall_total():
+    """Regression (live run 1): API 'total' == page size; we must keep paging."""
+    case = fetch.build_case(client(FakeAPI()), now=NOW, log=lambda *a: None)
+    assert case["buyers"] == 349
+
+
+def test_too_many_pages_marks_lower_bound():
+    old = fetch.MAX_TRADER_PAGES
+    fetch.MAX_TRADER_PAGES = 2
+    try:
+        trs, complete = fetch.traders(client(FakeAPI(more_pages=True)), RUG, max_pages=2)
+    finally:
+        fetch.MAX_TRADER_PAGES = old
+    assert complete is False
+    case = fetch.build_case(client(FakeAPI(more_pages=True)), now=NOW, log=lambda *a: None)
+    assert case["loss_is_lower_bound"] and case["buyers_is_lower_bound"]
+    words = " ".join(w.show for sc in rug_des_tages(case) for s in sc.sentences for w in s.words)
+    assert "mindestens" in words and "mehr als" in words
+
+
+def test_bot_farm_rejected():
+    """Regression (live run 3): creator with dozens of clone launches is not a case."""
+    diag = {}
+    case = fetch.build_case(client(FakeAPI(farm=True)), now=NOW, log=lambda *a: None, diag=diag)
+    assert case is None
+    res = [c["result"] for c in diag["candidates"] if c["mint"] == RUG][0]
+    assert "Bot-Farm" in res, res
 
 
 if __name__ == "__main__":
