@@ -26,10 +26,10 @@ API = "https://data.solanatracker.io"
 TZ = ZoneInfo(os.environ.get("RUGTOK_TZ", "Europe/Berlin"))
 
 # selection rules: what counts as a 'case'
-MIN_GAIN_PCT = 300          # at least +300 % from first trade to peak
+MIN_GAIN_PCT = 150          # at least +150 % from first trade to peak
 MIN_DRAWDOWN_PCT = 90       # at least −90 % from peak
-MAX_MIN_TO_PEAK = 180
-MAX_MIN_PEAK_TO_DEAD = 60
+MAX_MIN_TO_PEAK = 360
+MAX_MIN_PEAK_TO_DEAD = 180
 MIN_BUYERS = 100
 PRIOR_THRESHOLD_PCT = 90
 MAX_PRIOR_CHECKS = 8
@@ -196,7 +196,7 @@ def say_symbol(sym):
 # -------------------------------------------------------------- pipeline --
 
 
-def discover(c, now_ms, hours_back=36, min_age_h=2, limit=100, exclude=(), diag=None):
+def discover(c, now_ms, hours_back=60, min_age_h=2, limit=100, exclude=(), diag=None):
     body = c.get("/search", {
         "minCreatedAt": now_ms - hours_back * 3600_000, "maxCreatedAt": now_ms - min_age_h * 3600_000,
         "minVolume_24h": SEARCH_MIN_VOLUME_24H, "maxMarketCap": SEARCH_MAX_MARKET_CAP,
