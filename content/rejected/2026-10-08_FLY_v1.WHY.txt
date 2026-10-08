@@ -1,0 +1,1 @@
+Nicht posten: Bundle-Aussage falsch (API-Prozent >100 %, Bundles über 40 min statt beim Start), Verlust stark unterschätzt (nur frühe Käufer geladen). Fall bleibt gültig -> mit Fix neu erzeugen.

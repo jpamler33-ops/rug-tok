@@ -125,15 +125,11 @@ def flag_specs(d: dict) -> list:
             sen = S(M(mk), "Die Ersteller-Wallet hielt", N(p, "%"), "aller Coins.")
             big, small = f"{fmt_int(p)} % in Ersteller-Wallet", "Anteil am Gesamt-Supply beim Start"
         elif k == "bundle":
-            w, p = f["wallets"], f.get("pct")
-            if p:
-                sen = S(M(mk), N(w), X("Wallets", "Wollets"), "kauften gebündelt beim Start,",
-                        "zusammen", N(p, "%", "."))
-                small = f"zusammen {fmt_int(p)} % des Supply beim Start"
-            else:
-                sen = S(M(mk), N(w), X("Wallets", "Wollets"), "kauften gebündelt beim Start.")
-                small = "Gebündelte Käufe beim Start"
-            big = f"{fmt_int(w)} Wallets gebündelt"
+            w, sec = f["wallets"], f.get("window_s", 5)
+            sen = S(M(mk), N(w), X("Wallets", "Wollets"), "kauften gebündelt in den ersten",
+                    N(sec), "Sekunden.")
+            big = f"{fmt_int(w)} Wallets in {sec} Sekunden"
+            small = "gebündelte Käufe direkt nach dem Start"
         elif k == "prior":
             bad, tot, thr = f["bad"], f["total"], f.get("threshold_pct", 90)
             if bad == tot:

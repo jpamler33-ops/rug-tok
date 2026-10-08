@@ -37,6 +37,8 @@ MIN_INVESTED_USD = 10_000          # real money: sum of all buys (creator exclud
 MAX_CREATOR_LAUNCHES_48H = 10      # more = launch-bot farm, not a story
 MAX_TRADER_PAGES = 10              # API returns <= 200 traders per page
 MAX_ENRICH_TRIES = 3
+MAX_LOSER_PAGES = 10               # losers sorted by PnL ascending
+BUNDLE_WINDOW_S = 5                # 'bundled at launch' = bundle within 5 s of creation
 # A crash = many real holders left behind, but almost no market cap left now.
 # Sorting by volume is useless: the top of that list is bot wash-trading
 # (millions in volume, 10-40 holders) – seen in the first live runs.
@@ -230,12 +232,14 @@ def chart(c, mint, created_ms, hours=6, interval="1m"):
     return candles_to_series(body)
 
 
-def traders(c, mint, max_pages=MAX_TRADER_PAGES):
-    """All wallets that traded the token, with PnL. Returns (rows, complete).
-    The API pages with nextCursor/hasMore; its 'total' is only the page count."""
+def traders(c, mint, max_pages=MAX_TRADER_PAGES, sort="first_trade", direction="asc",
+            stop=None):
+    """Wallets that traded the token, with PnL. Returns (rows, complete).
+    The API pages with nextCursor/hasMore; its 'total' is only the page count.
+    stop(page_rows) -> True ends paging early (counts as complete)."""
     out, cursor, seen = [], None, set()
     for _ in range(max_pages):
-        params = {"limit": 500, "sort": "first_trade", "direction": "asc"}
+        params = {"limit": 500, "sort": sort, "direction": direction}
         if cursor:
             params["cursor"] = cursor
         body = c.get(f"/v2/pnl/tokens/{mint}/traders", params)
@@ -246,9 +250,19 @@ def traders(c, mint, max_pages=MAX_TRADER_PAGES):
         pag = body.get("pagination", {}) if isinstance(body, dict) else {}
         cursor = pag.get("nextCursor")
         more = pag.get("hasMore", bool(cursor))
-        if not more or not cursor:
+        if not more or not cursor or (stop and stop(rows(body, "traders"))):
             return out, True
     return out, False
+
+
+def losers(c, mint, creator):
+    """Total loss of buyers: page through traders sorted by PnL ascending until the
+    first wallet with PnL >= 0 -> the sum is complete. Returns (loss_usd, complete)."""
+    def reached_winners(page):
+        return any(_num(t, "pnl", "token", "total", default=0.0) >= 0 for t in page)
+    trs, complete = traders(c, mint, max_pages=MAX_LOSER_PAGES, sort="pnl", direction="asc",
+                            stop=reached_winners)
+    return buyer_loss(trs, creator, mint), complete
 
 
 def _num(x, *path, default=0.0):
@@ -257,9 +271,9 @@ def _num(x, *path, default=0.0):
     return float(x) if isinstance(x, (int, float)) else default
 
 
-def creator_crash(trs, creator, peak_ms):
+def creator_crash(trs, creator, peak_ms, mint=None):
     """Did the creator wallet sell everything, around the peak?"""
-    row = next((t for t in trs if _is_creator(t, creator)), None)
+    row = next((t for t in trs if _is_creator(t, creator, mint)), None)
     if not row:
         return {}
     bal = _num(row, "position", "balance", default=-1)
@@ -269,16 +283,21 @@ def creator_crash(trs, creator, peak_ms):
     return {"by_creator": bool(sold_all and near_peak), "sold_all": sold_all}
 
 
-def _is_creator(t, creator):
+def _is_creator(t, creator, mint=None):
+    """The creator wallet, or a wallet the API marks as developer OF THIS token."""
     ident = t.get("identity") or {}
-    return t.get("wallet") == creator or "developer" in (ident.get("tags") or []) \
-        or bool(ident.get("developer"))
+    dev = ident.get("developer")
+    if t.get("wallet") == creator:
+        return True
+    if isinstance(dev, dict):
+        return mint is None or dev.get("token") in (None, mint)
+    return "developer" in (ident.get("tags") or [])
 
 
-def buyer_loss(trs, creator):
+def buyer_loss(trs, creator, mint=None):
     loss = 0.0
     for t in trs:
-        if _is_creator(t, creator):
+        if _is_creator(t, creator, mint):
             continue
         total = _num(t, "pnl", "token", "total", default=0.0)
         if total < 0:
@@ -286,11 +305,11 @@ def buyer_loss(trs, creator):
     return loss
 
 
-def buyer_stats(trs, creator):
+def buyer_stats(trs, creator, mint=None):
     """(number of buying wallets, USD they invested) - creator excluded."""
     n, inv = 0, 0.0
     for t in trs:
-        if _is_creator(t, creator):
+        if _is_creator(t, creator, mint):
             continue
         usd = t.get("buyUsd", t.get("invested"))
         usd = float(usd) if isinstance(usd, (int, float)) else _num(t, "volume", "buyUsd")
@@ -411,25 +430,26 @@ def enrich(c, cand, st, now, now_ms, log=print):
         return None, f"Bot-Farm: Ersteller-Wallet startete {launches} Coins in 48 h"
 
     trs, complete = traders(c, mint)
-    n_buyers, invested = buyer_stats(trs, creator)
+    n_buyers, invested = buyer_stats(trs, creator, mint)
     if n_buyers < MIN_BUYERS:
         return None, f"nur {n_buyers} Käufer"
     if invested < MIN_INVESTED_USD:
         return None, f"nur {invested:.0f} $ echtes Kaufvolumen"
     peak_ms = t0 + st["minutes_to_peak"] * 60000 if t0 else None
-    crash = creator_crash(trs, creator, peak_ms)
-    loss = buyer_loss(trs, creator)
+    crash = creator_crash(trs, creator, peak_ms, mint)
+    loss, loss_complete = losers(c, mint, creator)
 
     flags = []
     try:
+        # Only bundles right at launch count. The API's own totals/percentages span the
+        # whole token life and can exceed 100 % (seen live), so we don't use them.
         b = c.get(f"/tokens/{mint}/bundlers")
-        nb = int(b.get("total") or 0) if isinstance(b, dict) else 0
-        pct = b.get("initialPercentage") if isinstance(b, dict) else None
-        if nb >= 3:
-            f = {"kind": "bundle", "wallets": nb}
-            if isinstance(pct, (int, float)) and pct >= 1:
-                f["pct"] = int(round(pct))
-            flags.append(f)
+        ws = rows(b, "wallets")
+        early = [w for w in ws if (to_ms(w.get("bundleTime")) or 0) <= created_ms + BUNDLE_WINDOW_S * 1000
+                 and (to_ms(w.get("bundleTime")) or 0) >= created_ms - 5000]
+        if len(early) >= 3:
+            flags.append({"kind": "bundle", "wallets": len(early), "window_s": BUNDLE_WINDOW_S,
+                          "source": "Solana Tracker Bundle-Erkennung"})
     except ApiError as e:
         log(f"  Bundler-Daten fehlen ({e}) – Signal wird weggelassen")
     if prior:
@@ -467,10 +487,10 @@ def enrich(c, cand, st, now, now_ms, log=print):
         "crash": crash,
         "flags": flags[:3],
         "buyer_loss_usd": int(round(loss)),
-        "loss_is_lower_bound": not complete,
+        "loss_is_lower_bound": not loss_complete,
         "loss_method": (f"Summe der negativen Gewinne/Verluste (realisiert + unrealisiert) aller "
-                        f"Käufer-Wallets ohne Ersteller-Wallet; {len(trs)} Wallets erfasst"
-                        f"{'' if complete else ' (nicht alle – Untergrenze)'}; "
+                        f"Käufer-Wallets ohne Ersteller-Wallet, nach Verlust sortiert geladen"
+                        f"{'' if loss_complete else ' (nicht alle – Untergrenze)'}; "
                         f"Quelle Solana Tracker PnL-API, Stand {stamp}"),
         "price_series": ser,
         "sources": sources,

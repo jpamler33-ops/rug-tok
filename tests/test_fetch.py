@@ -79,6 +79,15 @@ class FakeAPI:
         if p[1] == "chart":
             fn = price_rug if p[2] == RUG else price_ok
             return {"oclhv": candles(fn, int(q["time_from"]), int(q["time_to"]), STEP[q["type"]])}
+        if path.endswith("/traders") and q.get("sort") == "pnl":
+            # losers first: page 1 all losers, page 2 starts with a winner -> stop
+            all_rows = self.route(path, {}) ["traders"] + self.route(path, {"cursor": "p2"})["traders"]
+            all_rows.sort(key=lambda t: t["pnl"]["token"]["total"])
+            if q.get("cursor") == "L2":
+                return {"traders": all_rows[200:400], "pagination": {"hasMore": True,
+                        "nextCursor": "L3", "count": 200, "total": 200}}
+            return {"traders": all_rows[:200], "pagination": {"hasMore": True, "nextCursor": "L2",
+                                                              "count": 200, "total": 200}}
         if path.endswith("/traders"):
             # real API: <= 200 per page, 'total' == page count, paging via hasMore/nextCursor
             if q.get("cursor") == "p2":
@@ -95,7 +104,12 @@ class FakeAPI:
             return {"traders": rows, "pagination": {"hasMore": True, "nextCursor": "p2",
                                                     "count": 200, "total": 200}}
         if path.endswith("/bundlers"):
-            return {"total": 14, "initialPercentage": 27.4, "wallets": []}
+            # real API: totals span the whole token life and exceed 100 % -> must be ignored
+            ws = [{"wallet": f"b{i}", "bundleTime": (CREATED_S * 1000) + 300 + i * 200,
+                   "initialPercentage": 4.0} for i in range(14)]          # 14 within 5 s
+            ws += [{"wallet": f"l{i}", "bundleTime": (CREATED_S + 600) * 1000,
+                    "initialPercentage": 9.0} for i in range(20)]          # later: ignore
+            return {"total": 34, "initialPercentage": 143.2, "wallets": ws}
         if path.endswith("/ath"):
             if p[2] == RUG:
                 return {"highest_price": 5e-5, "highest_market_cap": 51234.7, "timestamp": 0}
@@ -142,7 +156,7 @@ def test_full_case():
     assert case["buyer_loss_usd"] == 99 * 50 + 150 * 100, case["buyer_loss_usd"]
     assert case["loss_is_lower_bound"] is False
     kinds = {f["kind"]: f for f in case["flags"]}
-    assert kinds["bundle"] == {"kind": "bundle", "wallets": 14, "pct": 27}
+    assert kinds["bundle"]["wallets"] == 14 and "pct" not in kinds["bundle"], kinds["bundle"]
     assert kinds["prior"]["bad"] == 2 and kinds["prior"]["total"] == 3   # duplicates removed
     assert case["peak_market_cap_usd"] == 51235
     assert "https://dexscreener.com/solana/PooL1" in case["sources"]
@@ -197,9 +211,23 @@ def test_too_many_pages_marks_lower_bound():
         fetch.MAX_TRADER_PAGES = old
     assert complete is False
     case = fetch.build_case(client(FakeAPI(more_pages=True)), now=NOW, log=lambda *a: None)
-    assert case["loss_is_lower_bound"] and case["buyers_is_lower_bound"]
+    assert case["buyers_is_lower_bound"] is True
+    # loss is still complete: losers are loaded first, paging stops at the first winner
+    assert case["loss_is_lower_bound"] is False
     words = " ".join(w.show for sc in rug_des_tages(case) for s in sc.sentences for w in s.words)
-    assert "mindestens" in words and "mehr als" in words
+    assert "mehr als" in words and "rund" in words
+
+
+def test_loss_lower_bound_when_losers_capped():
+    old = fetch.MAX_LOSER_PAGES
+    fetch.MAX_LOSER_PAGES = 1
+    try:
+        case = fetch.build_case(client(FakeAPI()), now=NOW, log=lambda *a: None)
+    finally:
+        fetch.MAX_LOSER_PAGES = old
+    assert case["loss_is_lower_bound"] is True
+    words = " ".join(w.show for sc in rug_des_tages(case) for s in sc.sentences for w in s.words)
+    assert "mindestens" in words
 
 
 def test_bot_farm_rejected():

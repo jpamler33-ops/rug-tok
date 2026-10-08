@@ -63,6 +63,8 @@ def validate(d: dict) -> list:
             errs.append(f"flag {f['kind']} braucht {need}")
         elif f["kind"] == "prior" and not 0 < f["bad"] <= f["total"]:
             errs.append("flag prior: 0 < bad <= total")
+        elif "pct" in f and not 0 < f["pct"] <= 100:
+            errs.append(f"flag {f['kind']}: pct {f['pct']} nicht in (0, 100]")
     crash = d.get("crash", {})
     if crash.get("single_tx") and not crash.get("sold_all"):
         errs.append("crash.single_tx nur zusammen mit sold_all")
