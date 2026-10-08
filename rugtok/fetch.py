@@ -33,6 +33,12 @@ MAX_MIN_PEAK_TO_DEAD = 60
 MIN_BUYERS = 100
 PRIOR_THRESHOLD_PCT = 90
 MAX_PRIOR_CHECKS = 8
+# A crash = lots of trading volume, but almost no market cap left now.
+SEARCH_MIN_VOLUME_24H = 30_000
+SEARCH_MAX_MARKET_CAP = 15_000
+# Symbols we never put on screen (platform guidelines)
+BLOCKED_SYMBOLS = {"TITS", "PORN", "SEX", "CUM", "NAZI", "HITLER", "NIGGA", "FUCK", "SHIT",
+                   "COCK", "DICK", "PUSSY", "ASS", "RAPE", "KKK", "JEW", "ISIS"}
 
 
 class BudgetExceeded(RuntimeError):
@@ -183,11 +189,11 @@ def say_symbol(sym):
 # -------------------------------------------------------------- pipeline --
 
 
-def discover(c, now_ms, hours_back=36, min_age_h=3, min_volume=20000, limit=50, exclude=(),
-             diag=None):
+def discover(c, now_ms, hours_back=36, min_age_h=2, limit=100, exclude=(), diag=None):
     body = c.get("/search", {
         "minCreatedAt": now_ms - hours_back * 3600_000, "maxCreatedAt": now_ms - min_age_h * 3600_000,
-        "minVolume_24h": min_volume, "sortBy": "volume_24h", "sortOrder": "desc", "limit": limit})
+        "minVolume_24h": SEARCH_MIN_VOLUME_24H, "maxMarketCap": SEARCH_MAX_MARKET_CAP,
+        "sortBy": "volume_24h", "sortOrder": "desc", "limit": limit})
     out, raw = [], rows(body, "data")
     if diag is not None:
         diag["search_rows"] = len(raw)
@@ -198,7 +204,9 @@ def discover(c, now_ms, hours_back=36, min_age_h=3, min_volume=20000, limit=50, 
         mint = r.get("mint") or (r.get("token") or {}).get("mint")
         sym = str(r.get("symbol") or (r.get("token") or {}).get("symbol") or "")
         if (not mint or mint in exclude or not BASE58.match(mint) or not sym.isascii()
-                or not sym.isalnum() or len(sym) > 12):
+                or not sym.isalnum() or len(sym) > 12
+                or sym.upper() in BLOCKED_SYMBOLS
+                or any(b in sym.upper() for b in BLOCKED_SYMBOLS if len(b) >= 4)):
             if diag is not None:
                 diag["skipped"].append({"mint": mint, "symbol": sym, "reason": "symbol/mint/used"})
             continue
@@ -302,7 +310,7 @@ def _why_not(ser):
     return ", ".join(r) or "?"
 
 
-def build_case(c, now=None, max_candidates=12, exclude=(), log=print, diag=None):
+def build_case(c, now=None, max_candidates=25, exclude=(), log=print, diag=None):
     now = now or datetime.now(TZ)
     now_ms = int(now.timestamp() * 1000)
     diag = diag if diag is not None else {}

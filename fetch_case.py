@@ -22,7 +22,7 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--budget", type=int, default=int(os.environ.get("RUGTOK_BUDGET", 80)),
                     help="max API requests for this run")
-    ap.add_argument("--candidates", type=int, default=12)
+    ap.add_argument("--candidates", type=int, default=25)
     ap.add_argument("--out-dir", default=str(ROOT / "content"))
     a = ap.parse_args()
 
