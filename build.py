@@ -13,24 +13,10 @@ from pathlib import Path
 
 from rugtok.audio import mix
 from rugtok.config import ROOT
+from rugtok.data import DataError, tiktok_description, validate
 from rugtok.render import Video
 from rugtok.script import rug_des_tages
 from rugtok.tts import build_timeline, get_tts, voice_track
-
-REQUIRED = ["token", "launch_time", "initial_liquidity_usd", "minutes_to_peak", "peak_gain_pct",
-            "minutes_peak_to_dead", "drawdown_pct", "buyers", "dev_supply_pct", "bundle_wallets",
-            "deployer_prior_rugs", "buyer_loss_usd"]
-
-
-def validate(d):
-    missing = [k for k in REQUIRED if k not in d]
-    if missing:
-        sys.exit(f"Data file is missing fields: {', '.join(missing)}")
-    if not 0 < d["drawdown_pct"] <= 100:
-        sys.exit("drawdown_pct must be in (0, 100]")
-    if d["minutes_to_peak"] <= 0 or d["minutes_peak_to_dead"] <= 0:
-        sys.exit("minute values must be > 0")
-
 
 def main():
     ap = argparse.ArgumentParser()
@@ -43,7 +29,11 @@ def main():
     a = ap.parse_args()
 
     data = json.loads(Path(a.data).read_text(encoding="utf-8"))
-    validate(data)
+    try:
+        for w in validate(data):
+            print("WARNUNG:", w)
+    except DataError as e:
+        sys.exit(f"Daten ungültig: {e}")
     stem = Path(a.data).stem
     out = Path(a.out) if a.out else ROOT / "out" / f"{stem}.mp4"
     out.parent.mkdir(parents=True, exist_ok=True)
@@ -71,7 +61,9 @@ def main():
             pdir = out.parent / f"{stem}_frames"
             pdir.mkdir(exist_ok=True)
         video.render(out, audio, preview_every=a.preview_every, preview_dir=pdir)
-    print(f"Done: {out}  ({time.time() - t0:.0f}s)")
+    desc = out.with_name(out.stem + "_beschreibung.txt")
+    desc.write_text(tiktok_description(data), encoding="utf-8")
+    print(f"Done: {out}  ({time.time() - t0:.0f}s)\nBeschreibung: {desc}")
 
 
 if __name__ == "__main__":

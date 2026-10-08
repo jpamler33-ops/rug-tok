@@ -1,4 +1,4 @@
-# rug-tok – „Rug des Tages“ TikTok-Generator
+# rug-tok – „Rug-Check“ TikTok-Generator
 
 Erzeugt aus einer JSON-Datei mit Token-Daten ein fertiges TikTok-Video (1080×1920, 30 fps, ~30–35 s):
 Hook mit Kurs-Counter → Token-Karte → Live-Chart mit Dev-Dump → Warnsignale → Verlust + Follow-CTA.
@@ -31,6 +31,18 @@ Nützlich:
 | `buyers`, `dev_supply_pct`, `bundle_wallets`, `deployer_prior_rugs` | Käufer, Dev-Anteil, gebündelte Wallets, frühere Rugs des Deployers |
 | `buyer_loss_usd` | Verlust der Käufer |
 | `demo` | `true` blendet „DEMO-DATEN“ ein. **Nur echte, geprüfte Daten mit `false` posten.** |
+| `contract_address`, `price_series`, `sources`, `loss_method` | **Pflicht bei `demo: false`.** `price_series` = `[[minute, preis], …]` (≥ 20 Punkte). Die Kennzahlen werden gegen die Preisreihe geprüft; passt etwas nicht, bricht der Build ab. |
+| `series`, `cta.telegram` | Serienname (Standard `RUG-CHECK`), Telegram-CTA statt „Folgen“ |
+
+Zu jedem Video entsteht `out/<name>_beschreibung.txt` mit voller Contract-Adresse, Quellen, Berechnungsmethode, Disclaimer und Hashtags – als Post-Text.
+
+## Sprachregel (rechtlich)
+
+Das Template sagt nur **beobachtbare On-Chain-Fakten**: „Die Ersteller-Wallet verkaufte alles“, nicht „Betrüger“ oder „Scam“. Keine Personennamen, keine Absicht unterstellen, Verlust als „geschätzt“ mit Methode. Das senkt das Risiko, ersetzt aber **keine Prüfung durch einen Anwalt** vor dem echten Betrieb.
+
+## Tests
+
+`python3 tests/test_data.py` – prüft, dass echte Videos ohne Contract-Adresse, Quellen, echte Preisreihe oder mit unstimmigen Zahlen **nicht** gebaut werden.
 
 ## Aufbau
 
@@ -48,7 +60,7 @@ rugtok/render.py    Frame-Loop, Shake/Flash/Glitch, ffmpeg
 
 - Getestet mit Piper (Offline-Stimme, 16 kHz – hörbar „billiger“). Der edge-tts-Pfad ist geschrieben, aber **noch nicht getestet** (hier kein Zugang zu Microsofts Server).
 - Wort-Timings sind geschätzt (Silben + echte Pausen), nicht forced-aligned. Bei Versatz `GAP_*`/Piper-Tempo in `config.py`/`tts.py` anpassen.
-- Der Chartverlauf ist aus den Kennzahlen synthetisiert, nicht die echte Kurshistorie. Für echte Daten: Preisreihe ins JSON aufnehmen (nächster Schritt).
+- Ohne `price_series` (nur im Demo-Modus erlaubt) wird der Chart aus den Kennzahlen synthetisiert.
 - Noch keine Datenanbindung und kein automatisches Posten – kommt in Schritt 3/4.
 
 Lizenzen: Inter (OFL-1.1, `assets/fonts/LICENSE-Inter.txt`), Piper (MIT), Stimme „thorsten“ (siehe Model Card).

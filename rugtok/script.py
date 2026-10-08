@@ -85,37 +85,66 @@ def S(*parts) -> Sentence:
     return Sentence(words)
 
 
+def approx(n) -> int:
+    """Round down to a speakable number: 4218 -> 4000, 1240 -> 1200, 38 -> 38."""
+    n = int(n)
+    if n >= 10000:
+        return n // 1000 * 1000
+    if n >= 1000:
+        return n // 100 * 100 if n % 1000 >= 100 and n < 2000 else n // 1000 * 1000
+    if n >= 200:
+        return n // 100 * 100
+    return n
+
+
+def A(value, unit="", punct="") -> list:
+    """Approximate spoken number with 'über' (only if rounding changed the value)."""
+    r = approx(value)
+    w = N(r, unit, punct)
+    return [Word("über", "über"), w] if r != int(value) else [w]
+
+
 def rug_des_tages(d: dict) -> list:
-    """Script for the 'Rug des Tages' format. All numbers come from the data dict."""
+    """Script for the 'Rug-Check' format.
+
+    Language rule (legal): only observable on-chain facts. No claims about people,
+    intent or fraud. The wallet that created the token is 'Ersteller-Wallet'.
+    """
     tok = d["token"]
     ticker = X(f"${tok['symbol']}.", f"{tok['say']}.")
     hh, mm = (int(x) for x in d["launch_time"].split(":"))
     launch = X(d["launch_time"], f"{num_de(hh)} Uhr {num_de(mm) if mm else ''}".strip())
+    thr = d.get("prior_drop_threshold_pct", 90)
+    cta = d.get("cta", {})
+
+    end = [S(M("cta"), "Folg mir für den nächsten Fall.")]
+    if cta.get("telegram"):
+        end = [S(M("cta"), "Den täglichen Report gibt's auf Telegram.", "Link in Bio.")]
 
     return [
         SceneScript("hook", [
-            S("Dieser Coin ging um", M("num"), N(d["peak_gain_pct"], "%"), "hoch."),
-            S(N(d["minutes_peak_to_dead"]), "Minuten später war er", M("crash"), "tot."),
-        ], hold=0.75),
+            S(M("num"), "Erst", *A(d["peak_gain_pct"], "%"), "Plus."),
+            S(N(d["minutes_peak_to_dead"]), "Minuten später:", M("crash"), "tot."),
+        ], hold=0.6),
         SceneScript("card", [
-            S(M("name"), "Sein Name:", ticker),
+            S(M("name"), "Der Coin:", ticker),
             S(M("launch"), "Gestartet", d.get("launch_day", "gestern"), "um", launch,
               M("liq"), "mit", N(d["initial_liquidity_usd"], "$"), "Liquidität."),
         ]),
         SceneScript("chart", [
-            S(M("rise"), "In", N(d["minutes_to_peak"]), "Minuten kauften", N(d["buyers"]),
+            S(M("rise"), "In", N(d["minutes_to_peak"]), "Minuten kauften", *A(d["buyers"]),
               X("Wallets.", "Wollets.")),
-            S("Dann verkaufte der Entwickler", M("dump"), "alles,", "in einer einzigen Transaktion."),
+            S("Dann verkaufte die Ersteller-Wallet", M("dump"), "alles.", "In einer Transaktion."),
         ], hold=0.3),
         SceneScript("flags", [
-            S("Die Warnsignale waren vorher sichtbar."),
-            S(M("f1"), "Der Entwickler hielt", N(d["dev_supply_pct"], "%"), "aller Coins."),
+            S("Diese Signale waren vorher sichtbar."),
+            S(M("f1"), "Die Ersteller-Wallet hielt", N(d["dev_supply_pct"], "%"), "aller Coins."),
             S(M("f2"), N(d["bundle_wallets"]), X("Wallets", "Wollets"), "kauften im selben Block."),
-            S(M("f3"), "Und derselbe Entwickler hatte schon", N(d["deployer_prior_rugs"]),
-              X("Rugs.", "Raggs.")),
+            S(M("f3"), "Und", N(d["deployer_prior_rugs"]), "frühere Coins dieser Wallet:",
+              "alle über", N(thr, "%"), "gefallen."),
         ], hold=0.3),
         SceneScript("loss", [
-            S(M("loss"), N(d["buyer_loss_usd"], "$"), "sind weg."),
-            S(M("cta"), "Folg mir.", "Morgen kommt der nächste", X("Rug.", "Ragg.")),
+            S(M("loss"), "Verlust der Käufer:", "rund", N(d["buyer_loss_usd"], "$", ".")),
+            *end,
         ]),
     ]

@@ -2,7 +2,11 @@
   "_note": "DEMO-DATEN: frei erfunden, nur zum Testen des Video-Templates. Nicht posten.",
   "demo": true,
   "episode": 1,
-  "token": {"symbol": "GLIMMR", "say": "Glimmer", "chain": "Solana"},
+  "token": {
+    "symbol": "GLIMMR",
+    "say": "Glimmer",
+    "chain": "Solana"
+  },
   "launch_day": "gestern",
   "launch_time": "14:02",
   "initial_liquidity_usd": 38000,
@@ -15,5 +19,11 @@
   "bundle_wallets": 12,
   "deployer_prior_rugs": 7,
   "buyer_loss_usd": 212000,
-  "seed": 7
+  "seed": 7,
+  "series": "RUG-CHECK",
+  "cta": {
+    "telegram": true
+  },
+  "dev_sold_pct": 100,
+  "prior_drop_threshold_pct": 90
 }

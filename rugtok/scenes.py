@@ -8,6 +8,7 @@ from PIL import Image, ImageDraw, ImageFilter
 from .config import COL, W
 from .gfx import (circle_icon, clamp, e_back, e_in_out, e_out, fit_size, mix, mix_col, panel,
                   pill, place, prog, text_sprite)
+from .data import short_ca
 from .text_de import fmt_dec, fmt_int, fmt_usd
 
 CX = W // 2
@@ -22,7 +23,12 @@ def enter(lt, t0, dur=0.42):
 
 
 def price_series(d):
-    """Synthetic but data-consistent price path: rise to peak, dev dump, bleed to 'dead'."""
+    """Real price_series if given (required for non-demo videos); otherwise a synthetic
+    path consistent with the key numbers (demo only)."""
+    if d.get("price_series"):
+        a = np.asarray(d["price_series"], dtype=float)
+        ms, ps = a[:, 0] - a[0, 0], a[:, 1] / a[0, 1]
+        return ms, ps, int(np.argmax(ps))
     rng = np.random.default_rng(d.get("seed", 1))
     peak_m = float(d["minutes_to_peak"])
     G = 1 + d["peak_gain_pct"] / 100
@@ -177,7 +183,7 @@ class Hook(Scene):
 
     def events(self):
         c = self.sc.markers["crash"]
-        n_end = self.sc.markers["num"] + 0.55
+        n_end = self.sc.markers["num"] + 0.9
         return [
             ("sfx", 0.0, {"name": "impact", "gain": 0.6}),
             ("sfx", 0.05, {"name": "riser", "gain": 0.45, "dur": n_end - 0.05}),
@@ -191,7 +197,7 @@ class Hook(Scene):
     def draw(self, cv, lt):
         d = self.d
         crash = self.m("crash")
-        n_end = self.m("num") + 0.55
+        n_end = self.m("num") + 0.9
         crashed = lt >= crash
         ms, ps, pk = self.series
 
@@ -204,7 +210,7 @@ class Hook(Scene):
         # counter
         if not crashed:
             x = e_out(prog(lt, 0.0, n_end))
-            val = mix(d["peak_gain_pct"] * 0.07, d["peak_gain_pct"], x)
+            val = mix(d["peak_gain_pct"] * 0.55, d["peak_gain_pct"], x)
             txt = f"+{fmt_int(val)} %"
             col = COL["green"]
             # suspense: slow push-in between the number landing and the crash
@@ -241,7 +247,7 @@ class Hook(Scene):
 
 
 class Card(Scene):
-    """Token profile card; status flips from LIVE to a RUGGED stamp."""
+    """Token profile card; status flips from LIVE to a drawdown stamp."""
 
     def stamp_t(self):
         return max(self.m("liq") + 0.9, self.dur - 0.85)
@@ -268,7 +274,8 @@ class Card(Scene):
         place(cv, avatar(tok["symbol"], 150), 200, top + 130, alpha=al)
         place(cv, text_sprite(f"${tok['symbol']}", "Black", 96, COL["white"]), 305, top + 108,
               anchor="lm", alpha=al)
-        place(cv, text_sprite(f"{tok['chain']} · Memecoin", "Text-Medium", 40, COL["muted"]), 310,
+        sub = f"{tok['chain']} · CA {short_ca(d.get('contract_address', 'DEMO'))}"
+        place(cv, text_sprite(sub, "Text-Medium", 40, COL["muted"]), 310,
               top + 182, anchor="lm", alpha=al)
         ImageDraw.Draw(cv).line([(130, top + 262), (950, top + 262)],
                                 fill=tuple(COL["stroke"]) + (int(255 * al),), width=2)
@@ -298,7 +305,7 @@ class Card(Scene):
             dead = pill("TOT", "Bold", 38, COL["white"], COL["red"], dot=(255, 255, 255))
             place(cv, dead, 950, y, anchor="rm")
             k = prog(lt, stamp_t, stamp_t + 0.22)
-            stamp = text_sprite("RUGGED", "Black", 170, COL["red"], stroke=10,
+            stamp = text_sprite(f"−{int(d['drawdown_pct'])} %", "Black", 190, COL["red"], stroke=10,
                                 stroke_color=(25, 0, 6), glow=20, glow_color=COL["red"])
             place(cv, stamp, CX, 700 + oy, scale=mix(2.2, 1.0, e_out(k)), alpha=clamp(k * 3),
                   rot=12)
@@ -375,7 +382,8 @@ class Chart(Scene):
             a = clamp(prog(lt, dump, dump + 0.15))
             dashed_vline(cv, px, by + 20, by + bh - 10, COL["red"], alpha=a)
             k2 = prog(lt, dump + 0.08, dump + 0.45)
-            lab = pill("ENTWICKLER VERKAUFT 100 %", "Black", 38, COL["white"], COL["red"])
+            lab = pill(f"ERSTELLER-WALLET VERKAUFT {d.get('dev_sold_pct', 100)} %", "Black", 34,
+                       COL["white"], COL["red"])
             place(cv, lab, min(px, 960 - lab.width / 2), by + 40, anchor="mt",
                   scale=mix(0.6, 1, e_back(k2)) if k2 < 1 else 1, alpha=clamp(k2 * 3))
         # x axis
@@ -391,9 +399,10 @@ class Flags(Scene):
     def items(self):
         d = self.d
         return [
-            ("f1", f"{d['dev_supply_pct']} % beim Entwickler", "Anteil am Gesamt-Supply"),
-            ("f2", f"{d['bundle_wallets']} Wallets, 1 Block", "Gebündelter Kauf beim Start"),
-            ("f3", f"{d['deployer_prior_rugs']} frühere Rugs", "Gleiche Entwickler-Wallet"),
+            ("f1", f"{d['dev_supply_pct']} % in Ersteller-Wallet", "Anteil am Gesamt-Supply"),
+            ("f2", f"{d['bundle_wallets']} Wallets, 1 Block", "Gleichzeitige Käufe beim Start"),
+            ("f3", f"{d['deployer_prior_rugs']} frühere Coins abgestürzt",
+             f"Alle über −{d.get('prior_drop_threshold_pct', 90)} %, gleiche Ersteller-Wallet"),
         ]
 
     def events(self):
@@ -405,7 +414,7 @@ class Flags(Scene):
 
     def draw(self, cv, lt):
         mo, al = enter(lt, 0.0, 0.45)
-        title = text_sprite("Die Warnsignale", "Black", 92, COL["white"])
+        title = text_sprite("Die Signale", "Black", 92, COL["white"])
         icon = circle_icon(84, "warn", COL["yellow"])
         tw = title.width - 20 + icon.width + 20
         x0 = CX - tw / 2
@@ -429,9 +438,11 @@ class Flags(Scene):
             place(cv, card, CX + xo, yc, alpha=ra)
             place(cv, circle_icon(100, "x", COL["red"]), 175 + xo, yc, alpha=ra,
                   scale=mix(0.5, 1, rm) if rm < 1 else 1)
-            place(cv, text_sprite(big, "Bold", 56, COL["white"]), 255 + xo, yc - 26, anchor="lm",
+            place(cv, text_sprite(big, "Bold", fit_size(big, "Bold", 56, 650), COL["white"]),
+                  255 + xo, yc - 26, anchor="lm",
                   alpha=ra)
-            place(cv, text_sprite(small, "Text-Medium", 36, COL["muted"]), 257 + xo, yc + 34,
+            place(cv, text_sprite(small, "Text-Medium", fit_size(small, "Text-Medium", 36, 650),
+                                  COL["muted"]), 257 + xo, yc + 34,
                   anchor="lm", alpha=ra)
 
 
@@ -451,7 +462,7 @@ class Loss(Scene):
         d = self.d
         loss, cta = self.m("loss"), self.m("cta")
         mo, al = enter(lt, 0.0, 0.4)
-        lab = d.get("loss_label", "Verlust der Käufer")
+        lab = d.get("loss_label", "Verlust der Käufer (geschätzt)")
         place(cv, text_sprite(lab, "SemiBold", 54, COL["muted"]), CX, 470 - (1 - mo) * 40, alpha=al)
 
         x = e_out(prog(lt, loss, loss + 1.05))
@@ -462,20 +473,24 @@ class Loss(Scene):
         scale = 1.0 + 0.12 * (1 - e_out(land)) * (land > 0)
         place(cv, text_sprite(txt, "Black", size, COL["red"], glow=28, glow_strength=1.3,
                               fixed_digits=True), CX, 640, scale=scale, alpha=al)
-        if d.get("loss_note"):
-            place(cv, text_sprite(d["loss_note"], "Text-Medium", 34, COL["dim"]), CX, 770, alpha=al)
+        note = d.get("loss_note", "Summe aller Käufer-Wallets, on-chain berechnet")
+        place(cv, text_sprite(note, "Text-Medium", 32, COL["dim"]), CX, 770, alpha=al)
 
         if lt >= cta:
             cm, ca = enter(lt, cta, 0.45)
             ep = d.get("episode", 1)
-            place(cv, pill(f"RUG DES TAGES  #{ep}", "Black", 44, COL["white"], COL["card2"],
+            series = d.get("series", "RUG-CHECK")
+            place(cv, pill(f"{series}  #{ep}", "Black", 44, COL["white"], COL["card2"],
                            outline=COL["stroke"], dot=COL["red"]), CX, 900 + (1 - cm) * 60, alpha=ca)
-            place(cv, text_sprite(f"Morgen: Rug #{ep + 1}", "Black", 78, COL["white"]), CX,
+            place(cv, text_sprite(f"Morgen: Fall #{ep + 1}", "Black", 78, COL["white"]), CX,
                   1020 + (1 - cm) * 80, alpha=ca)
             fm, fa = enter(lt, cta + 0.25, 0.45)
             pulse = 1 + 0.045 * np.sin(max(0.0, lt - cta - 0.7) * 7)
-            place(cv, pill("+  Folgen", "Black", 52, COL["white"], COL["red"], pad_x=48, pad_y=20),
-                  CX, 1160, scale=(mix(0.6, 1, fm) if fm < 1 else 1) * pulse, alpha=fa)
+            btn = ("Telegram · Link in Bio" if d.get("cta", {}).get("telegram") else "+  Folgen")
+            place(cv, pill(btn, "Black", 50, COL["white"], COL["red"], pad_x=44, pad_y=20),
+                  CX, 1145, scale=(mix(0.6, 1, fm) if fm < 1 else 1) * pulse, alpha=fa)
+            place(cv, text_sprite("Nur On-Chain-Daten · keine Finanzberatung", "Text-Medium", 30,
+                                  COL["dim"]), CX, 1222, alpha=fa)
 
 
 SCENES = {"hook": Hook, "card": Card, "chart": Chart, "flags": Flags, "loss": Loss}

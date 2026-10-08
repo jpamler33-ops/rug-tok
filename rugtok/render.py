@@ -72,7 +72,7 @@ class Video:
         # progress bar (signals 'short video' -> better completion)
         ImageDraw.Draw(cv).rectangle([0, 0, int(W * t / self.total), 7],
                                      fill=tuple(COL["red"]) + (230,))
-        badge = pill(f"RUG DES TAGES  #{d.get('episode', 1)}", "Bold", 34, COL["white"],
+        badge = pill(f"{d.get('series', 'RUG-CHECK')}  #{d.get('episode', 1)}", "Bold", 34, COL["white"],
                      (12, 12, 18), outline=COL["stroke"], dot=COL["red"], bg_alpha=200)
         blink = 0.75 + 0.25 * np.sin(t * 5)
         place(cv, badge, 60, 230, anchor="lm", alpha=blink if t > 0.1 else 1)
