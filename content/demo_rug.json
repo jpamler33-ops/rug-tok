@@ -2,28 +2,24 @@
   "_note": "DEMO-DATEN: frei erfunden, nur zum Testen des Video-Templates. Nicht posten.",
   "demo": true,
   "episode": 1,
-  "token": {
-    "symbol": "GLIMMR",
-    "say": "Glimmer",
-    "chain": "Solana"
-  },
+  "series": "RUG-CHECK",
+  "token": {"symbol": "GLIMMR", "say": "Glimmer", "chain": "Solana"},
   "launch_day": "gestern",
   "launch_time": "14:02",
-  "initial_liquidity_usd": 38000,
+  "peak_market_cap_usd": 386000,
   "minutes_to_peak": 11,
   "peak_gain_pct": 4218,
   "minutes_peak_to_dead": 3,
   "drawdown_pct": 99.7,
   "buyers": 1240,
-  "dev_supply_pct": 38,
-  "bundle_wallets": 12,
-  "deployer_prior_rugs": 7,
+  "crash": {"by_creator": true, "sold_all": true, "single_tx": true},
+  "flags": [
+    {"kind": "creator_hold", "pct": 38},
+    {"kind": "bundle", "wallets": 12, "pct": 31},
+    {"kind": "prior", "bad": 7, "total": 7, "threshold_pct": 90}
+  ],
   "buyer_loss_usd": 212000,
-  "seed": 7,
-  "series": "RUG-CHECK",
-  "cta": {
-    "telegram": true
-  },
-  "dev_sold_pct": 100,
-  "prior_drop_threshold_pct": 90
+  "loss_is_lower_bound": false,
+  "cta": {"telegram": true},
+  "seed": 7
 }

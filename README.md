@@ -1,66 +1,97 @@
-# rug-tok – „Rug-Check“ TikTok-Generator
+# rug-tok – „Rug-Check“: tägliches TikTok-Video aus echten Solana-Daten
 
-Erzeugt aus einer JSON-Datei mit Token-Daten ein fertiges TikTok-Video (1080×1920, 30 fps, ~30–35 s):
-Hook mit Kurs-Counter → Token-Karte → Live-Chart mit Dev-Dump → Warnsignale → Verlust + Follow-CTA.
-Deutsche KI-Stimme, Wort-für-Wort-Untertitel, Sounddesign, Lautheit auf −14 LUFS normalisiert.
-Kein LLM pro Video nötig, also null Claude/ChatGPT-Kontingent im Betrieb.
+Jeden Morgen automatisch:
 
-## Start
+1. **Fall finden** (`fetch_case.py`): sucht unter den Solana-Tokens der letzten 36 h den auffälligsten Crash
+   (mind. +300 % Anstieg, dann mind. −90 % innerhalb von 60 Minuten, ≥ 100 Käufer-Wallets).
+2. **Video bauen** (`build.py`): 1080×1920, ~30–35 s, Stimme, Untertitel, Chart, Sounddesign.
+3. **Aufs Handy schicken** (`deliver.py`): Video + fertiger Post-Text per Telegram-Bot.
+   Du postest es auf TikTok mit ein paar Taps (siehe „Warum nicht automatisch auf TikTok?“).
+
+Kein LLM im Betrieb → **null Claude/ChatGPT-Kontingent pro Video**.
+
+## Einrichten (einmalig, ~20 Minuten)
+
+1. **API-Key holen:** Account bei [Solana Tracker](https://www.solanatracker.io) → Data API Key.
+   Free-Plan: 10.000 Requests/Monat, 3 Requests/s. Ein Lauf braucht ~20–40 Requests.
+2. **Telegram-Bot:** In Telegram `@BotFather` → `/newbot` → Token kopieren.
+   Dann dem Bot einmal „hi“ schreiben und deine Chat-ID über `@userinfobot` holen.
+3. **GitHub:** Neues **privates** Repo anlegen, diesen Ordner hochladen.
+   Unter *Settings → Secrets and variables → Actions* anlegen:
+   - Secret `SOLANATRACKER_API_KEY`
+   - Secret `TELEGRAM_BOT_TOKEN`, Secret `TELEGRAM_CHAT_ID`
+   - optional Variable `RUGTOK_TELEGRAM_CTA` = `1` (Video endet mit „Telegram, Link in Bio“)
+4. **Testlauf:** *Actions → Daily Rug-Check video → Run workflow*. Danach läuft es täglich um 07:47 (Sommerzeit).
+
+**Niemals** Keys in den Chat, in Code oder in Dateien schreiben – nur als GitHub-Secret.
+
+## Lokal ausführen
 
 ```bash
-pip install -r requirements.txt          # Python 3.10+, dazu ffmpeg im PATH
-bash scripts/setup_piper.sh              # nur nötig, wenn edge-tts nicht geht (Offline-Stimme)
-python3 build.py content/demo_rug.json   # -> out/demo_rug.mp4
+pip install -r requirements.txt      # Python 3.10+, ffmpeg im PATH
+bash scripts/setup_piper.sh          # Offline-Ersatzstimme, falls edge-tts nicht geht
+export SOLANATRACKER_API_KEY=...
+python3 fetch_case.py                # -> content/<datum>_<SYMBOL>.json
+python3 build.py content/<datei>.json   # -> out/<datei>.mp4 + _beschreibung.txt
+python3 build.py content/demo_rug.json  # Demo ohne API (mit Wasserzeichen)
 ```
 
-Nützlich:
-- `--stills 1,5.2,16` → nur Standbilder (PNG), zum schnellen Prüfen in Sekunden
-- `--tts edge|piper|auto` → Stimme wählen (auto = edge, sonst piper)
-- `--no-music` → ohne Hintergrund-Beat (wenn du in der TikTok-App einen Trend-Sound drunterlegst)
-- Stimme ändern: `RUGTOK_EDGE_VOICE=de-DE-KatjaNeural`, Tempo: `RUGTOK_EDGE_RATE=+12%`
+`build.py --stills 1,5.2,16` rendert nur Standbilder zum schnellen Prüfen, `--tts piper|edge`,
+`--no-music` (wenn du in der App einen Trend-Sound drunterlegst).
 
-## Daten (`content/*.json`)
+## Was das Video sagt – und was nicht
 
-| Feld | Bedeutung |
-|---|---|
-| `token.symbol` / `token.say` | Ticker auf dem Bildschirm / so wird er ausgesprochen |
-| `launch_time`, `launch_day` | Start, z. B. `"14:02"`, `"gestern"` |
-| `initial_liquidity_usd` | Liquidität beim Start |
-| `minutes_to_peak`, `peak_gain_pct` | Zeit bis Hoch, Anstieg in % |
-| `minutes_peak_to_dead`, `drawdown_pct` | Zeit vom Hoch bis „tot“, Absturz in % |
-| `buyers`, `dev_supply_pct`, `bundle_wallets`, `deployer_prior_rugs` | Käufer, Dev-Anteil, gebündelte Wallets, frühere Rugs des Deployers |
-| `buyer_loss_usd` | Verlust der Käufer |
-| `demo` | `true` blendet „DEMO-DATEN“ ein. **Nur echte, geprüfte Daten mit `false` posten.** |
-| `contract_address`, `price_series`, `sources`, `loss_method` | **Pflicht bei `demo: false`.** `price_series` = `[[minute, preis], …]` (≥ 20 Punkte). Die Kennzahlen werden gegen die Preisreihe geprüft; passt etwas nicht, bricht der Build ab. |
-| `series`, `cta.telegram` | Serienname (Standard `RUG-CHECK`), Telegram-CTA statt „Folgen“ |
+Jede Aussage stammt aus der API und wird nur gesagt, wenn die Daten sie belegen:
 
-Zu jedem Video entsteht `out/<name>_beschreibung.txt` mit voller Contract-Adresse, Quellen, Berechnungsmethode, Disclaimer und Hashtags – als Post-Text.
+| Aussage | Quelle | Wenn nicht belegt |
+|---|---|---|
+| +X % / −Y % / Minuten | 1-Minuten- bzw. Sekunden-Kerzen (`/chart`) | Fall wird verworfen |
+| „Ersteller-Wallet verkaufte alles“ | PnL-API: Ersteller-Wallet hat Bestand 0, letzter Trade ±3 min um das Hoch | stattdessen „Kurs fiel um Y % in Z Minuten“ |
+| „N Wallets gebündelt beim Start“ | `/tokens/{mint}/bundlers` (Erkennung von Solana Tracker) | Signal entfällt |
+| „X von Y früheren Coins dieser Wallet über 90 % gefallen“ | `/deployer` + ATH je Token (max. 8 geprüft) | Signal entfällt |
+| Verlust der Käufer | Summe negativer PnL aller Käufer-Wallets ohne Ersteller | „mindestens“, wenn nicht alle Wallets geladen wurden |
 
-## Sprachregel (rechtlich)
+Sprachregel: nur beobachtbare On-Chain-Fakten, keine Personen, keine Absicht („Betrug“, „Scam“) unterstellen.
+Das senkt das Risiko, **ersetzt aber keine Prüfung durch einen Anwalt** vor dem echten Betrieb.
 
-Das Template sagt nur **beobachtbare On-Chain-Fakten**: „Die Ersteller-Wallet verkaufte alles“, nicht „Betrüger“ oder „Scam“. Keine Personennamen, keine Absicht unterstellen, Verlust als „geschätzt“ mit Methode. Das senkt das Risiko, ersetzt aber **keine Prüfung durch einen Anwalt** vor dem echten Betrieb.
+Jede API-Antwort wird unter `data/raw/<lauf>/` archiviert (Beweissicherung), der Post-Text enthält
+Contract-Adresse, Quellen-Links und die Berechnungsmethode.
+
+## Warum nicht automatisch auf TikTok?
+
+TikToks Content-Posting-API veröffentlicht für nicht geprüfte Apps nur **privat**. Öffentliches
+Auto-Posten braucht entweder TikToks App-Audit oder einen kostenpflichtigen Dienst mit geprüfter App.
+Erst lohnt es sich zu sehen, ob die Videos Views bringen – dann automatisieren.
 
 ## Tests
 
-`python3 tests/test_data.py` – prüft, dass echte Videos ohne Contract-Adresse, Quellen, echte Preisreihe oder mit unstimmigen Zahlen **nicht** gebaut werden.
-
-## Aufbau
-
-```
-build.py            CLI: Daten → Skript → Stimme → Bild → Ton → MP4
-rugtok/script.py    Text-Template (Anzeige vs. Aussprache, Marker für Effekte)
-rugtok/tts.py       edge-tts / Piper, Wort-Timings, Timeline
-rugtok/scenes.py    die 5 Szenen + Chart
-rugtok/captions.py  Untertitel
-rugtok/audio.py     synthetische SFX (lizenzfrei), Beat, Ducking, Voice-Chain
-rugtok/render.py    Frame-Loop, Shake/Flash/Glitch, ffmpeg
+```bash
+python3 tests/test_data.py    # echte Videos ohne Belege/mit unstimmigen Zahlen werden blockiert
+python3 tests/test_fetch.py   # Fall-Auswahl, Verlust, Ersteller-Verkauf, Retry, Budget – offline mit Fixtures
 ```
 
 ## Stand / bekannte Grenzen
 
-- Getestet mit Piper (Offline-Stimme, 16 kHz – hörbar „billiger“). Der edge-tts-Pfad ist geschrieben, aber **noch nicht getestet** (hier kein Zugang zu Microsofts Server).
-- Wort-Timings sind geschätzt (Silben + echte Pausen), nicht forced-aligned. Bei Versatz `GAP_*`/Piper-Tempo in `config.py`/`tts.py` anpassen.
-- Ohne `price_series` (nur im Demo-Modus erlaubt) wird der Chart aus den Kennzahlen synthetisiert.
-- Noch keine Datenanbindung und kein automatisches Posten – kommt in Schritt 3/4.
+- **Gegen die echte API noch nicht gelaufen** (aus der Entwicklungsumgebung kein Zugriff). Die Feldnamen
+  stammen aus der offiziellen Doku; die Tests nutzen nachgebaute Antworten. Erster echter Lauf: Ausgabe
+  prüfen, bei Abweichungen liegen die Rohantworten in `data/raw/`.
+- Pagination der PnL-Trader-Liste ist in der Doku nicht beschrieben → wenn nur eine Seite kommt,
+  steht im Video „mindestens“.
+- edge-tts (bessere Stimme) ist geschrieben, aber nicht getestet; Fallback ist die Offline-Stimme Piper.
+- Wort-Timings der Untertitel sind geschätzt, nicht exakt ausgerichtet.
 
-Lizenzen: Inter (OFL-1.1, `assets/fonts/LICENSE-Inter.txt`), Piper (MIT), Stimme „thorsten“ (siehe Model Card).
+## Aufbau
+
+```
+fetch_case.py        Fall finden -> content/*.json (validiert)
+build.py             Daten -> Skript -> Stimme -> Bild -> Ton -> MP4 + Post-Text
+deliver.py           Video + Text an Telegram
+rugtok/fetch.py      API-Client (Rate-Limit, Retries, Budget, Archiv) + Auswahl-Logik
+rugtok/data.py       Schema + strenge Prüfung echter Daten
+rugtok/script.py     Text-Template (Anzeige vs. Aussprache, nur belegte Sätze)
+rugtok/scenes.py     5 Szenen + Chart     rugtok/render.py  Frames, Effekte, ffmpeg
+rugtok/tts.py        Stimme + Timing      rugtok/audio.py   SFX, Beat, Mix
+.github/workflows/daily.yml   täglicher Lauf
+```
+
+Lizenzen: Inter (OFL-1.1), Piper (MIT), Stimme „thorsten“ (CC0).

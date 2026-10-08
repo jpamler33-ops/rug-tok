@@ -1,15 +1,16 @@
-"""Input validation. Real (non-demo) videos must be fully backed by verifiable data."""
+"""Input schema + validation. Real (non-demo) videos must be fully backed by verifiable data."""
 import re
 
 import numpy as np
 
 from .text_de import fmt_dec, fmt_int
 
-REQUIRED = ["token", "launch_time", "initial_liquidity_usd", "minutes_to_peak", "peak_gain_pct",
-            "minutes_peak_to_dead", "drawdown_pct", "buyers", "dev_supply_pct", "bundle_wallets",
-            "deployer_prior_rugs", "buyer_loss_usd"]
+REQUIRED = ["token", "launch_time", "peak_market_cap_usd", "minutes_to_peak", "peak_gain_pct",
+            "minutes_peak_to_dead", "drawdown_pct", "buyers", "buyer_loss_usd"]
 REQUIRED_REAL = ["contract_address", "price_series", "sources", "loss_method"]
+FLAG_FIELDS = {"creator_hold": ["pct"], "bundle": ["wallets"], "prior": ["bad", "total"]}
 BASE58 = re.compile(r"^[1-9A-HJ-NP-Za-km-z]{32,44}$")
+DEAD_LEVEL = 0.10  # 'tot' = first point at or below 10 % of the peak price (−90 %)
 
 
 class DataError(ValueError):
@@ -21,17 +22,21 @@ def short_ca(ca: str) -> str:
 
 
 def series_stats(series):
-    """price_series: [[minute, price], ...] -> peak gain %, minute of peak, drawdown % from peak,
-    minutes from peak to the first point at/below the final drawdown level."""
+    """price_series [[minute, price], ...] -> the key numbers the video states.
+    peak = highest price; dead = first point after the peak at/below DEAD_LEVEL * peak
+    (falls back to the lowest point); drawdown = peak -> lowest point after the peak."""
     a = np.asarray(series, dtype=float)
     m, p = a[:, 0], a[:, 1]
     pk = int(np.argmax(p))
-    gain = (p[pk] / p[0] - 1) * 100
-    low = p[pk:].min()
-    dd = (1 - low / p[pk]) * 100
-    dead_idx = pk + int(np.argmax(p[pk:] <= low * 1.0001))
-    return {"peak_gain_pct": gain, "minutes_to_peak": m[pk] - m[0],
-            "drawdown_pct": dd, "minutes_peak_to_dead": m[dead_idx] - m[pk]}
+    after = p[pk:]
+    low = after.min()
+    hit = np.where(after <= p[pk] * DEAD_LEVEL)[0]
+    dead_idx = pk + (int(hit[0]) if len(hit) else int(np.argmin(after)))
+    return {"peak_gain_pct": (p[pk] / p[0] - 1) * 100,
+            "minutes_to_peak": m[pk] - m[0],
+            "drawdown_pct": (1 - low / p[pk]) * 100,
+            "minutes_peak_to_dead": m[dead_idx] - m[pk],
+            "peak_index": pk}
 
 
 def validate(d: dict) -> list:
@@ -48,6 +53,19 @@ def validate(d: dict) -> list:
         errs.append("Minutenwerte müssen > 0 sein")
     if not re.match(r"^\d{1,2}:\d{2}$", str(d["launch_time"])):
         errs.append("launch_time muss HH:MM sein")
+    if not re.match(r"^[A-Za-z0-9]{1,12}$", str(d["token"].get("symbol", ""))):
+        errs.append("token.symbol muss 1-12 Zeichen A-Z/0-9 sein")
+    for f in d.get("flags", []):
+        need = FLAG_FIELDS.get(f.get("kind"))
+        if need is None:
+            errs.append(f"unbekannter flag kind: {f.get('kind')}")
+        elif any(k not in f for k in need):
+            errs.append(f"flag {f['kind']} braucht {need}")
+        elif f["kind"] == "prior" and not 0 < f["bad"] <= f["total"]:
+            errs.append("flag prior: 0 < bad <= total")
+    crash = d.get("crash", {})
+    if crash.get("single_tx") and not crash.get("sold_all"):
+        errs.append("crash.single_tx nur zusammen mit sold_all")
 
     if not d.get("demo", True):
         for k in REQUIRED_REAL:
@@ -69,7 +87,7 @@ def validate(d: dict) -> list:
             else:
                 st = series_stats(ser)
                 checks = [("peak_gain_pct", 0.03, "rel"), ("drawdown_pct", 0.5, "abs"),
-                          ("minutes_to_peak", 0.5, "abs"), ("minutes_peak_to_dead", 0.75, "abs")]
+                          ("minutes_to_peak", 0.75, "abs"), ("minutes_peak_to_dead", 0.75, "abs")]
                 for key, tol, mode in checks:
                     want, got = float(d[key]), st[key]
                     bad = abs(want - got) > (tol * abs(got) if mode == "rel" else tol)
@@ -83,7 +101,7 @@ def validate(d: dict) -> list:
 
 
 def tiktok_description(d: dict) -> str:
-    """Post text: facts, full contract address, sources, disclaimer, hashtags."""
+    """Post text: facts, full contract address, sources, method, disclaimer, hashtags."""
     tok = d["token"]
     lines = [
         f"{d.get('series', 'RUG-CHECK')} #{d.get('episode', 1)}: ${tok['symbol']} "

@@ -9,6 +9,7 @@ from .config import COL, W
 from .gfx import (circle_icon, clamp, e_back, e_in_out, e_out, fit_size, mix, mix_col, panel,
                   pill, place, prog, text_sprite)
 from .data import short_ca
+from .script import flag_specs
 from .text_de import fmt_dec, fmt_int, fmt_usd
 
 CX = W // 2
@@ -283,7 +284,7 @@ class Card(Scene):
         stamp_t = self.stamp_t()
         rows = [
             ("launch", "Gestartet", f"{d.get('launch_day', 'gestern')}, {d['launch_time']}", COL["white"]),
-            ("liq", "Liquidität", fmt_usd(d["initial_liquidity_usd"]), COL["white"]),
+            ("liq", "Höchster Marktwert", fmt_usd(d["peak_market_cap_usd"]), COL["white"]),
         ]
         for i, (mk, label, value, vc) in enumerate(rows):
             rm, ra = enter(lt, self.m(mk), 0.4)
@@ -382,8 +383,10 @@ class Chart(Scene):
             a = clamp(prog(lt, dump, dump + 0.15))
             dashed_vline(cv, px, by + 20, by + bh - 10, COL["red"], alpha=a)
             k2 = prog(lt, dump + 0.08, dump + 0.45)
-            lab = pill(f"ERSTELLER-WALLET VERKAUFT {d.get('dev_sold_pct', 100)} %", "Black", 34,
-                       COL["white"], COL["red"])
+            cr = d.get("crash", {})
+            txt = ("ERSTELLER-WALLET VERKAUFT ALLES" if cr.get("by_creator") and cr.get("sold_all")
+                   else f"−{fmt_dec(d['drawdown_pct'])} % IN {d['minutes_peak_to_dead']} MIN")
+            lab = pill(txt, "Black", 34, COL["white"], COL["red"])
             place(cv, lab, min(px, 960 - lab.width / 2), by + 40, anchor="mt",
                   scale=mix(0.6, 1, e_back(k2)) if k2 < 1 else 1, alpha=clamp(k2 * 3))
         # x axis
@@ -397,13 +400,7 @@ class Flags(Scene):
     """Three red flags that were visible on-chain before the rug."""
 
     def items(self):
-        d = self.d
-        return [
-            ("f1", f"{d['dev_supply_pct']} % in Ersteller-Wallet", "Anteil am Gesamt-Supply"),
-            ("f2", f"{d['bundle_wallets']} Wallets, 1 Block", "Gleichzeitige Käufe beim Start"),
-            ("f3", f"{d['deployer_prior_rugs']} frühere Coins abgestürzt",
-             f"Alle über −{d.get('prior_drop_threshold_pct', 90)} %, gleiche Ersteller-Wallet"),
-        ]
+        return [(f["marker"], f["big"], f["small"]) for f in flag_specs(self.d)]
 
     def events(self):
         ev = super().events()
@@ -421,7 +418,7 @@ class Flags(Scene):
         y = 360 - (1 - mo) * 50
         place(cv, icon, x0 + icon.width / 2, y, alpha=al)
         place(cv, title, x0 + icon.width + 10, y, anchor="lm", alpha=al)
-        place(cv, text_sprite("Alle vorher on-chain sichtbar", "Text-Medium", 42, COL["muted"]),
+        place(cv, text_sprite("Vorher on-chain sichtbar", "Text-Medium", 42, COL["muted"]),
               CX, 450, alpha=al)
 
         for i, (mk, big, small) in enumerate(self.items()):
