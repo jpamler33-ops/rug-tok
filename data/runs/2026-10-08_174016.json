@@ -1,0 +1,163 @@
+{
+ "run": "2026-10-08_174016",
+ "search_rows": 50,
+ "search_top_keys": [
+  "data",
+  "hasMore",
+  "nextCursor",
+  "page",
+  "pages",
+  "status",
+  "total"
+ ],
+ "search_row_keys": [
+  "bundlers",
+  "buys",
+  "communityMessages",
+  "createdAt",
+  "decimals",
+  "deployer",
+  "dev",
+  "fees",
+  "freezeAuthority",
+  "hasCoinCommunity",
+  "hasSocials",
+  "holders",
+  "id",
+  "image",
+  "insiders",
+  "lastUpdated",
+  "liquidityUsd",
+  "lpBurn",
+  "market",
+  "marketCapUsd",
+  "mint",
+  "mintAuthority",
+  "name",
+  "poolAddress",
+  "priceUsd",
+  "quoteToken",
+  "riskScore",
+  "sells",
+  "snipers",
+  "socials",
+  "status",
+  "symbol",
+  "tokenDetails",
+  "top10",
+  "totalTransactions",
+  "volume",
+  "volume_12h",
+  "volume_15m",
+  "volume_1h",
+  "volume_24h",
+  "volume_30m",
+  "volume_5m",
+  "volume_6h"
+ ],
+ "skipped": [
+  {
+   "mint": "Gi4zQb7oHRuLMBQx3J9yHdyV8UhX9CAJRUBCt1FgRye",
+   "symbol": "[cat]",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "GVUm4FNAZ3Uww1TV8VFRN5JHBZ84ScEmyDChEWHWnUi",
+   "symbol": "9-5",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "A3MGQeWksUibxajusaBriYJHkFppFPk5JfrBeGyehHZ",
+   "symbol": "分身",
+   "reason": "symbol/mint/used"
+  }
+ ],
+ "candidates": [
+  {
+   "symbol": "US",
+   "mint": "Dc26VNVhXVSZXGmCR92yTMhQx6ZygLz5NLMv9zSyg6Fp",
+   "createdAt": 1791401087749,
+   "candles": 358,
+   "result": "Absturz nur 2 %, Hoch nach 350 min"
+  },
+  {
+   "symbol": "LOBBY",
+   "mint": "6h6eCyD4kM3ifgfurDEFq5ykdAz8PEPHx2Uph2uZqMqQ",
+   "createdAt": 1791401393798,
+   "candles": 360,
+   "result": "Absturz nur 0 %, Hoch nach 358 min, Absturz dauerte 0 min"
+  },
+  {
+   "symbol": "WHUF",
+   "mint": "Hyn3TNGqTyz936vJDHAEgRP9krcVKSahFtXXE6Jv4vKu",
+   "createdAt": 1791427976379,
+   "candles": 360,
+   "result": "Anstieg nur 76 %, Absturz nur 0 %, Hoch nach 358 min, Absturz dauerte 0 min"
+  },
+  {
+   "symbol": "TWEETCRAFT",
+   "mint": "BZe6RWbM8AU86Luky7d8sAEQcz4ge1wADoYYgryPYua",
+   "createdAt": 1791393946352,
+   "candles": 236,
+   "result": "Anstieg nur 174 %, Absturz nur 8 %, Absturz dauerte 69 min"
+  },
+  {
+   "symbol": "CAPYBARA",
+   "mint": "7jZLo8XKfLzPxny3gK2bVjnr4eDRV8xE8RHuGu2ay6h",
+   "createdAt": 1791436187576,
+   "candles": 199,
+   "result": "Anstieg nur 168 %, Absturz nur 10 %"
+  },
+  {
+   "symbol": "IBVM",
+   "mint": "AmxWpCTYNU23qhKrDgE4Q4kohMRRt3S4HEEqZAWRaxRh",
+   "createdAt": 1791388537679,
+   "candles": 197,
+   "result": "Absturz nur 0 %, Hoch nach 195 min, Absturz dauerte 0 min"
+  },
+  {
+   "symbol": "ANTHROPIC",
+   "mint": "6tTmkPXBMVnW1DG9orKx2xFtw3hWAyuR6JPRLbfrX5r",
+   "createdAt": 1791414972274,
+   "candles": 152,
+   "result": "Anstieg nur 176 %, Absturz nur 4 %"
+  },
+  {
+   "symbol": "ALLOX",
+   "mint": "6EBAidEj8PLA9RxgPD49Phr5hDQ8u7AFLDksFk8nrp2R",
+   "createdAt": 1791388195464,
+   "candles": 212,
+   "result": "Absturz nur 3 %, Hoch nach 205 min"
+  },
+  {
+   "symbol": "KNIGHTCAT",
+   "mint": "JBhaALoYi2QTuLS8U6CqXMdSdaKdC3vqMpF6AzysyWXh",
+   "createdAt": 1791401442570,
+   "candles": 358,
+   "result": "Anstieg nur 204 %, Absturz nur 9 %, Hoch nach 340 min"
+  },
+  {
+   "symbol": "TITS",
+   "mint": "3W7zTq934hq2DbcHrCaG37aamniJXAtYnhRQKvoq8fLB",
+   "createdAt": 1791418168889,
+   "candles": 276,
+   "result": "Anstieg nur 190 %, Absturz nur 0 %, Hoch nach 274 min, Absturz dauerte 0 min"
+  },
+  {
+   "symbol": "CAPYBARA",
+   "mint": "22VsRoUFikdWPZ1Y63ygtczdhA9YrKyX412XSB1jQKTu",
+   "createdAt": 1791438771542,
+   "candles": 220,
+   "result": "Anstieg nur 165 %, Absturz nur 13 %, Hoch nach 196 min"
+  },
+  {
+   "symbol": "PQC",
+   "mint": "9wYhvRXS4yWvcsuB7YgHsnufSqL24ZhSpBsUgbWCLuqQ",
+   "createdAt": 1791432426217,
+   "candles": 242,
+   "result": "Anstieg nur 176 %, Absturz nur 0 %, Hoch nach 239 min"
+  }
+ ],
+ "status": "no_case",
+ "api_requests": 13
+}
