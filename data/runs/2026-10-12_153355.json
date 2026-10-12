@@ -1,0 +1,358 @@
+{
+ "run": "2026-10-12_153355",
+ "search_rows": 94,
+ "search_top_keys": [
+  "data",
+  "hasMore",
+  "nextCursor",
+  "page",
+  "pages",
+  "status",
+  "total"
+ ],
+ "search_row_keys": [
+  "bundlers",
+  "buys",
+  "communityMessages",
+  "createdAt",
+  "decimals",
+  "deployer",
+  "dev",
+  "fees",
+  "freezeAuthority",
+  "hasCoinCommunity",
+  "hasSocials",
+  "holders",
+  "id",
+  "image",
+  "insiders",
+  "lastUpdated",
+  "liquidityUsd",
+  "lpBurn",
+  "market",
+  "marketCapUsd",
+  "mint",
+  "mintAuthority",
+  "name",
+  "poolAddress",
+  "priceUsd",
+  "quoteToken",
+  "riskScore",
+  "sells",
+  "snipers",
+  "status",
+  "symbol",
+  "tokenDetails",
+  "top10",
+  "totalTransactions",
+  "volume",
+  "volume_12h",
+  "volume_15m",
+  "volume_1h",
+  "volume_24h",
+  "volume_30m",
+  "volume_5m",
+  "volume_6h"
+ ],
+ "skipped": [
+  {
+   "mint": "CbcyNo7m1amFWqEQm2m4PLv1UNvpcL3C1Ujm6AkzpKoU",
+   "symbol": "e/acc",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "siEw814mYa1o2srAGhv3DNpLj683rh3tpBxQkeg1BD2",
+   "symbol": "狸花猫",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "6hEgPc1ponHshRizo8Xuchi65t5FiqHJTpNSL6S9aXfQ",
+   "symbol": "SpaceX AI",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "8EYfYthtJMjHzRkM9kWDfyoQKYs1iME1GwmkMxfMRD2f",
+   "symbol": "LMA&LMP",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "CLLtgW8215GDN13HorRDLbwvbyYc2dX4wN8BKhcbxgwp",
+   "symbol": "SpaceX AI",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "EZP2fXC9FadxR5AWREigMx53ceCGcVmuhfwhbkR3dRwB",
+   "symbol": "SpaceX AI",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "FHXt5FGfnQcaWgZLYggGeRx9Tr4UqSX8Aavg82kDht89",
+   "symbol": "数字偶像",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "LdiMJzi9rMceCEarbp2aAakxXgUt1KT6gQs6zLCiqeP",
+   "symbol": "SpaceX AI",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "CNkY36FE6hRRitP3drNg94fqusZkAZyTvo2F7bq8fzNk",
+   "symbol": "Mr Beast",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "Etb6mjk4ryri1yDEMyA1vmUzm8ETnUydjcpK4MiCpZs3",
+   "symbol": "大闸蟹",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "9j8QwV5RPZbFMgyK548eF9KeHvvTdyfX8R2f75kwC1Wi",
+   "symbol": "大闸蟹",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "8hFyfrmptGKTLesSJCe62tVyh8cGgSxG3br493CqT8Uk",
+   "symbol": "大闸蟹",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "DrVhAwTeNpiMai4WnBJaGE8VfYy1ofppmfkHhWrmSzoT",
+   "symbol": "大闸蟹",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "4hAQWeyhMWZ1kjhbqC8LWGurAk63UMPjEqVaFp3WBRfV",
+   "symbol": "大闸蟹",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "GrGQLLNi6bFNuKz5tCQfqCp8Nq1Ay3RVZYg3ZgrMSKck",
+   "symbol": "大闸蟹",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "Bv475Um7ngHeLrGUYZoeK7r6KomAU5sbqvbe7cAGBZhj",
+   "symbol": "大闸蟹",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "BEHNAx3y5wYEChDCqDMSGWbaiQ11YgEN7sZqb9ZqHk9b",
+   "symbol": "大闸蟹",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "But4S9sKgnygcyQ5FeYZf7vgZBskLj4bksdkEcQQmZBD",
+   "symbol": "尤栗",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "6GkTEwqXaMfDDkus939adheLberz66ueuHJaPvs5eUEJ",
+   "symbol": "大闸蟹",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "BxxxSAmTMBiTVmq8Qt56ZWeqd1GsR2KCDpqpEjrrNRGt",
+   "symbol": "大闸蟹",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "5EAJ8CjJfkkQ8MH7HL2kFxMh3HZssxw7EJ1ZnjEfTchA",
+   "symbol": "SpaceX AI",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "FTh6Q1rZXJDQv8keeDzoNna7BZfM9xgZju22Yy9vPKiZ",
+   "symbol": "大闸蟹",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "6tC7mrfaetgSKAsqDqm4NkFNed4D2FzcA7cGoWsT3HD",
+   "symbol": "SpaceX AI",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "3voPwaFd3JQjs2gRrUmfgF4FmqHMMrNMvs5Zyxob8H6F",
+   "symbol": "Mr Beast",
+   "reason": "symbol/mint/used"
+  }
+ ],
+ "candidates": [
+  {
+   "symbol": "W",
+   "mint": "85VBFQZC9TZkfaptBWjvUw7YbZjy52A6mjtPGjstQAmQ",
+   "createdAt": 1791775574786,
+   "candles": 362,
+   "result": "Anstieg nur 4 %, Absturz nur 5 %"
+  },
+  {
+   "symbol": "SOLAMIANS",
+   "mint": "8ZP5CzbPL1fmP8dn1GEmLd8xw1JdudUF5Dk7EpLxpump",
+   "createdAt": 1791770971312,
+   "candles": 356,
+   "result": "Absturz nur 56 %"
+  },
+  {
+   "symbol": "NORMIE",
+   "mint": "DzMwArmdzPqcqgvyqAmTxy79XdA9NwK9mMteqWLJpump",
+   "createdAt": 1791712379583,
+   "candles": 361,
+   "result": "Absturz nur 30 %"
+  },
+  {
+   "symbol": "SWOLF",
+   "mint": "HwJyyniKKDRLXxjRSzyLtpvxzqecqrhrbcSbKRm7STNK",
+   "createdAt": 1791725104247,
+   "candles": 362,
+   "result": "Anstieg nur 5 %, Absturz nur 39 %, Absturz dauerte 251 min"
+  },
+  {
+   "symbol": "INCOGNITO",
+   "mint": "BBZ3sgY66QVsxcXXBVpuQfDzH2b5Ub8qmfKNQJjBpump",
+   "createdAt": 1791698327950,
+   "candles": 361,
+   "result": "Anstieg nur 13 %, Absturz nur 67 %"
+  },
+  {
+   "symbol": "OVERDRIVE",
+   "mint": "HT1hPomeMjNM81XebDHLgiBr3upQCHSgWLmeoyU7pump",
+   "createdAt": 1791799262497,
+   "candles": 214,
+   "result": "Absturz nur 70 %"
+  },
+  {
+   "symbol": "PEGCOIN",
+   "mint": "GeaWYiU4x5BnYts5sUKxyz87EFE71MyLguyvUZxwcvDA",
+   "createdAt": 1791731223459,
+   "candles": 17,
+   "result": "Anstieg nur 0 %, Absturz nur 41 %, Hoch nach 0 min"
+  },
+  {
+   "symbol": "STARTUP",
+   "mint": "AuQ68Q7F3gaD6CnshwxaLX4qwbs3g7g87pZ6z5RRZDPG",
+   "createdAt": 1791804312266,
+   "candles": 29,
+   "result": "Anstieg nur 105 %, Absturz nur 0 %, Absturz dauerte 0 min"
+  },
+  {
+   "symbol": "TESLASI",
+   "mint": "7aXp7eme6VuM7JJhkM15HjmdVkkTbsPr3nK1XGQUMMdG",
+   "createdAt": 1791801398529,
+   "candles": 131,
+   "result": "Absturz nur 28 %"
+  },
+  {
+   "symbol": "SLOPCANNON",
+   "mint": "DfcXPJpqAg324mcuKLe1JS41mFkrNz9MZwKy3iP4bANs",
+   "createdAt": 1791784318089,
+   "candles": 78,
+   "result": "Absturz nur 47 %"
+  },
+  {
+   "symbol": "SLOPCANNON",
+   "mint": "2nUCEARuxPgTq2Kdv5Kh6Bg2852LbPLyofXDwAgv2FvJ",
+   "createdAt": 1791789162014,
+   "candles": 125,
+   "result": "Absturz nur 12 %"
+  },
+  {
+   "symbol": "W",
+   "mint": "8afapGCHdjkxxTxsi27xezegXPiz3iwAJMh8hsm5Hqsr",
+   "createdAt": 1791797595943,
+   "candles": 76,
+   "result": "Absturz nur 0 %, Absturz dauerte 0 min"
+  },
+  {
+   "symbol": "CAPYBARA",
+   "mint": "Hy1pTgTwkHMnmyMfcEEBj1bVYE8Nhspq7VCu3onCc1BY",
+   "createdAt": 1791796923808,
+   "candles": 219,
+   "result": "Absturz nur 7 %"
+  },
+  {
+   "symbol": "W",
+   "mint": "CHCGcYwA6qTB4tN5VSfEhfmyJrhryZGWR7NuMoqEWDnA",
+   "createdAt": 1791802282212,
+   "candles": 119,
+   "result": "Absturz nur 0 %, Absturz dauerte 0 min"
+  },
+  {
+   "symbol": "GTA6",
+   "mint": "3qLR91VVEt86fGTdQEhyafhu9BrNP3A23CUCpRSS5NPu",
+   "createdAt": 1791787172750,
+   "candles": 186,
+   "result": "Absturz nur 10 %"
+  },
+  {
+   "symbol": "ROCKSTAR",
+   "mint": "6muq3XpMeaMrW1zDSJKr7a5KSy5FEhJTPNzPAyvnV8wy",
+   "createdAt": 1791781694971,
+   "candles": 89,
+   "result": "Absturz nur 10 %"
+  },
+  {
+   "symbol": "JARVIS",
+   "mint": "4XtBLQ4L3mHB6wMi6AMC5vPWB5Y7qCe3CBYRzTSvZfZK",
+   "createdAt": 1791770288166,
+   "candles": 138,
+   "result": "Absturz nur 0 %, Absturz dauerte 0 min"
+  },
+  {
+   "symbol": "ROCKSTAR",
+   "mint": "4MEhwh35KToMLsCDqY6qN1BvMPCijcCTYGW5c1VxGy2c",
+   "createdAt": 1791777512044,
+   "candles": 70,
+   "result": "Absturz nur 0 %, Absturz dauerte 0 min"
+  },
+  {
+   "symbol": "SLOPCANNON",
+   "mint": "ARRVSZhHtoRykVzVT6vkvzhB9GA9p3jNiEozJuDuYrUE",
+   "createdAt": 1791796630716,
+   "candles": 221,
+   "result": "Absturz nur 78 %"
+  },
+  {
+   "symbol": "SAID",
+   "mint": "DoLeU1ABb9J6swXrjiQxDcvRD91k1irNbu4oyphJaAXx",
+   "createdAt": 1791778827506,
+   "candles": 305,
+   "result": "Absturz nur 75 %"
+  },
+  {
+   "symbol": "ROCKSTAR",
+   "mint": "Cu523PDpvBCBfLVPvK3A1eLZwgAUdmAEo3GtjBhTzCWi",
+   "createdAt": 1791769970756,
+   "candles": 125,
+   "result": "Absturz nur 0 %, Absturz dauerte 0 min"
+  },
+  {
+   "symbol": "BLACKBOX",
+   "mint": "GGLZnpv16YV7roUZzSRDZsxByzh5MX6a459JtLhabcDd",
+   "createdAt": 1791801908919,
+   "candles": 22,
+   "result": "Absturz nur 5 %"
+  },
+  {
+   "symbol": "BLACKBOX",
+   "mint": "7sLityJG9K8z2wecJQ2Uj7zJqjbbxT5BujfuQ2AgMVDp",
+   "createdAt": 1791801020437,
+   "candles": 14,
+   "result": "Anstieg nur 66 %, Absturz nur 22 %"
+  },
+  {
+   "symbol": "MEMESTER",
+   "mint": "9AAgBuSvotxUGbVXzx7DZgXwgbaUb9iYHe7bVmZbNxHd",
+   "createdAt": 1791802839293,
+   "candles": 47,
+   "result": "Absturz nur 35 %"
+  },
+  {
+   "symbol": "TESLASI",
+   "mint": "HwQcQiPwcngE4pUxCrEg4wKoHX3o9PuJwkomRV4jpPDw",
+   "createdAt": 1791798355922,
+   "candles": 34,
+   "result": "Absturz nur 42 %"
+  }
+ ],
+ "status": "no_case",
+ "api_requests": 26
+}
