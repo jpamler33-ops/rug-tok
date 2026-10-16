@@ -1,0 +1,354 @@
+{
+ "run": "2026-10-16_120831",
+ "search_rows": 92,
+ "search_top_keys": [
+  "data",
+  "hasMore",
+  "nextCursor",
+  "page",
+  "pages",
+  "status",
+  "total"
+ ],
+ "search_row_keys": [
+  "bundlers",
+  "buys",
+  "communityMessages",
+  "createdAt",
+  "decimals",
+  "deployer",
+  "dev",
+  "fees",
+  "freezeAuthority",
+  "hasCoinCommunity",
+  "hasSocials",
+  "holders",
+  "id",
+  "image",
+  "insiders",
+  "lastUpdated",
+  "liquidityUsd",
+  "lpBurn",
+  "market",
+  "marketCapUsd",
+  "mint",
+  "mintAuthority",
+  "name",
+  "poolAddress",
+  "priceUsd",
+  "quoteToken",
+  "riskScore",
+  "sells",
+  "snipers",
+  "socials",
+  "status",
+  "symbol",
+  "tokenDetails",
+  "top10",
+  "totalTransactions",
+  "volume",
+  "volume_12h",
+  "volume_15m",
+  "volume_1h",
+  "volume_24h",
+  "volume_30m",
+  "volume_5m",
+  "volume_6h"
+ ],
+ "skipped": [
+  {
+   "mint": "CCrhnK8ABcQ7HoojSYX8HMwbDYMMm6RH9r1YPz91oDzJ",
+   "symbol": "特斯拉能飞",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "J6hboz4RaDWZAsUtxZiHi8cLNRUwgsQwNYHxWxWudp5N",
+   "symbol": "特斯拉能飞",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "znZAYH269CM17T9GcpzndY75KxzmziD5j3jJXr6dWCD",
+   "symbol": "特斯拉能飞",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "uqnJh9MWDbiizXRXEhag9biGYkn9A3CbHDeogC7qGU9",
+   "symbol": "yoki酱",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "33Wqnu2JjFNP9uUZTUugu7XvWiUfMj83aFJTTqWg7jdy",
+   "symbol": "羊来",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "2DYdWxxBWuwCwwQgXgAuLLnMpq6qG2Sdmh54Pt87Lrbq",
+   "symbol": "币安酱",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "AzfXh96MBafphbUckfuMKkacbksRigVJu8xCj4EikAtb",
+   "symbol": "四瓶假酒",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "CdQmU1cpy31a1CRLZFgW8bJV2W6xavU6reHfWX4U1Wcy",
+   "symbol": "四瓶假酒",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "HAGesCTqVe3ZsvzWuBpnp681Nrn6ryJiUwrHYsYdKsyQ",
+   "symbol": "拉飞",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "5L2v2cEnGQMWXvgg71zVoBSHzJyjxbNTVWP4NFTvUWPF",
+   "symbol": "羊来",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "DWE9uZoezMKZY1b39rRPGB6hKCmWRfPbYf2ra1yxJW1q",
+   "symbol": "四瓶假酒",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "DCNUNw6qgzXYwXibknjPaRZzvsP2SzQTNSygqoAzgRWL",
+   "symbol": "拉飞",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "Dnt3Qsjge1nk1Vj6N9Z4kUietdHh3XFYYC6KiL3LCJa1",
+   "symbol": "中华羊",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "B8ok4zRaKDq72fbiXSu9TAz2AJopWPy9F8fD6RNPdStk",
+   "symbol": "拉飞",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "8GoLJUwQUSzqkdXdeKvb5EQAiLCHxgdTS22urF1hAWbh",
+   "symbol": "四瓶假酒",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "DihLi9UYhTtorvW8WSDfneqURVVpxwpk3ppFidxfxzxz",
+   "symbol": "McDonald's",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "8ucZtgGR7VJjAxKXJXtbRveXgHg61yhFytuKsU1uNNkS",
+   "symbol": "特斯拉能飞",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "FhSHHjFpCTJoEpxEbVyVcH8JmwvKor44ZH2cTftCWpHr",
+   "symbol": "四瓶假酒",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "DTQYEMWYfWtxWUFFndq4g3QoAhdHqkMtDcvw9bZkwnry",
+   "symbol": "特斯拉能飞",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "CcpFjViWrZv7yHqBAqmbveLXDVKPY4XPSZB1SFSeEfFG",
+   "symbol": "特斯拉能飞",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "6CXEXmRnax5zbPVauwbbahS2FCR8ZEBaKUQss1ATTVHQ",
+   "symbol": "elon-san",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "54CmWDDox9HeRxCr6dEJZchexnMgBxWGghrW7U1rDKoU",
+   "symbol": "特斯拉能飞",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "5mKBk9dJoZNvPTLmtFeWF4grwdRhbSoB36scAYNKjE2V",
+   "symbol": "crack.fun",
+   "reason": "symbol/mint/used"
+  }
+ ],
+ "candidates": [
+  {
+   "symbol": "SI",
+   "mint": "DEW9dSN6QpWyNthphCpMmAbZP1Q4cEKR9xQXAri98WDP",
+   "createdAt": 1792098704307,
+   "candles": 352,
+   "result": "Anstieg nur 22 %, Absturz nur 20 %, Absturz dauerte 295 min"
+  },
+  {
+   "symbol": "CARDS",
+   "mint": "CARDSccUMFKoPRZxt5vt3ksUbxEFEcnZ3H2pd3dKxYjp",
+   "createdAt": 1792089680658,
+   "candles": 320,
+   "result": "Anstieg nur 2 %, Absturz nur 4 %"
+  },
+  {
+   "symbol": "FTR",
+   "mint": "DFMt2FyLpB6ekPNAzVErLXgpSnJ9CRf1VnxBAkTLpump",
+   "createdAt": 1792117210609,
+   "candles": 362,
+   "result": "Anstieg nur 29 %, Absturz nur 21 %"
+  },
+  {
+   "symbol": "1",
+   "mint": "2bCCHQadi4QeHWPKG3w13siCyWWQPgkFtniouTqVpump",
+   "createdAt": 1792095365045,
+   "candles": 358,
+   "result": "Absturz nur 75 %"
+  },
+  {
+   "symbol": "CLAUDIA",
+   "mint": "2j5SaS7xy776qCBpyPQbZjyQSAtKiFgrwjfErthnW2ZM",
+   "createdAt": 1792103588363,
+   "candles": 360,
+   "result": "Anstieg nur 1 %, Absturz nur 7 %"
+  },
+  {
+   "symbol": "XRC",
+   "mint": "fVBdKD7ojf544LDnAdPB9JUPXJkiDcpncjgtqvdpump",
+   "createdAt": 1792119448582,
+   "candles": 359,
+   "result": "Anstieg nur 6 %, Absturz nur 0 %"
+  },
+  {
+   "symbol": "ADP",
+   "mint": "AbNArk3jzCjqVSJ5aGR4wrcuy2qQGmVvhUzo2Pmpump",
+   "createdAt": 1792117960857,
+   "candles": 361,
+   "result": "Absturz nur 0 %"
+  },
+  {
+   "symbol": "CBUCKS",
+   "mint": "Z3QAYEy2rJMW8381x5BbvRv2Jt5z8ytXwkKRLaKpump",
+   "createdAt": 1792112543948,
+   "candles": 359,
+   "result": "Anstieg nur 8 %, Absturz nur 0 %"
+  },
+  {
+   "symbol": "DORONI",
+   "mint": "AkMD1mSYLawyWxNtbALWkaRqBXxwbFqrbeFQdYwpump",
+   "createdAt": 1792130873600,
+   "candles": 240,
+   "result": "Anstieg nur 6 %, Absturz nur 1 %"
+  },
+  {
+   "symbol": "DACITY",
+   "mint": "nxPqZ4F7ux8Vph5NFu25rEP6Kx9Gr1U6Fmj36Rjpump",
+   "createdAt": 1792070265973,
+   "candles": 362,
+   "result": "Anstieg nur 51 %, Absturz nur 69 %, Absturz dauerte 338 min"
+  },
+  {
+   "symbol": "IQD",
+   "mint": "mrVR4cnZY8sAMDh1XuwDctrWvZ7XGdSp6DARTFkpump",
+   "createdAt": 1792118120994,
+   "candles": 358,
+   "result": "Anstieg nur 13 %, Absturz nur 1 %"
+  },
+  {
+   "symbol": "GDF",
+   "mint": "5RfRCKvGMDqQDQAraRv6S7HG2xQH4wje3uFWFevcpump",
+   "createdAt": 1792082567464,
+   "candles": 361,
+   "result": "Absturz nur 0 %, Absturz dauerte 0 min"
+  },
+  {
+   "symbol": "FTR",
+   "mint": "6SPwGThCxae3SRQa1jsYtYKP6d8yiXMDui9CzENdpump",
+   "createdAt": 1792112555815,
+   "candles": 359,
+   "result": "Anstieg nur 49 %, Absturz nur 0 %, Absturz dauerte 0 min"
+  },
+  {
+   "symbol": "GDF",
+   "mint": "V2Gh1yXaKrwH6fAvb5ncUbdAU89XUEcoVdiKHHQpump",
+   "createdAt": 1792115615624,
+   "candles": 359,
+   "result": "Anstieg nur 11 %, Absturz nur 0 %"
+  },
+  {
+   "symbol": "OMNI",
+   "mint": "5GDX5fJTQns4arM1J94wjxdA8KXFsV5qW46MLFpHpump",
+   "createdAt": 1791981615645,
+   "candles": 357,
+   "result": "Anstieg nur 66 %, Absturz nur 28 %"
+  },
+  {
+   "symbol": "XTO",
+   "mint": "KTU49spRCyKRWHfKcjSLxr4ir2yZrbvL6QK7gzGpump",
+   "createdAt": 1792116792486,
+   "candles": 359,
+   "result": "Anstieg nur 20 %, Absturz nur 0 %"
+  },
+  {
+   "symbol": "DJT",
+   "mint": "wNi42pCNbMN25XP6J2iS6cNjXG7nwpnesxJ5ANwpump",
+   "createdAt": 1792113053080,
+   "candles": 361,
+   "result": "Absturz nur 0 %"
+  },
+  {
+   "symbol": "BORDR",
+   "mint": "DQpHw64qRiaJB5iHDxJ9GJz1xVSa6FxG4XK8AGvDpump",
+   "createdAt": 1792129013498,
+   "candles": 272,
+   "result": "Anstieg nur 5 %, Absturz nur 0 %"
+  },
+  {
+   "symbol": "FTR",
+   "mint": "orWftP7DZK5SvUHd3NKUvbhBzXitnRKXVrngwjMpump",
+   "createdAt": 1792114625066,
+   "candles": 361,
+   "result": "Absturz nur 89 %"
+  },
+  {
+   "symbol": "DNA",
+   "mint": "654f1vvxRapiqQg9jtFATpnHEkGCWwbvcudexaJppump",
+   "createdAt": 1792124007223,
+   "candles": 357,
+   "result": "Absturz nur 0 %, Absturz dauerte 0 min"
+  },
+  {
+   "symbol": "BUBBLE",
+   "mint": "ALDVtr9JeLjKH91fHFvLxFoyd7C6eLUxi9dUoN2FsWdD",
+   "createdAt": 1792108416256,
+   "candles": 362,
+   "result": "Anstieg nur 37 %, Absturz nur 70 %, Absturz dauerte 293 min"
+  },
+  {
+   "symbol": "NODF",
+   "mint": "BNj1neW1sZYxHpYX2dPm6o1VwJFEpbxy3X6tjAqZpump",
+   "createdAt": 1792103424911,
+   "candles": 358,
+   "result": "Anstieg nur 51 %, Absturz nur 0 %"
+  },
+  {
+   "symbol": "XTO",
+   "mint": "3399AnVhv9buT1uXWG6oiShk5onA3RLzmvbmsanRpump",
+   "createdAt": 1792114869723,
+   "candles": 361,
+   "result": "Absturz nur 0 %, Absturz dauerte 0 min"
+  },
+  {
+   "symbol": "UDR",
+   "mint": "5T3P5PLnfm9Phx6wsoeBnGRzhwTfE8ZTCZ7JcQFpump",
+   "createdAt": 1792067599381,
+   "candles": 361,
+   "result": "Absturz nur 0 %"
+  },
+  {
+   "symbol": "WOSE",
+   "mint": "39JZ1bJRKEXoZHYRKjZtayqv42aJJxFKoBYy3eGjpump",
+   "createdAt": 1792117645848,
+   "candles": 361,
+   "result": "Absturz nur 0 %, Absturz dauerte 0 min"
+  }
+ ],
+ "status": "no_case",
+ "api_requests": 26
+}
