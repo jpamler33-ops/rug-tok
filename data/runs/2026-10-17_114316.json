@@ -1,0 +1,333 @@
+{
+ "run": "2026-10-17_114316",
+ "search_rows": 90,
+ "search_top_keys": [
+  "data",
+  "hasMore",
+  "nextCursor",
+  "page",
+  "pages",
+  "status",
+  "total"
+ ],
+ "search_row_keys": [
+  "bundlers",
+  "buys",
+  "communityMessages",
+  "createdAt",
+  "decimals",
+  "deployer",
+  "dev",
+  "fees",
+  "freezeAuthority",
+  "hasCoinCommunity",
+  "hasSocials",
+  "holders",
+  "id",
+  "image",
+  "insiders",
+  "lastUpdated",
+  "liquidityUsd",
+  "lpBurn",
+  "market",
+  "marketCapUsd",
+  "mint",
+  "mintAuthority",
+  "name",
+  "poolAddress",
+  "priceUsd",
+  "quoteToken",
+  "riskScore",
+  "sells",
+  "snipers",
+  "status",
+  "symbol",
+  "tokenDetails",
+  "top10",
+  "totalTransactions",
+  "volume",
+  "volume_12h",
+  "volume_15m",
+  "volume_1h",
+  "volume_24h",
+  "volume_30m",
+  "volume_5m",
+  "volume_6h"
+ ],
+ "skipped": [
+  {
+   "mint": "GvdwhaH6GAQeHibWM2oNvgAa1tuu1xMyke8jVycxdHMH",
+   "symbol": "TikTok US",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "GCjVStYzbmzZHNzz7FyWvdXqHziGLHGPURJ6V7Pyyjj5",
+   "symbol": "NEX Ai",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "Ad9sJtrWB5k7unNukHsVGSGHNMugRWxdd9YHe43Xb3Sb",
+   "symbol": "NEX Ai",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "EyDzvQrDiejRQ83Y4DaAjpHVdgJYqTvdR3kGg1rMbbhL",
+   "symbol": "클랭커",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "A7QAjGKXm2TfEGJpgWGbUtcNRXpi1pBMHxij3SViARfk",
+   "symbol": "特能飞",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "8Eeowsd23ec7LkFVWB3xWvGMAWu73A9o4zhrR1a4UmEj",
+   "symbol": "特斯拉能飞",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "8zAKtbG58CmnzrhFc8JWTCeBzdacvQGCbk8DBF7C7a7H",
+   "symbol": "躺平小猫",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "82e2pPyhk38MVuiwW63hj3wpmfkeZgrykbK1qtkE7jLg",
+   "symbol": "特斯拉能飞",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "FCDxd3qhQDdFjpP6Q8vCxq4tTzdLamTa167GHy7RCN9T",
+   "symbol": "TESLA  AI",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "CB5bffzyhdPpjyfsDrUZHsULCFXdvSdWPjeYWg2CMVhw",
+   "symbol": "特斯拉能飞",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "7HnyMREifN22fvfSJ4vYsvN6hAmQ18xXhRvqfffEB67z",
+   "symbol": "躺平小猫",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "5pWLy5mzkTtZCmLH2t1nskyMmwTKFuLDKaZZNJR3L6XE",
+   "symbol": "$1",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "BBFF4JnKazcEGrh1b6qJJp521q5NYUqTKx8RqeM9EdxW",
+   "symbol": "特斯拉能飞",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "6a6ts2nXHSXyTpGrjgjb7eiqUSY4BYv23pAQTxDnm2U",
+   "symbol": "TESLA  AI",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "5HBogav2CyW2miZ6suPPzbUo8PfKBkj1svoDiab7sbkZ",
+   "symbol": "dev/null",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "3RL4YyaGNHxCpCwpxDgKaPapf9KSZ9LpCNbH4QLdvzMH",
+   "symbol": "特能飞",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "HrNtdE8yS2n16qE5KkDxREc8emgsQj7d32E5UmzRphm4",
+   "symbol": "躺平小猫",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "9iJAX54eWwscy6DbeaEeD16PrFMCGQrzkndz2riiyYgX",
+   "symbol": "特斯拉能飞",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "HeXcAv9VbLxkVPuJQXAYCxv4u6uT6hEFgDTKzDtpv1SN",
+   "symbol": "TESLA  AI",
+   "reason": "symbol/mint/used"
+  }
+ ],
+ "candidates": [
+  {
+   "symbol": "TRUMP",
+   "mint": "6p6xgHyF7AeE6TZkSmFsko444wqoP15icUSqi2jfGiPN",
+   "createdAt": 1792099045124,
+   "candles": 362,
+   "result": "Anstieg nur 0 %, Absturz nur 2 %, Absturz dauerte 296 min"
+  },
+  {
+   "symbol": "FTR",
+   "mint": "DFMt2FyLpB6ekPNAzVErLXgpSnJ9CRf1VnxBAkTLpump",
+   "createdAt": 1792162538395,
+   "candles": 361,
+   "result": "Anstieg nur 2 %, Absturz nur 49 %, Absturz dauerte 329 min"
+  },
+  {
+   "symbol": "SIMULATOR",
+   "mint": "8hnMfF4XL717GVwzDmvqjJvULozKW6w7BhHFABjvHje4",
+   "createdAt": 1792203749290,
+   "candles": 362,
+   "result": "Anstieg nur 82 %, Absturz nur 44 %, Absturz dauerte 240 min"
+  },
+  {
+   "symbol": "DACITY",
+   "mint": "nxPqZ4F7ux8Vph5NFu25rEP6Kx9Gr1U6Fmj36Rjpump",
+   "createdAt": 1792070728927,
+   "candles": 362,
+   "result": "Anstieg nur 19 %, Absturz nur 69 %, Absturz dauerte 304 min"
+  },
+  {
+   "symbol": "PRIME",
+   "mint": "rVWG97Yj6ZbuF9zeQo8TosQG6mUcUeL8BocfHu3pump",
+   "createdAt": 1792214813119,
+   "candles": 255,
+   "result": "Absturz nur 68 %"
+  },
+  {
+   "symbol": "ONBOARD",
+   "mint": "5ubruMYpgKqw9ip5J1qrXbVGmMdn2VCsMg421B4bpump",
+   "createdAt": 1792179801266,
+   "candles": 361,
+   "result": "Absturz nur 76 %"
+  },
+  {
+   "symbol": "ELON",
+   "mint": "B2GESkSErPjuCq6n4LcaJP5v2z1kJnw3xHVZnop2sZx",
+   "createdAt": 1792173273236,
+   "candles": 362,
+   "result": "Anstieg nur 2 %, Absturz nur 82 %"
+  },
+  {
+   "symbol": "HELL",
+   "mint": "B4xehkQYfcCWZdpBedxkikgbp9nHa4ufvEqdeKVpump",
+   "createdAt": 1792173011188,
+   "candles": 360,
+   "result": "Absturz nur 0 %"
+  },
+  {
+   "symbol": "USDP",
+   "mint": "fG1EFGKCDgrRETVivj3CFGzgDjctrGw99FENhEipump",
+   "createdAt": 1792200172486,
+   "candles": 359,
+   "result": "Anstieg nur 6 %, Absturz nur 0 %, Absturz dauerte 0 min"
+  },
+  {
+   "symbol": "DOTF",
+   "mint": "h9MSPWWhYs7DoJB6EhgRxL6LTX78McP6yyPqp64pump",
+   "createdAt": 1792201130807,
+   "candles": 361,
+   "result": "Absturz nur 0 %"
+  },
+  {
+   "symbol": "BUBBLE",
+   "mint": "ALDVtr9JeLjKH91fHFvLxFoyd7C6eLUxi9dUoN2FsWdD",
+   "createdAt": 1792151092733,
+   "candles": 360,
+   "result": "Anstieg nur 61 %, Absturz nur 41 %"
+  },
+  {
+   "symbol": "ELON",
+   "mint": "Ak8A9oUDotMPLQyGYPmwHyEJ4xTomDSi8Pks9hsJiEn3",
+   "createdAt": 1792213958483,
+   "candles": 68,
+   "result": "Absturz nur 57 %"
+  },
+  {
+   "symbol": "RONKE",
+   "mint": "Fp72qmkGKWtB5EoMuAWPx1viXjHJkUehA5weiPAbnh4S",
+   "createdAt": 1792199358737,
+   "candles": 11,
+   "result": "Absturz nur 12 %"
+  },
+  {
+   "symbol": "SIMULATOR",
+   "mint": "DnbnS8tLSdECNYsaG6CVFAzU7JRnKm3TH5SXprUJBd7Y",
+   "createdAt": 1792200041664,
+   "candles": 14,
+   "result": "Absturz nur 22 %"
+  },
+  {
+   "symbol": "PRIME",
+   "mint": "F6iKZmwd2NJhFuDybRouAHFBm4nDp2om4sUYhXq7MaWU",
+   "createdAt": 1792219135647,
+   "candles": 86,
+   "result": "Absturz nur 79 %"
+  },
+  {
+   "symbol": "SPEED",
+   "mint": "D574Xc2uEcGjo2rn1a1yBA1zuUZBn4vzwNu7tnuHeC5M",
+   "createdAt": 1792197385104,
+   "candles": 64,
+   "result": "Absturz nur 2 %"
+  },
+  {
+   "symbol": "DEEPSEEK",
+   "mint": "9g8aUeSuU4UwswYt4LDe5VEx7v5uvfgJuATWkTrBABbv",
+   "createdAt": 1792205177280,
+   "candles": 64,
+   "result": "Absturz nur 27 %"
+  },
+  {
+   "symbol": "SEXCOIN",
+   "mint": "5xx98vFKDsPW8uxUScUq5rHTxzZd7XWa4cAQyKpv3rpB",
+   "createdAt": 1792209384592,
+   "candles": 67,
+   "result": "Absturz nur 0 %, Absturz dauerte 0 min"
+  },
+  {
+   "symbol": "ELON",
+   "mint": "ncMuvCh4MpBHsVAhWsUCVoeZDFy4dDFfjE3jaFxnkCB",
+   "createdAt": 1792212131702,
+   "candles": 11,
+   "result": "Absturz nur 27 %"
+  },
+  {
+   "symbol": "VRAX",
+   "mint": "5DJSXUSbTXLjrVhrvSMiYP2GDg3K2ZKDyDPXsdpTrqXX",
+   "createdAt": 1792216051819,
+   "candles": 95,
+   "result": "Absturz nur 0 %, Absturz dauerte 0 min"
+  },
+  {
+   "symbol": "GCAT",
+   "mint": "GbhhHgHgAs3hKb1ukFJ1vbHEbMNnvDeyZVQM7TqqQ3Dy",
+   "createdAt": 1792217806241,
+   "candles": 99,
+   "result": "Absturz nur 0 %, Absturz dauerte 0 min"
+  },
+  {
+   "symbol": "TCF",
+   "mint": "ErW2NJUKkemBHk5hdckRJYB9qmBhQiz67zJbw79DLEz6",
+   "createdAt": 1792208490754,
+   "candles": 44,
+   "result": "Anstieg nur 147 %, Absturz nur 4 %"
+  },
+  {
+   "symbol": "DEEPSEEK",
+   "mint": "9oL5ex5aZXT6b5hydQ5XJwLpNzVX4ScG46Jhc834r2HS",
+   "createdAt": 1792218889400,
+   "candles": 64,
+   "result": "Absturz nur 18 %"
+  },
+  {
+   "symbol": "CHAMELEON",
+   "mint": "61J25Kx6AptBNV5NxVVhZW3TrvbyVCn1AaHGE9XMikw6",
+   "createdAt": 1792205662860,
+   "candles": 62,
+   "result": "Absturz nur 8 %"
+  },
+  {
+   "symbol": "TCF",
+   "mint": "81wkpMMZyAzGDsBtpXtwVSkxVwv7iHZGiq243QPRT3wG",
+   "createdAt": 1792222057309,
+   "candles": 76,
+   "result": "Absturz nur 25 %"
+  }
+ ],
+ "status": "no_case",
+ "api_requests": 26
+}
