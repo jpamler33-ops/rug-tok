@@ -1,0 +1,304 @@
+{
+ "run": "2026-10-20_122727",
+ "search_rows": 98,
+ "search_top_keys": [
+  "data",
+  "hasMore",
+  "nextCursor",
+  "page",
+  "pages",
+  "status",
+  "total"
+ ],
+ "search_row_keys": [
+  "bundlers",
+  "buys",
+  "communityMessages",
+  "createdAt",
+  "decimals",
+  "deployer",
+  "dev",
+  "fees",
+  "freezeAuthority",
+  "hasCoinCommunity",
+  "hasSocials",
+  "holders",
+  "id",
+  "image",
+  "insiders",
+  "lastUpdated",
+  "liquidityUsd",
+  "lpBurn",
+  "market",
+  "marketCapUsd",
+  "mint",
+  "mintAuthority",
+  "name",
+  "poolAddress",
+  "priceUsd",
+  "quoteToken",
+  "riskScore",
+  "sells",
+  "snipers",
+  "socials",
+  "status",
+  "symbol",
+  "top10",
+  "totalTransactions",
+  "volume",
+  "volume_12h",
+  "volume_15m",
+  "volume_1h",
+  "volume_24h",
+  "volume_30m",
+  "volume_5m",
+  "volume_6h"
+ ],
+ "skipped": [
+  {
+   "mint": "EUB6N3nm9Y3yvW3akE9B8moPrtSP2zhnGQkA3ZM91BzC",
+   "symbol": "Auto Pack",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "CDrLa9o1ctzPpNSgMa7oM6BS8MJ4eVbWYsYiFq7Gp6fU",
+   "symbol": "Pokémon",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "9UJ6PZXtGJd6GAHDW8t6FBKKR74sSrU2LdA5qR9yfJ4x",
+   "symbol": "아대리",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "7uz4PBVGVUkd99WhPZv8FRj7AcrygnnetkK4dTExwyzr",
+   "symbol": "TESLA SI",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "p1jNMs1eWfX14Jkg9cikQm3NLSTVkSnvfz1Qdzz5daj",
+   "symbol": "牛来",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "97qzVwXMYXvHxG9NfuZNjnCH3Za79F66QXaaHFoMHjYv",
+   "symbol": "牛来",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "JA89cGDfGbFzuq2M9bPCw9p2zrjpmsRCRZhEYLGUoqpZ",
+   "symbol": "サトシ",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "74M2JkkZKYcVnueWqS6qTYvU4EmG7FuYm4tLMTrjRvmY",
+   "symbol": "天猫双11",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "BMKLtUetCAn6eUJj3sma1G17xqLDFB3P6kpmoVYGj391",
+   "symbol": "레니니",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "8QF6QfQWJ6MDhaVmLHorxr7YzJcJe5pcXxFxBu6ATNsG",
+   "symbol": "Pokémon",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "DwBG18vxNCZSd282ui6FVJkY1kWvJU5hNuNhPfHox4bw",
+   "symbol": "레니니",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "5CC6qBRnExgBowiYYvonqoCc6XBJDdmzn7Dhu1TKXhZm",
+   "symbol": "牛来",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "6AAVezzvA4DNNncDCte6VoeSWiAcNFzcs3YpUzf5pkJp",
+   "symbol": "牛来",
+   "reason": "symbol/mint/used"
+  }
+ ],
+ "candidates": [
+  {
+   "symbol": "STONK",
+   "mint": "6GmAFSYs4gk3FDao5FzzySQpPZaWsa4rUJHacpMpUNgx",
+   "createdAt": 1792380923723,
+   "candles": 344,
+   "result": "Anstieg nur 3 %, Absturz nur 4 %, Absturz dauerte 205 min"
+  },
+  {
+   "symbol": "MUSK4",
+   "mint": "ysPp2Bt2j2UQu2tZwtSJz7JxyrmQ8GJcNJE5NyDoS5a",
+   "createdAt": 1792427054724,
+   "candles": 322,
+   "result": "Anstieg nur 1 %, Absturz nur 0 %"
+  },
+  {
+   "symbol": "FRONTIER",
+   "mint": "58QyXQ1UDgHh64EiTsCeevVM9cLPqBDNf3qZE6EdfUhZ",
+   "createdAt": 1792435765350,
+   "candles": 207,
+   "result": "Anstieg nur 2 %, Absturz nur 2 %"
+  },
+  {
+   "symbol": "COLLECTOOOR",
+   "mint": "ESnW5ZbLmoEAg2QEMxnMsY9R3aS8Kw58HJacYURmpump",
+   "createdAt": 1792452688724,
+   "candles": 362,
+   "result": "Anstieg nur 15 %, Absturz nur 75 %, Absturz dauerte 244 min"
+  },
+  {
+   "symbol": "PIERRE",
+   "mint": "D3S6J9s1byrNBt3ZKwEDiPsNRqHtoEP8zQKdhyBdpump",
+   "createdAt": 1792353305473,
+   "candles": 362,
+   "result": "Anstieg nur 68 %, Absturz nur 55 %"
+  },
+  {
+   "symbol": "UHI",
+   "mint": "FGkCj28xhabWTYg9QyzACvs4NsN6LUyesP6EwiHepump",
+   "createdAt": 1792398455236,
+   "candles": 362,
+   "result": "Anstieg nur 0 %, Absturz nur 55 %, Hoch nach 0 min, Absturz dauerte 203 min"
+  },
+  {
+   "symbol": "WEFT",
+   "mint": "HqmFi85adLD8BQA7en1HfajdAfzVFps5REgQaYuw6Ax8",
+   "createdAt": 1792395508903,
+   "candles": 350,
+   "result": "Anstieg nur 69 %, Absturz nur 32 %"
+  },
+  {
+   "symbol": "EARTH",
+   "mint": "2qgnTgJbZU6Tu6CMrm5Z5ePDGuUAyGTACbBoBCw6pump",
+   "createdAt": 1792481884400,
+   "candles": 169,
+   "result": "verworfen: Bot-Farm: Ersteller-Wallet startete 10 Coins in 48 h",
+   "score": 2.342
+  },
+  {
+   "symbol": "DBZ",
+   "mint": "DxZiLnfqHhxsdgvBUDphRQHbVU3WwF7C1Fs2A1DhYtSj",
+   "createdAt": 1792467378912,
+   "candles": 76,
+   "result": "Absturz nur 0 %, Absturz dauerte 0 min"
+  },
+  {
+   "symbol": "GEMINI",
+   "mint": "E2PWrvig9bNFMQj8bZMbJaTDpmBNFh5EFHBvkb3wPAe",
+   "createdAt": 1792478380481,
+   "candles": 81,
+   "result": "Absturz nur 22 %"
+  },
+  {
+   "symbol": "DOPE",
+   "mint": "4V6GdaEq37XRN1KSA3vSfQXAhCAGyGxUtZkparwipump",
+   "createdAt": 1792448974631,
+   "candles": 361,
+   "result": "Absturz nur 70 %"
+  },
+  {
+   "symbol": "BAWSAQ",
+   "mint": "7CTTWZ6jKj8F8VWLHNcsU9k5mV4UDKErRkXVhmFGffwq",
+   "createdAt": 1792469229418,
+   "candles": 84,
+   "result": "Anstieg nur 119 %, Absturz nur 11 %"
+  },
+  {
+   "symbol": "EVOLVE",
+   "mint": "5bhwEZaUsGo3iKAejW3tbkvHqU2ThpVabUyXLLJYapwP",
+   "createdAt": 1792483969175,
+   "candles": 120,
+   "result": "Absturz nur 49 %"
+  },
+  {
+   "symbol": "APPLE",
+   "mint": "71tcjVQHF1TwdFvLCgDWHqHydpwaLvaBDdk41jTpRTGJ",
+   "createdAt": 1792473352056,
+   "candles": 58,
+   "result": "Absturz nur 34 %"
+  },
+  {
+   "symbol": "FORKIUS",
+   "mint": "71WjTPGh148sMtVJhAQyMLD6gVvStMTcWa4sb9eU8t8K",
+   "createdAt": 1792474360395,
+   "candles": 60,
+   "result": "Anstieg nur 101 %, Absturz nur 0 %, Absturz dauerte 0 min"
+  },
+  {
+   "symbol": "SAMA4",
+   "mint": "7V1evjzUMFi4QDK7kAntcfdr9MyYC6S5bvsUCtxX1dSJ",
+   "createdAt": 1792445602614,
+   "candles": 343,
+   "result": "Anstieg nur 0 %, Absturz nur 4 %, Hoch nach 0 min"
+  },
+  {
+   "symbol": "FOMO",
+   "mint": "3EDixMzATXCS8yRhKdxdGm4bmBmXFF2U6QACuP9QJ4p5",
+   "createdAt": 1792472359788,
+   "candles": 111,
+   "result": "Absturz nur 88 %"
+  },
+  {
+   "symbol": "STONK",
+   "mint": "3ANvDzQks7kr44SqHfT3zL1vfBtLXjcouQeivDJrwsnZ",
+   "createdAt": 1792479275020,
+   "candles": 88,
+   "result": "Absturz nur 58 %"
+  },
+  {
+   "symbol": "OLLIE",
+   "mint": "H7XgbTSXYkDGRMFQSspHWcMq4WbpScz4aBsxiSPn8oEH",
+   "createdAt": 1792477024829,
+   "candles": 114,
+   "result": "Absturz nur 66 %"
+  },
+  {
+   "symbol": "USDF",
+   "mint": "3aTyUpdKfpctuvf1ddxakjSmn2C387pMw2N72cFFsCiW",
+   "createdAt": 1792479711304,
+   "candles": 28,
+   "result": "Absturz nur 0 %, Absturz dauerte 0 min"
+  },
+  {
+   "symbol": "USDF",
+   "mint": "EhDL7UCgRus6CA18M2CaEkvjqTjeFqB2e5RUo9MuzmsS",
+   "createdAt": 1792481783447,
+   "candles": 25,
+   "result": "Anstieg nur 65 %, Absturz nur 30 %"
+  },
+  {
+   "symbol": "USDF",
+   "mint": "C8Biw3C3xG7D6zzxigVmEGnFzME29RL7FuMoQZj3Kmdg",
+   "createdAt": 1792483277524,
+   "candles": 71,
+   "result": "Absturz nur 0 %, Absturz dauerte 0 min"
+  },
+  {
+   "symbol": "FORKIUS",
+   "mint": "8EBVv2L4vqZF3kDpJXi4tmv4W9w4ChPvmYwNuQJAEriX",
+   "createdAt": 1792474447053,
+   "candles": 38,
+   "result": "Absturz nur 34 %"
+  },
+  {
+   "symbol": "EVOLVE",
+   "mint": "6HwJEzvyZttwcjDkDEwDQZHSicFWfz3eqAhxSpwTeeWv",
+   "createdAt": 1792479560502,
+   "candles": 46,
+   "result": "Absturz nur 20 %"
+  },
+  {
+   "symbol": "RIPPED",
+   "mint": "ERwxSAKE3MCFjri2nrDvb2Jai4hoypdyeNFHLgiFPcBw",
+   "createdAt": 1792483348912,
+   "candles": 34,
+   "result": "Absturz nur 58 %"
+  }
+ ],
+ "status": "no_case",
+ "api_requests": 45
+}
