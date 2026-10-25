@@ -1,0 +1,410 @@
+{
+ "run": "2026-10-25_111103",
+ "search_rows": 94,
+ "search_top_keys": [
+  "data",
+  "hasMore",
+  "nextCursor",
+  "page",
+  "pages",
+  "status",
+  "total"
+ ],
+ "search_row_keys": [
+  "bundlers",
+  "buys",
+  "communityMessages",
+  "createdAt",
+  "decimals",
+  "deployer",
+  "dev",
+  "fees",
+  "freezeAuthority",
+  "hasCoinCommunity",
+  "hasSocials",
+  "holders",
+  "id",
+  "image",
+  "insiders",
+  "lastUpdated",
+  "liquidityUsd",
+  "lpBurn",
+  "market",
+  "marketCapUsd",
+  "mint",
+  "mintAuthority",
+  "name",
+  "poolAddress",
+  "priceUsd",
+  "quoteToken",
+  "riskScore",
+  "sells",
+  "snipers",
+  "socials",
+  "status",
+  "symbol",
+  "tokenDetails",
+  "top10",
+  "totalTransactions",
+  "volume",
+  "volume_12h",
+  "volume_15m",
+  "volume_1h",
+  "volume_24h",
+  "volume_30m",
+  "volume_5m",
+  "volume_6h"
+ ],
+ "skipped": [
+  {
+   "mint": "4QMvqs6eLocXwK2FKJ3Hzwr8jMfrzd6waBpWQYE9h8m9",
+   "symbol": "大A",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "J9hpMmpFyPiBBqyQiJepHrSfTsdcRWww5Uj5b98EGewa",
+   "symbol": "大A",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "7s1DPFh3Jm98r82sgVPwshSoX8FFZuEtdMzvZzjCGuA1",
+   "symbol": "민수",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "3w8YEzp2u2gGQJnnaAtnsXL3ngzJGubtoAnPEB5Gyyxc",
+   "symbol": "A股",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "H9sdQRW47VjtoNMzgHgMqCyfZrVxb9XT5SPRWWq9w6RN",
+   "symbol": "同花顺",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "8NCXsWKJBFNdUqj6PRSYxBFusEtNY9VDP1CtkwwvDDMr",
+   "symbol": "张雪机车水上漂",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "FKGyMRJ9xqwvhZkECkwpM2cAruoPvi7iSy5e1SMdhGyS",
+   "symbol": "张雪机车水上漂",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "GLnAuAjM1AsebHBHjgCkiRizvWkrAoKNikrH3Nm3CBB8",
+   "symbol": "GTA6 Coin",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "4pySFoG88vrtGayttM46j5xb1ZF9GdK9iLFCfWZFpoG4",
+   "symbol": "US stocks",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "BCVs9mggB7c9bpnhgwM9wT6KK1kdLkg1QHN6jXNH3ibn",
+   "symbol": "yoki酱",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "2G7wAKPNomimDx8xXQ9vXrqVzTvoDTWeU3q6RVQzoCJX",
+   "symbol": "NEX Ai",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "DNRKLiubVSnfPeGtDjXhKpV31tRSH8UPU7quPL1Y3GaR",
+   "symbol": "yoki酱",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "9T18CJgPGEGyJbfbMffLSkXXmFcZWFLcV2JQp45QJpEX",
+   "symbol": "NEX Ai",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "3PRK5SDjsCNb7x2eaJPActTujDzqzcS8DQnhTP3oxEez",
+   "symbol": "yoki酱",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "CKf7gd7RxZyzycTxSuxAB2C2ftHPCjRaELLoaaUzkNci",
+   "symbol": "yoki酱",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "Hj8mZCt1DgNEVrVrVve3Pr1258M24zZvPSk6mBtCJLA",
+   "symbol": "yoki酱",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "EQG6Aq1ymeJ9aPVpx5vhdEfkLCTzoU9s5rHKdSfK1GCT",
+   "symbol": "yoki酱",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "6tU7R4ZfJ9rsgtpw7HqC3VVtcQUQFAqqtGVB3BoGgxEm",
+   "symbol": "NEX Ai",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "4pWPtaqVvJk9LftY1sqDWrJr5dEGKQqLkUhouRYt2SRu",
+   "symbol": "███",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "8x8XXewdV5waavaBZxmrhkso5viB5xtnyh8jLpDcz4mw",
+   "symbol": "张雪机车水上漂",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "3LCY4a7MmUkDL1aGw3f8srQyWgod7dHYDLgdB9G99E3i",
+   "symbol": "NEX Ai",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "Dr1Nd5FmyuddTLh7DhoJfyp7iXMMRvjkpdwc4Uqi7gG9",
+   "symbol": "███",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "EHiDd3p4BjzW5Sx5aeZxoydavspGmczwJoyBQjBGyvSr",
+   "symbol": "███",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "9qoyjzCL1zEt3g6ZCaFyzhcJsXV8FsUb2fKrYc3hNwAC",
+   "symbol": ".ai",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "9ShkrdCYGRwA98JzpQn4EiA6qghqv2uuvMUX5XqXTvoo",
+   "symbol": "NEX Ai",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "woiw7EMYtHsquwk8eRuk14N76BSKAEA53fb2YbGDBJR",
+   "symbol": "yoki酱",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "6uucPsNEYeiH2g8H1Wo2nnh6LVDEaHBLmFUD2VQfcnSA",
+   "symbol": ".ai",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "87C4qscew7RbCPrtVmXjkCoXGwSvMoRwopiqjstSVgiC",
+   "symbol": "张雪机车水上漂",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "9QgtmqZLNwzwpEQWabjH3kK5cLY4sW3bJyXM1C28YivV",
+   "symbol": ".ai",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "DgZZLFXRjB9xUtLQ14xzkDuKAXexfPb4FUyC6wU4sBrd",
+   "symbol": "张雪机车水上漂",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "684DCCPoQG4USTSmT4Mwa8KwyyTXnzfTY6CWWZrmkDSg",
+   "symbol": "███",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "BAiGhEgM31XyU4yFrugJvi34QgC3WmMFNwKDr7wRMo6D",
+   "symbol": "yoki酱",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "EAXkk6RBAWi77M7AewasXJvHvTtJ29k1tPJajxB46FZw",
+   "symbol": "US stocks",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "8QU6qpuyhoNzbHFjgrkcN7wfAfWdnwhZptriiAPY2wCn",
+   "symbol": "GTA6 Coin",
+   "reason": "symbol/mint/used"
+  }
+ ],
+ "candidates": [
+  {
+   "symbol": "BTC",
+   "mint": "C5xph2yL6gMdxmuLGxJBkGpmuDFfyi5fqkBNhvL6pump",
+   "createdAt": 1792900886856,
+   "candles": 359,
+   "result": "Anstieg nur 27 %, Absturz nur 4 %"
+  },
+  {
+   "symbol": "REMUS",
+   "mint": "CA8q2mkYWZnUNqYmf6pxyxAPZsmSe2EG9P7hHMW5pump",
+   "createdAt": 1792835721554,
+   "candles": 362,
+   "result": "Anstieg nur 56 %, Absturz nur 49 %"
+  },
+  {
+   "symbol": "WRHND",
+   "mint": "hFF4rkdzsaoYhkz4dGEQepGmHCBTVFFCoaLXbJqpump",
+   "createdAt": 1792874005080,
+   "candles": 361,
+   "result": "Absturz nur 80 %, Absturz dauerte 218 min"
+  },
+  {
+   "symbol": "YMB",
+   "mint": "2TKDNLwVTbhVVy7jCvSDz6ic4REAqQshZ9n9ZTxmpump",
+   "createdAt": 1792784220720,
+   "candles": 362,
+   "result": "Anstieg nur 14 %, Absturz nur 87 %, Absturz dauerte 349 min"
+  },
+  {
+   "symbol": "MACCA",
+   "mint": "AKotzk1dhcNangAJBtvNKtT9bhbSVZc2mMhRFgkFpump",
+   "createdAt": 1792776095928,
+   "candles": 338,
+   "result": "Anstieg nur 19 %, Absturz nur 27 %, Absturz dauerte 213 min"
+  },
+  {
+   "symbol": "MARVIN",
+   "mint": "FmuciqKXRRnKqhi7BNin5mYH6fm3oTrfVB5A5Fyrpump",
+   "createdAt": 1792898096280,
+   "candles": 361,
+   "result": "Anstieg nur 13 %, Absturz nur 85 %, Absturz dauerte 337 min"
+  },
+  {
+   "symbol": "USDP",
+   "mint": "Wi2pmpvXR9KpvHLZAPn2iBkqHNFeLYsKA3SuLHKpump",
+   "createdAt": 1792894155825,
+   "candles": 343,
+   "result": "Anstieg nur 12 %, Absturz nur 0 %"
+  },
+  {
+   "symbol": "BILLIONS",
+   "mint": "9uNgkUWsRDCMsnE6UX9aJ9bCwj3Lw3pjTU4TnMEnpump",
+   "createdAt": 1792903548709,
+   "candles": 327,
+   "result": "verworfen: Bot-Farm: Ersteller-Wallet startete 92 Coins in 48 h",
+   "score": 1.293
+  },
+  {
+   "symbol": "WHITEWHALE",
+   "mint": "FgMT9fAWzwRt45jaeyK6nrHVLVY2zDvBDu1PzugBoGbc",
+   "createdAt": 1792913583540,
+   "candles": 107,
+   "result": "Absturz nur 0 %, Absturz dauerte 0 min"
+  },
+  {
+   "symbol": "BOB",
+   "mint": "3seU6Qpumsd4skqCFdAtCvvMsXGeid3NUYEzY5Y4fhFT",
+   "createdAt": 1792915213413,
+   "candles": 57,
+   "result": "Absturz nur 28 %"
+  },
+  {
+   "symbol": "HOBBES",
+   "mint": "EaZi7UqbNSUAF5noSxX8zdTn7Cp39iwmwGUCvsM15EPn",
+   "createdAt": 1792908378260,
+   "candles": 68,
+   "result": "Anstieg nur 136 %, Absturz nur 41 %"
+  },
+  {
+   "symbol": "WHITEWHALE",
+   "mint": "DX7w1XFAyTJVHEzvBVisPQyQZrYwDeDtuhkMmWK3nQEQ",
+   "createdAt": 1792911392069,
+   "candles": 132,
+   "result": "Absturz nur 64 %"
+  },
+  {
+   "symbol": "CHUBBY",
+   "mint": "387waZ5sARnEwRoqWCffMGroK1UmhFNM24rbhEBEfp9R",
+   "createdAt": 1792911584412,
+   "candles": 61,
+   "result": "Anstieg nur 112 %, Absturz nur 26 %"
+  },
+  {
+   "symbol": "BILLIONS",
+   "mint": "VTFGCQZnGetcpwwkz7x3d4ihmF4Go2tZfc88kc7Ny7e",
+   "createdAt": 1792906152473,
+   "candles": 102,
+   "result": "Absturz nur 63 %"
+  },
+  {
+   "symbol": "PANDA",
+   "mint": "CtJcth4tAbduQzzEiYbbV9pLsmJMFH1cQjHUrgMA4spq",
+   "createdAt": 1792912701991,
+   "candles": 96,
+   "result": "Anstieg nur 143 %, Absturz nur 15 %"
+  },
+  {
+   "symbol": "CLAUDE",
+   "mint": "9AVhzbEiroZiz4b1ws7mTky7dyp7DJa4QyD3jTMnyzjz",
+   "createdAt": 1792895550690,
+   "candles": 61,
+   "result": "Absturz nur 8 %"
+  },
+  {
+   "symbol": "GTA6",
+   "mint": "H3R2XvvMUF4EhgSJAcsocJW8SsfJPhbL9b46Zq3orfsA",
+   "createdAt": 1792895853848,
+   "candles": 79,
+   "result": "Absturz nur 4 %"
+  },
+  {
+   "symbol": "SEASON",
+   "mint": "85uM4Zd3C4dv5kg2giDkUJgghCFUsjJTD7EEhCDDXJSG",
+   "createdAt": 1792901882714,
+   "candles": 72,
+   "result": "Anstieg nur 146 %, Absturz nur 0 %, Absturz dauerte 0 min"
+  },
+  {
+   "symbol": "SKT1",
+   "mint": "DzuLNHafEAzXuJJ8QsT8AWMPpenEMBLKxTccVaJeHLh7",
+   "createdAt": 1792899412172,
+   "candles": 62,
+   "result": "Absturz nur 1 %"
+  },
+  {
+   "symbol": "NODF",
+   "mint": "C5nhWGrroQfTQrNPdBq41hRChDScrktzGG8FRfmBsS3B",
+   "createdAt": 1792904183094,
+   "candles": 73,
+   "result": "Absturz nur 0 %, Absturz dauerte 0 min"
+  },
+  {
+   "symbol": "NODF",
+   "mint": "9U88fbAM8q6igkjsm6xWubjb8biqY5sxpBLrFXt8jJDC",
+   "createdAt": 1792895674128,
+   "candles": 78,
+   "result": "Absturz nur 0 %, Absturz dauerte 0 min"
+  },
+  {
+   "symbol": "NODF",
+   "mint": "2E5qFL7CVGWV233FVFdXphErTamuoQGwk26GX7PJzc93",
+   "createdAt": 1792892436466,
+   "candles": 55,
+   "result": "Absturz nur 0 %, Absturz dauerte 0 min"
+  },
+  {
+   "symbol": "4AGENT",
+   "mint": "4DjqwEngknHmSVH6W3ecJY5XQpVMYsiynqKsP3QLg2CU",
+   "createdAt": 1792912792636,
+   "candles": 57,
+   "result": "Absturz nur 0 %, Absturz dauerte 0 min"
+  },
+  {
+   "symbol": "IG",
+   "mint": "2Y1wjP2NDTdK5CMDzist4HUQu9mLQNbQVyHPCDH9GcRr",
+   "createdAt": 1792903206356,
+   "candles": 87,
+   "result": "Absturz nur 2 %"
+  },
+  {
+   "symbol": "MARVIN",
+   "mint": "CyYfBQ5aHZZjpn9jsg6BU5fZbSid1GRER7hd7YzdLBXg",
+   "createdAt": 1792896130995,
+   "candles": 54,
+   "result": "Anstieg nur 75 %, Absturz nur 7 %"
+  }
+ ],
+ "status": "no_case",
+ "api_requests": 45
+}
