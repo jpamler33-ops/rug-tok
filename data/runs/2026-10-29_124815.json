@@ -1,0 +1,330 @@
+{
+ "run": "2026-10-29_124815",
+ "search_rows": 96,
+ "search_top_keys": [
+  "data",
+  "hasMore",
+  "nextCursor",
+  "page",
+  "pages",
+  "status",
+  "total"
+ ],
+ "search_row_keys": [
+  "bundlers",
+  "buys",
+  "communityMessages",
+  "createdAt",
+  "decimals",
+  "deployer",
+  "dev",
+  "fees",
+  "freezeAuthority",
+  "hasCoinCommunity",
+  "hasSocials",
+  "holders",
+  "id",
+  "image",
+  "insiders",
+  "lastUpdated",
+  "liquidityUsd",
+  "lpBurn",
+  "market",
+  "marketCapUsd",
+  "mint",
+  "mintAuthority",
+  "name",
+  "poolAddress",
+  "priceUsd",
+  "quoteToken",
+  "riskScore",
+  "sells",
+  "snipers",
+  "socials",
+  "status",
+  "symbol",
+  "tokenDetails",
+  "top10",
+  "totalTransactions",
+  "volume",
+  "volume_12h",
+  "volume_15m",
+  "volume_1h",
+  "volume_24h",
+  "volume_30m",
+  "volume_5m",
+  "volume_6h"
+ ],
+ "skipped": [
+  {
+   "mint": "E7Cw3aPtKBjuAJKGK6vR4UaxYcngystGNn4LZG3N5XKw",
+   "symbol": "Mbappe ",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "2E9mVPVZJdMYbfjjuTixgVbZAT2TBcNfPfgHaQZttdGh",
+   "symbol": "Mbappe ",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "rKRXUDMiLEHo17tF1ip29SNA6uTjfsJHCSy1hJwWRrB",
+   "symbol": "亮出你的剑",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "ADxPk6rvihajrVXjhKZW5PrqjL8ARFd42APCVTSptLza",
+   "symbol": "红苕饭太稀",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "CrxLYMhVYYza4ntorybWwzVPFx7LVaUyRQZspjAwJuED",
+   "symbol": "金叫焕",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "BrPzCjnxdiaHWJfHaGK2K8Pi7vhQW3tctEatQoHPXMH4",
+   "symbol": "红苕饭太稀",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "9YC57ro5FHdboJzoThUfoQ3WjeHTj3yg6dmujnMsKDtV",
+   "symbol": "红苕饭太稀",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "6gA8xkZehnvULwv42ChEamjrwoyqcnN8JjpqG9dRMLA9",
+   "symbol": "Mbappe ",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "BM3vXvy7v7bQeVkYgeTrge846tdFsij7GCZfyRMAdREg",
+   "symbol": "姆巴佩",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "GTgUZcSwWg11fr1m6gF5DitiYuWPgW2t7eHUS6TXQdoz",
+   "symbol": "Mbappe ",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "EV8GZoK5MR84zKWguQvaz2wxmdBRSx8Eo5rSFdb6Udas",
+   "symbol": "e/acc",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "5aG8iTqYBrsUYsFKT3ZZTxmHWPdUD5VUvtFiS9mwrRFE",
+   "symbol": "yoki酱",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "5qn6xPEodskg8vfDzUufoza28eaiL157PA2M4G1w4vPV",
+   "symbol": "GTA Ai",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "Cz9uGrQHxwAiPZoQ48Xsow9zR5TaNNgTycWevYv1UEvi",
+   "symbol": "yoki酱",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "64gEGpgnNG9SGqttNjDJqLpeKXd42x7dyMEHrSu1cVay",
+   "symbol": "Mbappe ",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "GzghgbMxMfADNDfk8fCeQqdQGGKAqwWZrnFQd7taib5a",
+   "symbol": "大A",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "AAKjF7uREqu2on563CvWfaYZPwJuqDGb5J8MahkCzdwV",
+   "symbol": "大A",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "Aqe9yUFapRJ1VSagVYmAGzwqLthz33aVNN5LWXLd6D3K",
+   "symbol": "大A",
+   "reason": "symbol/mint/used"
+  }
+ ],
+ "candidates": [
+  {
+   "symbol": "HOUSECOIN",
+   "mint": "FqzpYHxqDBDc8rh2VuRknTdWTLqLeEPEWusCSPFA3MCB",
+   "createdAt": 1793259455347,
+   "candles": 241,
+   "result": "Anstieg nur 95 %, Absturz nur 5 %"
+  },
+  {
+   "symbol": "FRONGUS",
+   "mint": "2BJDwUdMbnJhRRfhacFDjrDNhxUWdzE9H6LEND89pump",
+   "createdAt": 1793128448676,
+   "candles": 362,
+   "result": "Absturz nur 87 %, Absturz dauerte 291 min"
+  },
+  {
+   "symbol": "FLOAT",
+   "mint": "Bv1a7cEj5aRnJQhMw4kRQqAFesMSd5LwcDnUzq52BMmr",
+   "createdAt": 1793226454780,
+   "candles": 362,
+   "result": "Absturz nur 50 %"
+  },
+  {
+   "symbol": "INVERSE",
+   "mint": "2gLhk8p2KvUFeUXur2hiF4hxjdRM1vBcbgo9Q7DMZfiw",
+   "createdAt": 1793168379314,
+   "candles": 362,
+   "result": "Anstieg nur 1 %, Absturz nur 40 %, Absturz dauerte 314 min"
+  },
+  {
+   "symbol": "BIGGUY",
+   "mint": "Hz2zi56C6e9msn9zkfNd4W47KN79UoFgbJ8kto5cpump",
+   "createdAt": 1793215831172,
+   "candles": 186,
+   "result": "gewählt",
+   "score": 29.94
+  },
+  {
+   "symbol": "HOUSECOIN",
+   "mint": "DUKEjskPBoszW4xEowcSWptekuUZpwLFv6nTt5Cmpump",
+   "createdAt": 1793216675058,
+   "candles": 362,
+   "result": "Anstieg nur 97 %, Absturz nur 65 %, Absturz dauerte 191 min"
+  },
+  {
+   "symbol": "SPERM",
+   "mint": "8kTyoSRcM57zRCmZu2YkSEzKAcYZ3oMbxzunGBw1upQe",
+   "createdAt": 1793252769318,
+   "candles": 71,
+   "result": "Absturz nur 0 %, Absturz dauerte 0 min"
+  },
+  {
+   "symbol": "GROKBOT",
+   "mint": "EVgiod75DkdMEzJ44PLswXp5CY6PbsTbFVEeaGmKbXmZ",
+   "createdAt": 1793245713873,
+   "candles": 34,
+   "result": "Absturz nur 0 %, Absturz dauerte 0 min"
+  },
+  {
+   "symbol": "FRONGUS",
+   "mint": "AV3iJmpLP8AzKBCREoiaPYDsSn5y9GDeemS1AnQJpump",
+   "createdAt": 1793172568019,
+   "candles": 359,
+   "result": "Anstieg nur 30 %, Absturz nur 0 %, Absturz dauerte 0 min"
+  },
+  {
+   "symbol": "VC",
+   "mint": "7QXWi2hBcfrLgFHDC23u3w8LasQUha3NDK8tNobQK5xu",
+   "createdAt": 1793258383959,
+   "candles": 58,
+   "result": "Absturz nur 67 %"
+  },
+  {
+   "symbol": "PODCAT",
+   "mint": "FTHehvPHJNeBJAcNn3SohQGjQBVUAwZFajzWokabv6kw",
+   "createdAt": 1793245830757,
+   "candles": 82,
+   "result": "Absturz nur 80 %"
+  },
+  {
+   "symbol": "MICRODUCK",
+   "mint": "CyPHZxwWCRHRRYCwkijbd5DiLtArWijM98k7aCpacEiY",
+   "createdAt": 1793260605178,
+   "candles": 93,
+   "result": "Absturz nur 8 %"
+  },
+  {
+   "symbol": "INVERSE",
+   "mint": "E84vjtrbjtTsor7zaxs8hRsQiBazxjQKawao2v6rBY1d",
+   "createdAt": 1793245207008,
+   "candles": 122,
+   "result": "Absturz nur 3 %"
+  },
+  {
+   "symbol": "PRIORS",
+   "mint": "5wFmAJGGxAD6MQ8uz42ZnfwkAuX7iEkh3VkCJrrDFPDR",
+   "createdAt": 1793246076756,
+   "candles": 92,
+   "result": "Absturz nur 3 %"
+  },
+  {
+   "symbol": "RKC",
+   "mint": "4B17T5tBBmgnc7MJ9CRgwWgUPvTx5FkXCzyxmeGXhr7C",
+   "createdAt": 1793237827576,
+   "candles": 36,
+   "result": "Anstieg nur 149 %, Absturz nur 5 %"
+  },
+  {
+   "symbol": "INVERSE",
+   "mint": "7MsP3H71eEisZ99zwkaWKm62i2VqxFDTmtUG5Xph1apm",
+   "createdAt": 1793256646829,
+   "candles": 57,
+   "result": "Absturz nur 0 %, Absturz dauerte 0 min"
+  },
+  {
+   "symbol": "AISI",
+   "mint": "HMien42XRoguSvn5WqhUxY6teCviUUNwoYUWqkbNgoit",
+   "createdAt": 1793249933117,
+   "candles": 57,
+   "result": "Absturz nur 0 %, Absturz dauerte 0 min"
+  },
+  {
+   "symbol": "GHOST",
+   "mint": "BpS9FvfZgnUHnbr4AgLsM3FvhkJSCEiYidk9BwmcVpju",
+   "createdAt": 1793244961426,
+   "candles": 29,
+   "result": "Anstieg nur 101 %, Absturz nur 4 %"
+  },
+  {
+   "symbol": "GHOST",
+   "mint": "DkDgE5U8LcUUyMDWy1ys5xdcKMThVaXobBBFcL9J5Ym8",
+   "createdAt": 1793262998213,
+   "candles": 39,
+   "result": "Anstieg nur 132 %, Absturz nur 0 %, Absturz dauerte 0 min"
+  },
+  {
+   "symbol": "MICRODUCK",
+   "mint": "ApSeXZAZPfe3gVPY414EnYrTJ2ywdSW9Bv1Y385zgos3",
+   "createdAt": 1793266095964,
+   "candles": 99,
+   "result": "Absturz nur 0 %, Absturz dauerte 0 min"
+  },
+  {
+   "symbol": "PRIORS",
+   "mint": "72uT2xUVfanK5J9QREfhYBqh4kq6YKsfmYt4b7VfauQg",
+   "createdAt": 1793252763652,
+   "candles": 82,
+   "result": "Absturz nur 0 %, Absturz dauerte 0 min"
+  },
+  {
+   "symbol": "INVERSE",
+   "mint": "5kaqKHmNcseLQdkkEXt8JfkDnkHvYpyoduZXfDRTjbqw",
+   "createdAt": 1793263462483,
+   "candles": 143,
+   "result": "Absturz nur 0 %, Absturz dauerte 0 min"
+  },
+  {
+   "symbol": "GTA",
+   "mint": "8bzAX1yHapUBi7oSiuQf2oTSi82fKzRFvHBtWyuUqeDa",
+   "createdAt": 1793240245613,
+   "candles": 91,
+   "result": "Absturz nur 0 %, Absturz dauerte 0 min"
+  },
+  {
+   "symbol": "GANG",
+   "mint": "F2aDyMhAmLjoAWQnD9EtNgwbd1MRfQJYdyX1TN9reKPY",
+   "createdAt": 1793249565060,
+   "candles": 95,
+   "result": "Absturz nur 3 %"
+  },
+  {
+   "symbol": "INVERSE",
+   "mint": "22xGEvB62oBWfeptLKZZQFY37hw24zocfPzQzuLgMrv2",
+   "createdAt": 1793241973897,
+   "candles": 54,
+   "result": "Absturz nur 0 %, Absturz dauerte 0 min"
+  }
+ ],
+ "status": "case",
+ "api_requests": 50
+}
