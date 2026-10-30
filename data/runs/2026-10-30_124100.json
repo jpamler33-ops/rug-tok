@@ -1,0 +1,320 @@
+{
+ "run": "2026-10-30_124100",
+ "search_rows": 96,
+ "search_top_keys": [
+  "data",
+  "hasMore",
+  "nextCursor",
+  "page",
+  "pages",
+  "status",
+  "total"
+ ],
+ "search_row_keys": [
+  "bundlers",
+  "buys",
+  "communityMessages",
+  "createdAt",
+  "decimals",
+  "deployer",
+  "dev",
+  "fees",
+  "freezeAuthority",
+  "hasCoinCommunity",
+  "hasSocials",
+  "holders",
+  "id",
+  "image",
+  "insiders",
+  "lastUpdated",
+  "liquidityUsd",
+  "lpBurn",
+  "market",
+  "marketCapUsd",
+  "mint",
+  "mintAuthority",
+  "name",
+  "poolAddress",
+  "priceUsd",
+  "quoteToken",
+  "riskScore",
+  "sells",
+  "snipers",
+  "socials",
+  "status",
+  "symbol",
+  "top10",
+  "totalTransactions",
+  "volume",
+  "volume_12h",
+  "volume_15m",
+  "volume_1h",
+  "volume_24h",
+  "volume_30m",
+  "volume_5m",
+  "volume_6h"
+ ],
+ "skipped": [
+  {
+   "mint": "4hN9Ke3ndGWvgvGXgmAkngqgpNFWCSkX1mpnTuvidbfy",
+   "symbol": "大A",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "ERPwTYE7xtEAH1WWWreBqj6L19F8t7y4anqQPnbgHzxS",
+   "symbol": "大A",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "Cw1NnMbeniHw8nxXEDmYD3cayS7evTWWoXBUBDeRP9Kt",
+   "symbol": "Tik Tok",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "7UooyJwzetmLTbPtECt1FRcp8UV4wBpznswU6hJJQ1Qe",
+   "symbol": "大A",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "DyPSedj3KY6nEJnc6M2d17uc28X1azBJqpU5aQEs2Cqi",
+   "symbol": "大A",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "DFCQZ9DoE3vvZtsxb5Tmj9kZ79TMWTerMB8MDkXonudZ",
+   "symbol": "大A",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "FD2gKQPzewtKAjsCueQy8fVUD3r7Kzhk5DdPVpD5MmB5",
+   "symbol": "$19",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "87mJ72ec1NuNfhTMyKpfbu5KhHBeZhL89GcoG4u5y7xV",
+   "symbol": "Mbappe ",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "6vY1szz1rQuFe9V7Xs7qv58jZFRet3F3pJpaQD6rscND",
+   "symbol": "Tik Tok",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "2wHzH319FuobULuRuS2tgzJ16vkprG5mG25jmJN6msE8",
+   "symbol": "Mbappe ",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "DWb7tiQ48nzCsNrSedzktQHUXpRhVeDDqhRSLcHonp5y",
+   "symbol": "寿来",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "NpRt2DGFxPg1hKdCj8JAxRk5mzdcc5uF89QX1Rm564g",
+   "symbol": "币安加油",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "BLanURTjde2B9gsaFfmgz6kmuyE7iCwSBcqQyM3FfaNe",
+   "symbol": ".ai",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "Dpxkj1a8KqiU2mdrKurpELMqfzwfD5MM2Lpt1ty1fzCT",
+   "symbol": "寿来",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "BDtteNUUtGoBJQJ6cG78VYBkPRkSiyMdj19SVN3ZJhQg",
+   "symbol": "Mbappe ",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "aCAYczcrTPw8xMLTRJQsahXKMuiwMDpT3CcTdD9YxVZ",
+   "symbol": "Mbappe ",
+   "reason": "symbol/mint/used"
+  }
+ ],
+ "candidates": [
+  {
+   "symbol": "GATO",
+   "mint": "9nLd6rr9G7o6BGCMAuvsymtQAJ1bMzVqsxw2zoYpKDm",
+   "createdAt": 1793303860159,
+   "candles": 351,
+   "result": "Anstieg nur 71 %, Absturz nur 74 %, Absturz dauerte 309 min"
+  },
+  {
+   "symbol": "HOUSECOIN",
+   "mint": "GoFCL64AiiMsjvPn5PZ9bC4WnmCqkTP79gACuubE54hL",
+   "createdAt": 1793303237217,
+   "candles": 353,
+   "result": "Anstieg nur 31 %, Absturz nur 72 %"
+  },
+  {
+   "symbol": "HI",
+   "mint": "3w2TvVmTrtq4kSkoFVrTFQgz6MX7ThzDVrx9r5c3pump",
+   "createdAt": 1793291863906,
+   "candles": 358,
+   "result": "Absturz nur 78 %, Absturz dauerte 182 min"
+  },
+  {
+   "symbol": "INVERSE",
+   "mint": "2gLhk8p2KvUFeUXur2hiF4hxjdRM1vBcbgo9Q7DMZfiw",
+   "createdAt": 1793168379314,
+   "candles": 362,
+   "result": "Anstieg nur 1 %, Absturz nur 40 %, Absturz dauerte 314 min"
+  },
+  {
+   "symbol": "VIEWER",
+   "mint": "78jfNokExJBCNrxptJ8FQsoFYa68Bs8rckz5kwe2Q35o",
+   "createdAt": 1793348435572,
+   "candles": 26,
+   "result": "verworfen: Bot-Farm: Ersteller-Wallet startete 50 Coins in 48 h",
+   "score": 8.312
+  },
+  {
+   "symbol": "CTO",
+   "mint": "FgQ7voPhAnTejatMnxQtTDZn5CTH7F9XXrEhnDzfQs48",
+   "createdAt": 1793352845085,
+   "candles": 43,
+   "result": "Absturz nur 84 %"
+  },
+  {
+   "symbol": "MEMES",
+   "mint": "AuNttv6Y5XDHjJwRGK66JhSP4vPckozAJvm4WCvd7ySD",
+   "createdAt": 1793350564925,
+   "candles": 37,
+   "result": "verworfen: Bot-Farm: Ersteller-Wallet startete 29 Coins in 48 h",
+   "score": 8.902
+  },
+  {
+   "symbol": "HI",
+   "mint": "JAnpVvddbrUaW91zTHLDMTn8oSyYBh5Pb7JJKk1XYaRh",
+   "createdAt": 1793350604582,
+   "candles": 33,
+   "result": "Absturz nur 79 %"
+  },
+  {
+   "symbol": "XTO",
+   "mint": "P82RMk3bNFkc3S5TZfUnM3vJ6F7oYzxtNCn2E44pump",
+   "createdAt": 1793276881146,
+   "candles": 349,
+   "result": "Absturz nur 0 %, Absturz dauerte 0 min"
+  },
+  {
+   "symbol": "USDF",
+   "mint": "122GHPxz5ntVd41LgoAZAr8C5LQqkQwybgBupyaapump",
+   "createdAt": 1793329863133,
+   "candles": 361,
+   "result": "Absturz nur 0 %, Absturz dauerte 0 min"
+  },
+  {
+   "symbol": "NOTHING",
+   "mint": "E3JA3RSaBjnw1qR4P9pz67hjLz6tWBkRgWz6xjc41bGZ",
+   "createdAt": 1793211574880,
+   "candles": 361,
+   "result": "Anstieg nur 12 %, Absturz nur 77 %"
+  },
+  {
+   "symbol": "OPTIMISM",
+   "mint": "4ZvrkCauEUuzGUswZVNZQ5P187qCimfKfq21QgyEyzbL",
+   "createdAt": 1793336876069,
+   "candles": 178,
+   "result": "Absturz nur 2 %"
+  },
+  {
+   "symbol": "LAPTOP",
+   "mint": "CkAyx6f5qrsTHeT19jDCK8qxG1u6i1cERnPSKiuBZ1o",
+   "createdAt": 1793346896999,
+   "candles": 89,
+   "result": "Absturz nur 85 %"
+  },
+  {
+   "symbol": "RARI",
+   "mint": "GfywiHZirQBPQ7NZ56owqEo5USaQBvck4F7s95BqH4XF",
+   "createdAt": 1793334569018,
+   "candles": 52,
+   "result": "Absturz nur 54 %"
+  },
+  {
+   "symbol": "RARI",
+   "mint": "AV3dWWwbiso9PMscYfbiiEsiKpmkcLrDXQef9gRhhUqy",
+   "createdAt": 1793337692032,
+   "candles": 166,
+   "result": "Absturz nur 10 %"
+  },
+  {
+   "symbol": "LAPTOP",
+   "mint": "DC95JYsaCAXKZnK48dUVV8wTEjqXtZiuUuceczs22yqs",
+   "createdAt": 1793332293990,
+   "candles": 81,
+   "result": "Absturz nur 88 %"
+  },
+  {
+   "symbol": "ZERODAY",
+   "mint": "6dWzrCpWVR2U4v7YKdD95J6WdfYGbWvpCxyVV2wPrAbs",
+   "createdAt": 1793344896576,
+   "candles": 59,
+   "result": "Anstieg nur 114 %, Absturz nur 39 %"
+  },
+  {
+   "symbol": "JASON",
+   "mint": "A9UQthSJUDYMW72TdEY8PYjzetpuomEkLFsFoiEsbTKF",
+   "createdAt": 1793335529105,
+   "candles": 66,
+   "result": "Absturz nur 3 %"
+  },
+  {
+   "symbol": "JASON",
+   "mint": "JmVn28Kz56PcRtcgccETNYRCbPH5dvGsYQTCLcrnZSQ",
+   "createdAt": 1793339762038,
+   "candles": 200,
+   "result": "Absturz nur 0 %"
+  },
+  {
+   "symbol": "ZERODAY",
+   "mint": "GY16hVLxe3VrB1uXa5w6erZKLXwQnpefdqMNeSbnR2H6",
+   "createdAt": 1793338704669,
+   "candles": 100,
+   "result": "Anstieg nur 147 %, Absturz nur 49 %"
+  },
+  {
+   "symbol": "WOFL",
+   "mint": "HyaFoqeM7KUyr3KaXA2LGWzY7vnJYtYynX3GtFu9Fxba",
+   "createdAt": 1793328061601,
+   "candles": 74,
+   "result": "Absturz nur 0 %, Absturz dauerte 0 min"
+  },
+  {
+   "symbol": "E91",
+   "mint": "3u2WVU3fg37rcTgKydvrVyp7L8F284zypdbGieHwH9q9",
+   "createdAt": 1793346323537,
+   "candles": 71,
+   "result": "Absturz nur 2 %"
+  },
+  {
+   "symbol": "E91",
+   "mint": "Cuz3oAYnhCnrPH8daUBFaaSNpXYjKmodj4AJAhAUh7yC",
+   "createdAt": 1793350598513,
+   "candles": 62,
+   "result": "Absturz nur 0 %, Absturz dauerte 0 min"
+  },
+  {
+   "symbol": "ZERODAY",
+   "mint": "HfBHC48uenW5Z7kP2UmiZBBLGWXeAPQKPB4MVGbyTN3m",
+   "createdAt": 1793333432806,
+   "candles": 101,
+   "result": "Absturz nur 66 %"
+  },
+  {
+   "symbol": "ZERODAY",
+   "mint": "EbRjiQtyY2Wki8rjVWSA2Q4fYgdUjNJ9RASjpQ3wNkNH",
+   "createdAt": 1793326657378,
+   "candles": 55,
+   "result": "Absturz nur 0 %, Absturz dauerte 0 min"
+  }
+ ],
+ "status": "no_case",
+ "api_requests": 64
+}
