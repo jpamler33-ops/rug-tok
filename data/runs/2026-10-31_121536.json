@@ -1,0 +1,335 @@
+{
+ "run": "2026-10-31_121536",
+ "search_rows": 90,
+ "search_top_keys": [
+  "data",
+  "hasMore",
+  "nextCursor",
+  "page",
+  "pages",
+  "status",
+  "total"
+ ],
+ "search_row_keys": [
+  "bundlers",
+  "buys",
+  "communityMessages",
+  "createdAt",
+  "decimals",
+  "deployer",
+  "dev",
+  "fees",
+  "freezeAuthority",
+  "hasCoinCommunity",
+  "hasSocials",
+  "holders",
+  "id",
+  "image",
+  "insiders",
+  "lastUpdated",
+  "liquidityUsd",
+  "lpBurn",
+  "market",
+  "marketCapUsd",
+  "mint",
+  "mintAuthority",
+  "name",
+  "poolAddress",
+  "priceUsd",
+  "quoteToken",
+  "riskScore",
+  "sells",
+  "snipers",
+  "status",
+  "symbol",
+  "top10",
+  "totalTransactions",
+  "volume",
+  "volume_12h",
+  "volume_15m",
+  "volume_1h",
+  "volume_24h",
+  "volume_30m",
+  "volume_5m",
+  "volume_6h"
+ ],
+ "skipped": [
+  {
+   "mint": "Fdz5uSFEz8T7NVhthVkAwKc4DWs6XKmvmoQYJFcggoFz",
+   "symbol": "发发",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "FC9BhWDcn226fHXA18dsaMXZqeM2zdS4JYJAevTfK44V",
+   "symbol": "S.p.A.",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "2xFdYaEFksoiiWiZpBuFrFB9WdtuteWEnxBzsbvEGpkr",
+   "symbol": "NEX Ai",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "Dsr5NT92Vu9GqZhQ4mp6cMwXJ3pm73G75v6NMqV5YARm",
+   "symbol": "NEX Ai",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "DhcRuDWjBUgsfo3Cjd4osshYLPWsNYmN6DAJUNoaD7f7",
+   "symbol": "NEX Ai",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "7S29vpoGsz3kQJqtF51hxnNdbFsCSGukJFfUrbq8oxXV",
+   "symbol": "P C",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "7PA6xRdmttdck3eKFv4B2FbACJazs8733wsEtrdwN7YC",
+   "symbol": "大A",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "FC5bwC3gADqQcmLpHGf3qKTKeSWLe244mPmStgtSAYr1",
+   "symbol": "发发",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "5vZng6in6Twxi8it8q8KCXLiLYvgbUfh8P9Qc6aEyaAN",
+   "symbol": "大A",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "SMHofU9MELJw34kNSArZzUntuznrmVegK9nFMSF8Fgq",
+   "symbol": "大A",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "579SPFV2C96ajRJ9o2XpgfSx5atyhRQgdaMbcnsKxQz9",
+   "symbol": "NEX Ai",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "GPgmpwSwiVTjNV24EsKtKHeQAGx9BTq6jh1VKbNPhe8Z",
+   "symbol": "大A",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "5qHwzQXTNvrzWDBNoLZyDmMqZBfAER121xU3GeW3TPAr",
+   "symbol": "NEX Ai",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "5i7LcyEAkWmEvzLNkh4qN89nKijyaCsUKDay7viuesUF",
+   "symbol": "发发",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "5MViE4CjVVwkKcZ5xeUY8gpJpK6uBQLcJAcx3w6FsdVt",
+   "symbol": "NEX Ai",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "Cpmk8kjD9RTwXqUrnseyHSBXXU33nDyrZ9KG7X1TUVWt",
+   "symbol": "大A",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "45eBj7K8E6g1B6U8RKXwf2eemjcZQSDh31yHZtSzBcgK",
+   "symbol": "NEX Ai",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "EKASJ6yNVrfzU54vwfyQdEvFjWiaYPnyaybYfKJSQAj2",
+   "symbol": "V France",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "FrnFWjrDrm7xWY4DounP7ayJwjsfBuNxzbHcUk4an5uK",
+   "symbol": "NEX Ai",
+   "reason": "symbol/mint/used"
+  }
+ ],
+ "candidates": [
+  {
+   "symbol": "DJT",
+   "mint": "DJTu7vi8norVzdVAffgvb39VP7wjKeTsgaMBJrzfxvoF",
+   "createdAt": 1793367837205,
+   "candles": 306,
+   "result": "Anstieg nur 2 %, Absturz nur 3 %, Absturz dauerte 200 min"
+  },
+  {
+   "symbol": "GTA6",
+   "mint": "4kjruqGHDsSqkMdFfCjV7Vb62HPFhtXyWc2t6JpQzDnz",
+   "createdAt": 1793255757062,
+   "candles": 361,
+   "result": "Anstieg nur 30 %, Absturz nur 20 %"
+  },
+  {
+   "symbol": "ICOIN",
+   "mint": "HgxEGTZ1Epb64RrYqcuHkqb1gGWWnF5WcPTCDWzApump",
+   "createdAt": 1793404409026,
+   "candles": 362,
+   "result": "Anstieg nur 40 %, Absturz nur 73 %"
+  },
+  {
+   "symbol": "LUMI",
+   "mint": "HvitmAeh6TkToQonoiNwqWcrZsYdYiaSZHP7yMmspump",
+   "createdAt": 1793412674627,
+   "candles": 362,
+   "result": "Anstieg nur 137 %, Absturz nur 29 %"
+  },
+  {
+   "symbol": "HIMS",
+   "mint": "6FZiRtqq9jzDYiV8ie3te4gBqeG2UoKCggy5GpKDWE94",
+   "createdAt": 1793428451397,
+   "candles": 27,
+   "result": "verworfen: Bot-Farm: Ersteller-Wallet startete 50 Coins in 48 h",
+   "score": 4.266
+  },
+  {
+   "symbol": "ANITA",
+   "mint": "BTKQMkPhwScBpfqPz3PL5RExc7tEyJ23V9B6p9HWFPRR",
+   "createdAt": 1793434642735,
+   "candles": 19,
+   "result": "Absturz nur 19 %"
+  },
+  {
+   "symbol": "RIZZGIVING",
+   "mint": "GunktKCQNMoCS1Wwy3HcJUPvSGFL95NkbNxMzjBYFUsu",
+   "createdAt": 1793435550574,
+   "candles": 23,
+   "result": "verworfen: Bot-Farm: Ersteller-Wallet startete 50 Coins in 48 h",
+   "score": 5.289
+  },
+  {
+   "symbol": "JOIN",
+   "mint": "G3654cXAHsFw3BN4R1xiPS5pxrWKvqqExqHCwGJwMJHB",
+   "createdAt": 1793437462146,
+   "candles": 21,
+   "result": "Absturz nur 89 %"
+  },
+  {
+   "symbol": "MIKA",
+   "mint": "6R7AFrxw8FBsq83diKF5RGwDNwWV4f9zcTzT7QQbNbQX",
+   "createdAt": 1793432495439,
+   "candles": 22,
+   "result": "verworfen: Bot-Farm: Ersteller-Wallet startete 50 Coins in 48 h",
+   "score": 4.82
+  },
+  {
+   "symbol": "USOE",
+   "mint": "63nkhCHzptRr8qkLFWJHkD5c75VW5HDCh7pJ4K8pump",
+   "createdAt": 1793417903974,
+   "candles": 361,
+   "result": "Absturz nur 0 %, Absturz dauerte 0 min"
+  },
+  {
+   "symbol": "ICOIN",
+   "mint": "J56F8gausLkGJoXB2pTuzAejdGSVmCUkvhVQiLZDr4em",
+   "createdAt": 1793427467381,
+   "candles": 47,
+   "result": "Absturz nur 45 %"
+  },
+  {
+   "symbol": "ANITA",
+   "mint": "59XqA8RQjhF5SXmjhd3Bq1NsqVo7A8qNfotdQRFkCRrn",
+   "createdAt": 1793434210730,
+   "candles": 11,
+   "result": "Absturz nur 70 %"
+  },
+  {
+   "symbol": "ICOIN",
+   "mint": "4hE4m9zou17fK3MQDRecCu5dmGBbdLvLtnEPnLoRHWZW",
+   "createdAt": 1793432133901,
+   "candles": 43,
+   "result": "Absturz nur 0 %, Absturz dauerte 0 min"
+  },
+  {
+   "symbol": "ICOIN",
+   "mint": "71YBZjHYzxS1XxjTbvsYaZKCdp1opgrFPT5JF2tfeCQd",
+   "createdAt": 1793427999027,
+   "candles": 45,
+   "result": "Absturz nur 74 %"
+  },
+  {
+   "symbol": "AUDI",
+   "mint": "AkNWfS29CiuDz1zcPadiYnouHwd7VvVtGiaqcwGC7hyQ",
+   "createdAt": 1793436676980,
+   "candles": 138,
+   "result": "Absturz nur 46 %"
+  },
+  {
+   "symbol": "LUMI",
+   "mint": "6zF9SE2UWXNm8GNHnuWctJnHYydmbddcMnUQj7GVNxpm",
+   "createdAt": 1793421099210,
+   "candles": 122,
+   "result": "Absturz nur 45 %"
+  },
+  {
+   "symbol": "TELEMETRY",
+   "mint": "EbjssmRGdPjF85czaoMkDx1W22VqyhQPrwfiK4EDj5X2",
+   "createdAt": 1793428634831,
+   "candles": 55,
+   "result": "Absturz nur 20 %"
+  },
+  {
+   "symbol": "LUMI",
+   "mint": "8TQWe9hWiTmohiVgDyrUYMZAMWoJ1yx3gqvtvtcYwTBN",
+   "createdAt": 1793428395356,
+   "candles": 77,
+   "result": "Absturz nur 77 %"
+  },
+  {
+   "symbol": "GATO",
+   "mint": "8vTdrfzEzg5dTs5ri3LcSh6Uj3aUhLeiFYa2oUyNLu4Z",
+   "createdAt": 1793425181934,
+   "candles": 57,
+   "result": "Absturz nur 45 %"
+  },
+  {
+   "symbol": "JLR",
+   "mint": "Lyxzzd944ZtvN63aRRcayjMsWadPoNzBYkzXjNgHYxP",
+   "createdAt": 1793432911158,
+   "candles": 44,
+   "result": "Anstieg nur 61 %, Absturz nur 8 %"
+  },
+  {
+   "symbol": "ICOIN",
+   "mint": "BiPZ2WPvrx2udvXuLif6rrkK33XThNPdecCBvL1ZWCJ7",
+   "createdAt": 1793434879398,
+   "candles": 40,
+   "result": "Absturz nur 11 %"
+  },
+  {
+   "symbol": "SAFU",
+   "mint": "3P51oaeDkKjVDwTJ7mmgH7pEuNg4BZP4xPLAEwkX2RBV",
+   "createdAt": 1793428861660,
+   "candles": 69,
+   "result": "Absturz nur 0 %, Absturz dauerte 0 min"
+  },
+  {
+   "symbol": "CANDY",
+   "mint": "9CuBzkCXDaUX13MNCw9LhWWA3pVRNEnKvngFdHegYe9w",
+   "createdAt": 1793419377597,
+   "candles": 71,
+   "result": "Anstieg nur 112 %, Absturz nur 41 %"
+  },
+  {
+   "symbol": "WORM",
+   "mint": "6WVRy2yq9kSRyn97w8CyVaotyQSGKTvGu3cBmoH2SjUR",
+   "createdAt": 1793409255298,
+   "candles": 62,
+   "result": "Absturz nur 0 %, Absturz dauerte 0 min"
+  },
+  {
+   "symbol": "SAFU",
+   "mint": "HpbrHwLhqB73VkHqfETeN2YLhVfhiLvjUJeEThHGpc6K",
+   "createdAt": 1793433013486,
+   "candles": 118,
+   "result": "Absturz nur 0 %, Absturz dauerte 0 min"
+  }
+ ],
+ "status": "no_case",
+ "api_requests": 83
+}
