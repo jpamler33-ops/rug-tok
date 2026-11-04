@@ -1,0 +1,266 @@
+{
+ "run": "2026-11-04_141841",
+ "search_rows": 91,
+ "search_top_keys": [
+  "data",
+  "hasMore",
+  "nextCursor",
+  "page",
+  "pages",
+  "status",
+  "total"
+ ],
+ "search_row_keys": [
+  "bundlers",
+  "buys",
+  "communityMessages",
+  "createdAt",
+  "decimals",
+  "deployer",
+  "dev",
+  "fees",
+  "freezeAuthority",
+  "hasCoinCommunity",
+  "hasSocials",
+  "holders",
+  "id",
+  "image",
+  "insiders",
+  "lastUpdated",
+  "liquidityUsd",
+  "lpBurn",
+  "market",
+  "marketCapUsd",
+  "mint",
+  "mintAuthority",
+  "name",
+  "poolAddress",
+  "priceUsd",
+  "quoteToken",
+  "riskScore",
+  "sells",
+  "snipers",
+  "socials",
+  "status",
+  "symbol",
+  "tokenDetails",
+  "top10",
+  "totalTransactions",
+  "volume",
+  "volume_12h",
+  "volume_15m",
+  "volume_1h",
+  "volume_24h",
+  "volume_30m",
+  "volume_5m",
+  "volume_6h"
+ ],
+ "skipped": [
+  {
+   "mint": "AmVfg4g14HjRYV8Vdn9FoBGeNarko2upXAfxBU17EdZB",
+   "symbol": "大A",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "ZvzgnTQMpMPjVQUrJJApydN5d7q5PJgBxN6Cvu4GYoS",
+   "symbol": "大A",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "EfRnwABuWZKxri55se639twy4jy3FRgYfri7wLJ5pump",
+   "symbol": "E ",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "2AibYAPa3bbuB41M4KaVe9d4HJBvtPkkHtg25FDj9Qr8",
+   "symbol": "USOE✨",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "7kYXsF59Cc3HBjL1mW5y9eutEWYh3dTUuvBvnNV7pump",
+   "symbol": "ᑓହꚡई",
+   "reason": "symbol/mint/used"
+  }
+ ],
+ "candidates": [
+  {
+   "symbol": "CHOO",
+   "mint": "EJAxERvKU4kEVXn3NarjvRtgaMaJyP9ZuMeKA7JJpump",
+   "createdAt": 1793726399909,
+   "candles": 358,
+   "result": "Anstieg nur 0 %, Absturz nur 38 %, Hoch nach 0 min, Absturz dauerte 282 min"
+  },
+  {
+   "symbol": "AMD",
+   "mint": "DDmGnuvroxVrb7CSyjYcezFU8gnAfhKasg4ZZezmpump",
+   "createdAt": 1793740903498,
+   "candles": 353,
+   "result": "Absturz nur 61 %, Absturz dauerte 211 min"
+  },
+  {
+   "symbol": "MAMESUKE",
+   "mint": "SCGBBnSwnekytGFHgyeHHxPMiN7xDxsWFGg9JgFSTNK",
+   "createdAt": 1793714942613,
+   "candles": 349,
+   "result": "Anstieg nur 27 %, Absturz nur 40 %, Absturz dauerte 207 min"
+  },
+  {
+   "symbol": "HELL",
+   "mint": "A75Xx6SeftAmWduv9KGwb2GCjXUAhxozcCUCys9jpump",
+   "createdAt": 1793592634567,
+   "candles": 362,
+   "result": "Anstieg nur 5 %, Absturz nur 21 %"
+  },
+  {
+   "symbol": "CAPY",
+   "mint": "DBPTU2oKLDHXQjAEJ3rZi8bUGmt2uxUbipgg6xmXoMqr",
+   "createdAt": 1793658133788,
+   "candles": 362,
+   "result": "Anstieg nur 27 %, Absturz nur 44 %"
+  },
+  {
+   "symbol": "RICO",
+   "mint": "8kuQg3WivDtL85VEdw2jEmSXjYt6EEeYBATJ4DtQpump",
+   "createdAt": 1793685805087,
+   "candles": 362,
+   "result": "Anstieg nur 62 %, Absturz nur 37 %"
+  },
+  {
+   "symbol": "1",
+   "mint": "CFp5X4CXHuSN1hycBiUdyh2q7fRB2Ksmg4BFtqXr76A5",
+   "createdAt": 1793771377063,
+   "candles": 61,
+   "result": "Absturz nur 0 %, Absturz dauerte 0 min"
+  },
+  {
+   "symbol": "RAM",
+   "mint": "5UdorDGL4mix5rqKwxmdaEL6oAVGRUdKxqSvH42P96BQ",
+   "createdAt": 1793784442364,
+   "candles": 76,
+   "result": "Absturz nur 70 %"
+  },
+  {
+   "symbol": "VETO",
+   "mint": "4xjucGcJcYMxscVDVLKCj4FPf663V8hpX7xGMKuK5Zeg",
+   "createdAt": 1793778171045,
+   "candles": 70,
+   "result": "Absturz nur 1 %"
+  },
+  {
+   "symbol": "VETO",
+   "mint": "AGPbZ4vE5YFPL57DSH69BMSF2a5wf2PbREzELwsaPr2m",
+   "createdAt": 1793774935081,
+   "candles": 55,
+   "result": "Absturz nur 0 %, Absturz dauerte 0 min"
+  },
+  {
+   "symbol": "VETO",
+   "mint": "FxmxzVswtUbZZzxpZMdr1xN94LyBKZDWK7q47XBSWtsT",
+   "createdAt": 1793782418129,
+   "candles": 119,
+   "result": "Absturz nur 0 %, Absturz dauerte 0 min"
+  },
+  {
+   "symbol": "AMD",
+   "mint": "2wS6WqBQZnXr9RYS4tZwoo9kd6vevkijg7tBCdSNJzRK",
+   "createdAt": 1793766491239,
+   "candles": 56,
+   "result": "Absturz nur 0 %, Absturz dauerte 0 min"
+  },
+  {
+   "symbol": "OTHER",
+   "mint": "2X2y8e5kNGAdoy1dbeaV8AoYGVGaTnTfE38DieecvLji",
+   "createdAt": 1793766704614,
+   "candles": 136,
+   "result": "Absturz nur 75 %"
+  },
+  {
+   "symbol": "ANAKIN",
+   "mint": "HxJfSzgpyHdiJEv4XWt9uT5kYYnScrjZX2cWUEYwMLXe",
+   "createdAt": 1793787824483,
+   "candles": 69,
+   "result": "Absturz nur 84 %"
+  },
+  {
+   "symbol": "MAMESUKE",
+   "mint": "Ew3LgTZmA22jqcM9Ckfzdn7CYhA83pTv3XNXp3TThEYT",
+   "createdAt": 1793783489472,
+   "candles": 63,
+   "result": "Anstieg nur 133 %, Absturz nur 52 %"
+  },
+  {
+   "symbol": "OTHER",
+   "mint": "7t6BdP44VR23CJoDGZmsLG6R3aY3zSYTcPo4DvTwnmW3",
+   "createdAt": 1793774865959,
+   "candles": 129,
+   "result": "Absturz nur 80 %"
+  },
+  {
+   "symbol": "SOV",
+   "mint": "52kNHb9HC2ewmWGESJkgviwrcDrt6kpeowCWb4zEEFYC",
+   "createdAt": 1793786696089,
+   "candles": 68,
+   "result": "Absturz nur 12 %"
+  },
+  {
+   "symbol": "OTHER",
+   "mint": "Dwu2dScJRCRoTsdkGSPRds2MLso9Fr1s1c3tk9v2Vqb7",
+   "createdAt": 1793766290659,
+   "candles": 98,
+   "result": "Absturz nur 62 %"
+  },
+  {
+   "symbol": "VETO",
+   "mint": "5N6eo7wbnxCgUEWtBtUGLrbJ5omTsrRWeat3ywMFMpBz",
+   "createdAt": 1793769056166,
+   "candles": 91,
+   "result": "Absturz nur 55 %"
+  },
+  {
+   "symbol": "SLINGTOSHI",
+   "mint": "5M3geopg4JX2Q7CDV8juTtKCYocydBTm1o61eomRQPpg",
+   "createdAt": 1793769606974,
+   "candles": 41,
+   "result": "Absturz nur 0 %, Absturz dauerte 0 min"
+  },
+  {
+   "symbol": "SLINGTOSHI",
+   "mint": "F7x9LovuLNtTsYi5tbwi6hbuvBMsmPDG4vRugZg77uWH",
+   "createdAt": 1793786855016,
+   "candles": 76,
+   "result": "Absturz nur 61 %"
+  },
+  {
+   "symbol": "RAM",
+   "mint": "9MDb1T4xCCaoeaENco1jfkiAZXngp3s7CaUeuwLywrRN",
+   "createdAt": 1793782386854,
+   "candles": 34,
+   "result": "Absturz nur 65 %"
+  },
+  {
+   "symbol": "AMD",
+   "mint": "C9qnMgVn5JuxGH8Xwy88eUnbSpgVe7J88WnZrbf1ut75",
+   "createdAt": 1793770224645,
+   "candles": 236,
+   "result": "verworfen: Bot-Farm: Ersteller-Wallet startete 54 Coins in 48 h",
+   "score": 5.553
+  },
+  {
+   "symbol": "SLINGTOSHI",
+   "mint": "FspudJbNF8iARPXw8x43Dpi1ujXQLeuQXGwiwLsnCUYU",
+   "createdAt": 1793772096902,
+   "candles": 227,
+   "result": "Absturz nur 89 %"
+  },
+  {
+   "symbol": "OTHER",
+   "mint": "5oWQ7bJTkJg6RbjP9xr7GULbpmreVKuYZRqHx5HGHUP3",
+   "createdAt": 1793772220337,
+   "candles": 219,
+   "result": "verworfen: Bot-Farm: Ersteller-Wallet startete 93 Coins in 48 h",
+   "score": 6.12
+  }
+ ],
+ "status": "no_case",
+ "api_requests": 64
+}
