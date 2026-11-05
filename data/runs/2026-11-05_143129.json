@@ -1,0 +1,274 @@
+{
+ "run": "2026-11-05_143129",
+ "search_rows": 99,
+ "search_top_keys": [
+  "data",
+  "hasMore",
+  "nextCursor",
+  "page",
+  "pages",
+  "status",
+  "total"
+ ],
+ "search_row_keys": [
+  "bundlers",
+  "buys",
+  "communityMessages",
+  "createdAt",
+  "decimals",
+  "deployer",
+  "dev",
+  "fees",
+  "freezeAuthority",
+  "hasCoinCommunity",
+  "hasSocials",
+  "holders",
+  "id",
+  "image",
+  "insiders",
+  "lastUpdated",
+  "liquidityUsd",
+  "lpBurn",
+  "market",
+  "marketCapUsd",
+  "mint",
+  "mintAuthority",
+  "name",
+  "poolAddress",
+  "priceUsd",
+  "quoteToken",
+  "riskScore",
+  "sells",
+  "snipers",
+  "socials",
+  "status",
+  "symbol",
+  "tokenDetails",
+  "top10",
+  "totalTransactions",
+  "volume",
+  "volume_12h",
+  "volume_15m",
+  "volume_1h",
+  "volume_24h",
+  "volume_30m",
+  "volume_5m",
+  "volume_6h"
+ ],
+ "skipped": [
+  {
+   "mint": "7p6JsCNDWFi3eefbsA4nyVDbDk6ZmJxyAKKYxunvvhTG",
+   "symbol": "حلال",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "BfRJpzbZqedUgFEqYmwwMmDcSJsrKtdbKdxGEVD5Lyzx",
+   "symbol": "Love!",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "HvwY7WV8q75o3pYCar8uDQMmhKWthJzSHQkQXMnfT5Z7",
+   "symbol": "Love!",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "4kWy9kHjDcUY1spXk7oiYfrMSHWtCKp6vTioK9Was3wZ",
+   "symbol": "حلال",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "CiWMmwhTtdYgSwsGq6HHUvFQwxdXgYPt3iYArQEmkJGc",
+   "symbol": "PEACOCK",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "8cb9ZH9tH8PQobKV3ZBykfExVDefwaGjhQjxMjZSdvLz",
+   "symbol": "PEACOCK",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "8fwVMRnJ11UjWsaetKD4A2GmjwA2eJuSjyisGcWZwyDo",
+   "symbol": "Beeyoncé",
+   "reason": "symbol/mint/used"
+  }
+ ],
+ "candidates": [
+  {
+   "symbol": "CHOO",
+   "mint": "EJAxERvKU4kEVXn3NarjvRtgaMaJyP9ZuMeKA7JJpump",
+   "createdAt": 1793725640258,
+   "candles": 354,
+   "result": "Anstieg nur 13 %, Absturz nur 41 %, Absturz dauerte 284 min"
+  },
+  {
+   "symbol": "AMD",
+   "mint": "DDmGnuvroxVrb7CSyjYcezFU8gnAfhKasg4ZZezmpump",
+   "createdAt": 1793743591350,
+   "candles": 362,
+   "result": "Anstieg nur 93 %, Absturz nur 62 %, Absturz dauerte 211 min"
+  },
+  {
+   "symbol": "HIGH",
+   "mint": "7ymF66Z6VhgNiwadtVhjTtT6U7iQRpSxeiRrhfufhigh",
+   "createdAt": 1793827221240,
+   "candles": 362,
+   "result": "Anstieg nur 145 %, Absturz nur 62 %, Absturz dauerte 292 min"
+  },
+  {
+   "symbol": "STONKS",
+   "mint": "22r9JGoWRBYc4Z1pkSFw8p2tdjefS2ZZshw1vr8bBC2K",
+   "createdAt": 1793791207234,
+   "candles": 356,
+   "result": "Anstieg nur 71 %, Absturz nur 45 %"
+  },
+  {
+   "symbol": "ABTC",
+   "mint": "ERs7y4nMGLFVmHcXyDxiS7iDKpp4jWHz2VUuE2gxpump",
+   "createdAt": 1793822286791,
+   "candles": 356,
+   "result": "Absturz nur 47 %"
+  },
+  {
+   "symbol": "ADP",
+   "mint": "Ksh4FfRkqVDFnT9ick3SS8VhCzapcDiWbJgYnbQpump",
+   "createdAt": 1793755696366,
+   "candles": 358,
+   "result": "Anstieg nur 4 %, Absturz nur 0 %, Absturz dauerte 0 min"
+  },
+  {
+   "symbol": "AOTF",
+   "mint": "12vQv5WaKgtt4xoCsHqDuVFUvYaPsgyisCcgecQGpump",
+   "createdAt": 1793794639507,
+   "candles": 359,
+   "result": "Anstieg nur 10 %, Absturz nur 1 %"
+  },
+  {
+   "symbol": "UDTF",
+   "mint": "SMDzDH8SURtrLwn1VkqFbi2KEnbTnSg4CtC8VyRpump",
+   "createdAt": 1793793931389,
+   "candles": 361,
+   "result": "Absturz nur 24 %"
+  },
+  {
+   "symbol": "888FATED",
+   "mint": "Ue9euRMmaR5NrMBwUumzKLPxDaB9Kb2DMJP7nvzpump",
+   "createdAt": 1793858601141,
+   "candles": 361,
+   "result": "Absturz nur 0 %, Absturz dauerte 0 min"
+  },
+  {
+   "symbol": "AMD",
+   "mint": "HjiBij1BcEwjcgPEb22K8y7imdgaf1kHGMHuEgcDpump",
+   "createdAt": 1793770997738,
+   "candles": 362,
+   "result": "Anstieg nur 0 %, Absturz nur 57 %, Hoch nach 0 min"
+  },
+  {
+   "symbol": "CAPY",
+   "mint": "DBPTU2oKLDHXQjAEJ3rZi8bUGmt2uxUbipgg6xmXoMqr",
+   "createdAt": 1793694139586,
+   "candles": 361,
+   "result": "Anstieg nur 15 %, Absturz nur 39 %, Absturz dauerte 210 min"
+  },
+  {
+   "symbol": "RICO",
+   "mint": "8kuQg3WivDtL85VEdw2jEmSXjYt6EEeYBATJ4DtQpump",
+   "createdAt": 1793685805087,
+   "candles": 362,
+   "result": "Anstieg nur 62 %, Absturz nur 37 %"
+  },
+  {
+   "symbol": "LEEROY",
+   "mint": "98HEU4TvXB3xjB1t15fgxHwYDLUH4fDomvp2DCzJpump",
+   "createdAt": 1793834137431,
+   "candles": 358,
+   "result": "Absturz nur 73 %"
+  },
+  {
+   "symbol": "IMPEACH",
+   "mint": "F2xQeTCTqnczXxXQaBWAfDpUnpxn4wQHRPSqvUYJpump",
+   "createdAt": 1793807832793,
+   "candles": 361,
+   "result": "Absturz nur 75 %, Absturz dauerte 199 min"
+  },
+  {
+   "symbol": "ZELDA",
+   "mint": "E1PpVMPtWPhPUKL7DbF6f2eAmuwo3CHBkKusKk54pump",
+   "createdAt": 1793857804673,
+   "candles": 358,
+   "result": "Absturz nur 54 %"
+  },
+  {
+   "symbol": "ABTC",
+   "mint": "3dgQSzntnnkFYNZHonrrAW761KR56NxLmmFpZhe1at7m",
+   "createdAt": 1793867499483,
+   "candles": 60,
+   "result": "Absturz nur 4 %"
+  },
+  {
+   "symbol": "PIKACOIN",
+   "mint": "FdxW5dp9nUFpA2HwYpo3fsKKFeYRkixYx85TZZDUBVf3",
+   "createdAt": 1793868062425,
+   "candles": 43,
+   "result": "Absturz nur 45 %"
+  },
+  {
+   "symbol": "PIKACOIN",
+   "mint": "KiyNY4ppVjsQru43vFjeseUcuYnge9JkRyBbXi7DYpH",
+   "createdAt": 1793864289413,
+   "candles": 59,
+   "result": "Absturz nur 0 %, Absturz dauerte 0 min"
+  },
+  {
+   "symbol": "PIKACOIN",
+   "mint": "Beb4Vo2L69JssKSCtXFjhf6BXpk5jFPek495zjuTDkhN",
+   "createdAt": 1793870939684,
+   "candles": 60,
+   "result": "Anstieg nur 112 %, Absturz nur 41 %"
+  },
+  {
+   "symbol": "MRBEAST",
+   "mint": "5qG1j57eWngx6CZGrrY3dwXana6gkFuFUqeN1bpREyHn",
+   "createdAt": 1793855480560,
+   "candles": 52,
+   "result": "Absturz nur 0 %, Absturz dauerte 0 min"
+  },
+  {
+   "symbol": "ZELDA",
+   "mint": "qZVmgP4JCzuejT3GvtvtBfqW3e5jpMWZWTVxwZDJQag",
+   "createdAt": 1793867946965,
+   "candles": 41,
+   "result": "Absturz nur 0 %, Absturz dauerte 0 min"
+  },
+  {
+   "symbol": "INDEX",
+   "mint": "3id1DCVK5GLNKKDRTdTC7Vj2c4nr2H7TCsvQUBkrXkEL",
+   "createdAt": 1793874674400,
+   "candles": 59,
+   "result": "Absturz nur 59 %"
+  },
+  {
+   "symbol": "ZELDA",
+   "mint": "5jN8pdCKBJXLSbw53LRXKUNNcFoBx2ZGvp8gDNwrVQNu",
+   "createdAt": 1793872301949,
+   "candles": 66,
+   "result": "Absturz nur 60 %"
+  },
+  {
+   "symbol": "ZELDA",
+   "mint": "AsTJvT97AesDtsPqiFb9P3XbrrYiUm7qSfWsUw72uKGS",
+   "createdAt": 1793870491918,
+   "candles": 30,
+   "result": "Anstieg nur 80 %, Absturz nur 40 %"
+  },
+  {
+   "symbol": "ZELDA",
+   "mint": "EYVPpiHqp1sa6Dgn8PczYgRVH5E5VU7RdCyNSgBCqF7u",
+   "createdAt": 1793876264061,
+   "candles": 52,
+   "result": "Absturz nur 53 %"
+  }
+ ],
+ "status": "no_case",
+ "api_requests": 26
+}
