@@ -1,0 +1,483 @@
+{
+ "run": "2026-11-11_135853",
+ "search_rows": 95,
+ "search_top_keys": [
+  "data",
+  "hasMore",
+  "nextCursor",
+  "page",
+  "pages",
+  "status",
+  "total"
+ ],
+ "search_row_keys": [
+  "bundlers",
+  "buys",
+  "communityMessages",
+  "createdAt",
+  "decimals",
+  "deployer",
+  "dev",
+  "fees",
+  "freezeAuthority",
+  "hasCoinCommunity",
+  "hasSocials",
+  "holders",
+  "id",
+  "image",
+  "insiders",
+  "lastUpdated",
+  "liquidityUsd",
+  "lpBurn",
+  "market",
+  "marketCapUsd",
+  "mint",
+  "mintAuthority",
+  "name",
+  "poolAddress",
+  "priceUsd",
+  "quoteToken",
+  "riskScore",
+  "sells",
+  "snipers",
+  "socials",
+  "status",
+  "symbol",
+  "tokenDetails",
+  "top10",
+  "totalTransactions",
+  "volume",
+  "volume_12h",
+  "volume_15m",
+  "volume_1h",
+  "volume_24h",
+  "volume_30m",
+  "volume_5m",
+  "volume_6h"
+ ],
+ "skipped": [
+  {
+   "mint": "9HWzrq7bxfv7Bin8NAzoaEDkMo1Qt6kai45Nisc1Fimt",
+   "symbol": "花",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "3q36DPAnJvaSBbn4UfEfddHZQgzeK8JVq5GZRGDpaz4c",
+   "symbol": "Claude AI",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "AJJc3gKm7EcU5DkU23kxVAyUuvqLqAFW9LLJqBtT3JNG",
+   "symbol": "Claude AI",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "F5dmcUxenMa9GoUdZWGY5kHUQK3coiJxMw1auWtR27kj",
+   "symbol": "大A",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "6PcnXUN7vaq4Zj3ejDC3LPcYCbFVDW2SHeREdkjPQc1a",
+   "symbol": "仙猫",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "ADHzxNfKWmKXd5ubqAxp8JTzEvHyE1gbX6cdhnoFduwq",
+   "symbol": "仙猫",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "X8PQH1dJm1o2mVeKoGALcMGsoGDLvtUuLgJL78VnvWd",
+   "symbol": "仙猫",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "H7dBz7uXvtBJujatCpyGk99Xdwkx69wdvBnaNXyXezXL",
+   "symbol": "仙猫",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "GMcW5z3YMadjshoyxGsXFCBwBrczaR92ESPpuS8bEEJw",
+   "symbol": "仙猫",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "38DsVHRfbKqsu1UgySEY8ovhU2YGF3NnjXrEB2PpByD8",
+   "symbol": "仙猫",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "eD597ryH3Z6MTXh4V7RG1Q2BZmZ1X7TNgsj5Fq1TPgo",
+   "symbol": "花",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "77RfSxbVLhs23wzfDf3qtu8EbUDqSqVVost3xfLwoJRn",
+   "symbol": "仙猫",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "2PF85TAJc2NRaYLPNRXnhXZGVZJMFTPYGh5B4zTzPxVB",
+   "symbol": "雪球人生",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "GNZ6zcKy8Jcvb37cLb5iE62F1onespES1Y7RiCwPF7zq",
+   "symbol": "大A",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "2KFLM5Bj4TW3z2y9LhGtrsPUy4CuVxhGqTp2jqDsuZMQ",
+   "symbol": "莽小六",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "AmHLoBiLT5FpBUi76Y223xazdAfWVBsHnGimJhbS7jtj",
+   "symbol": "Claude AI",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "G2LNYKDtE78VLVdUwwaEvK7E71DCMHjjxzsVdKSDnLat",
+   "symbol": "Claude AI",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "AG623Fi3RjWKQ7sAK8DnAGqiqXj72aeaBPAc7dhPzDRH",
+   "symbol": "Gang Cat",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "GntTduyee4puS49iuGiTqCYUm6bJQAEYz1XsJAmS6Uoh",
+   "symbol": "Gang Cat",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "DHWCPtymaejWT22LWhk65u2r7zn92MeQSWUjJsS5Xkwg",
+   "symbol": "Gang Cat",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "GPBYtQaTtUDXomgBJRq7mwCZj6yUYT2mvPgSrVhUZbPv",
+   "symbol": "Gang Cat",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "CHXkwJP5iLZgmVQPw8RipdnxxL6x6iLf42FCUD84JA5g",
+   "symbol": "Gang Cat",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "CoeKvhUG5mZqgChrfdx3gfKAkdDt1y3Nf3uYLSHm3vZa",
+   "symbol": "Gang Cat",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "GsFsxwz66CExzcM4pgxco9fxMQAY4DFKM98EZ6iPPhrd",
+   "symbol": "Gang Cat",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "4j1btjzBTKDdWiyQ4oBgcgrMRqKWmvfbCRqyuoeVum1x",
+   "symbol": "Gang Cat",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "28mjj6GY3Y1FsiwSUkMs3wZ8oN5vwJZrTJ6YXFts2FBp",
+   "symbol": "Gang Cat",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "G7Tb9BdBksRyvMVmLf4P2EuE1x15HTdHbs4wc3groUiF",
+   "symbol": "Gang Cat",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "3yD9YuQfcZZKPQkeJ3RWwDjybdiCXRbNoBNFoHrEbcWV",
+   "symbol": "Gang Cat",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "D6ctbMR2k7sbVUNtt6iu9siLXBd816w4QTKjLqddcBM4",
+   "symbol": "仙猫",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "4caxDcdsHo312cSi8hpwRVtfXG1E7Fi7sSQ4gukBVRjZ",
+   "symbol": "Gang Cat",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "HM8Z3SZHvzfvTB2vX3zpREgEdVsNcQ61ixScG3kCq5rM",
+   "symbol": "中国人牛逼",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "6BbcpXHtBvAhrMci9Vw7UCWbFWMEuzcciWBNQUJvpXSt",
+   "symbol": "中国人牛逼",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "8WPET3HJm5YjKB8xMDGo8EmHfXWiGy3eKThCNhfWWuro",
+   "symbol": "中国人牛逼",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "G4CY2DzZn4kVWHKGUUovT2LYg11cXyfnFUWiSp7wP9NS",
+   "symbol": "中国人牛逼",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "96qfwLb88kReSxuKqYSd1QRauAv4Q9JHqsDmo6Gud4Nf",
+   "symbol": "中国人牛逼",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "FEmLhK53nz8efqHaAPqRskFEqhfgghunNA7bopXdmzMo",
+   "symbol": "中国人牛逼",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "2DnA69W6Fb72b5A4jRcnLg9sR75xMqx561LCadSo8QS2",
+   "symbol": "中国人牛逼",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "FjARmWSeeBUMt3V6JEPCgv3VroN1ydLSKKGB8rqjyzWD",
+   "symbol": "中国人牛逼",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "4WEZxVZPHasWnx3w3CpeRJPD8um25oLpyhGhHcKymxQM",
+   "symbol": "中国人牛逼",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "EWHrj9tx56gY3Q7ACHUKVoaAukZ9RY4tkHNarrXNo5Ef",
+   "symbol": "Gang Cat",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "5qSt1RkJNHFDjtAcKfLbJiBw8om5srNkF3QoX3n7Kxik",
+   "symbol": "Gang Cat",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "8v2Yj7BmqjVe3x7cNmq4LXsHjnYvn6a7dwydUgWUURce",
+   "symbol": "Claude AI",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "2bCkExuF9FMUkycfXcNo7BGL9ssHhY8JemiUjTBkasTK",
+   "symbol": "中国人牛逼",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "8dWqiJuQ5eMMViiMuKEyy3rxfHkyDiu1pczL6umgfUn2",
+   "symbol": "中国人牛逼",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "7HLwmVZYTN3rVk7XC8X2icxciB85ZNwt7xBXCfhUw5BK",
+   "symbol": "中国人牛逼",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "7uL5suQ6KPPMa8T9MB1HWdwAD5w8yWGH64f1BqdtbHQw",
+   "symbol": "中国人牛逼",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "Ht81EtXhHYYyVqcPoDKM5Xyp7PL5mj2VQbKqtGBb9R7z",
+   "symbol": "中国人牛逼",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "5FNFGLXHGuGgShFXXnuzWCBGUiKda3mwXCcUVSoo7H6N",
+   "symbol": "Gang Cat",
+   "reason": "symbol/mint/used"
+  }
+ ],
+ "candidates": [
+  {
+   "symbol": "JUP",
+   "mint": "JUPyiwrYJFskUPiHa7hkeR8VUtAeFoSYbKedZNsDvCN",
+   "createdAt": 1794337038348,
+   "candles": 331,
+   "result": "Anstieg nur 1 %, Absturz nur 3 %"
+  },
+  {
+   "symbol": "MIHAO",
+   "mint": "4CxjZyMNoF1p6eXHXHv1TWpS2X47CuUmLwtGe18spump",
+   "createdAt": 1794353842672,
+   "candles": 362,
+   "result": "Anstieg nur 88 %, Absturz nur 33 %"
+  },
+  {
+   "symbol": "DACITYCOIN",
+   "mint": "DKYcjobF7HPtL9RyQBRdeRQ2iWvizpfbgWwPWNXdpump",
+   "createdAt": 1794320178727,
+   "candles": 362,
+   "result": "Anstieg nur 15 %, Absturz nur 45 %"
+  },
+  {
+   "symbol": "STANK",
+   "mint": "5wsjHxT5nW5jQuVupXUNnYszF3WoWCfGGk9LMcsCJzY8",
+   "createdAt": 1794341385222,
+   "candles": 352,
+   "result": "Anstieg nur 22 %, Absturz nur 39 %"
+  },
+  {
+   "symbol": "JENSEN",
+   "mint": "5kop9u6Dg5iSmJ3qBnL3SsazBZkcAY3nw3wJrAq4h2gK",
+   "createdAt": 1794339064475,
+   "candles": 328,
+   "result": "Anstieg nur 1 %, Absturz nur 0 %, Hoch nach 360 min, Absturz dauerte 0 min"
+  },
+  {
+   "symbol": "X",
+   "mint": "9VZerdNL1x6EjetDqRnh5bYcdmk1y8sLAGs1ybzGpump",
+   "createdAt": 1794318239993,
+   "candles": 361,
+   "result": "Anstieg nur 6 %, Absturz nur 81 %, Absturz dauerte 355 min"
+  },
+  {
+   "symbol": "ALHGTR",
+   "mint": "DE2wEa3UJXS39RtKhaPUfcWzMk3vEphmjZdq5yTWpump",
+   "createdAt": 1794340575136,
+   "candles": 52,
+   "result": "qualifiziert",
+   "score": 2.874
+  },
+  {
+   "symbol": "OPNW",
+   "mint": "oPNWKYTYJyEs2RbpjUXfCTxrNtiTjTcz3ipvUvBBAH2",
+   "createdAt": 1794352943781,
+   "candles": 315,
+   "result": "Anstieg nur 6 %, Absturz nur 8 %"
+  },
+  {
+   "symbol": "BABYMINHAO",
+   "mint": "6bFAqDnEQhwiZaoT4VFbwAGfFtg23DrB3bNKjPFji2QU",
+   "createdAt": 1794357296200,
+   "candles": 361,
+   "result": "gewählt",
+   "score": 19.844
+  },
+  {
+   "symbol": "GTA6",
+   "mint": "AdubiMs4PkDuEQkBvKW9qM9GvKSc8dAh4j6JtMwAycAq",
+   "createdAt": 1794371347712,
+   "candles": 108,
+   "result": "qualifiziert",
+   "score": 4.216
+  },
+  {
+   "symbol": "HOLD",
+   "mint": "GtpaG8iuNNwdxwnUHwxywpcsjXuLLs18dZxLjHwHHqPK",
+   "createdAt": 1794370534743,
+   "candles": 86,
+   "result": "Absturz nur 75 %"
+  },
+  {
+   "symbol": "MIHAO",
+   "mint": "uupRQjWtsTfA9FqdBHo9KKPnGYxo5R7p7Cy2K4VNumS",
+   "createdAt": 1794377976574,
+   "candles": 79,
+   "result": "Absturz nur 55 %"
+  },
+  {
+   "symbol": "BABYCAT",
+   "mint": "8KDeiG6JpWT1fcW388Bxx6b5LgZWYWeRe4L7YBXVkYyZ",
+   "createdAt": 1794387113887,
+   "candles": 27,
+   "result": "Anstieg nur 93 %, Absturz nur 1 %"
+  },
+  {
+   "symbol": "HOLD",
+   "mint": "7ch6SCi84aaT72UESPTHJqSZydSqRR98szESk6Aq2HdQ",
+   "createdAt": 1794375736993,
+   "candles": 143,
+   "result": "Absturz nur 56 %"
+  },
+  {
+   "symbol": "BABYCAT",
+   "mint": "6G177N3ZiVzPVVH4gTqKhaaS4Y94TDxuQMaMjHSJwPT6",
+   "createdAt": 1794384701283,
+   "candles": 30,
+   "result": "Absturz nur 0 %, Absturz dauerte 0 min"
+  },
+  {
+   "symbol": "TI",
+   "mint": "CqSG46xX83T4Zubo7DUjnmCh5qJSs96pDtEke9aSudxb",
+   "createdAt": 1794390198990,
+   "candles": 145,
+   "result": "Absturz nur 7 %"
+  },
+  {
+   "symbol": "BABYCAT",
+   "mint": "8g2iydjjNjtzYso9yrXDwZ9LsKcGQbSBGigzvhqsoBgi",
+   "createdAt": 1794390141319,
+   "candles": 67,
+   "result": "Absturz nur 0 %, Absturz dauerte 0 min"
+  },
+  {
+   "symbol": "BABYCAT",
+   "mint": "8UJXuPGVoD3Rtt6q7CedM3PmwSZbYviSbCVw6SR65W2v",
+   "createdAt": 1794394396743,
+   "candles": 32,
+   "result": "Anstieg nur 122 %, Absturz nur 0 %, Absturz dauerte 0 min"
+  },
+  {
+   "symbol": "HOLD",
+   "mint": "GoAL6Zv8ZjPqJKHifxQMXbLektQp13rXL2bA3a1g5WUF",
+   "createdAt": 1794384310027,
+   "candles": 88,
+   "result": "Absturz nur 63 %"
+  },
+  {
+   "symbol": "TIRED",
+   "mint": "HkhR3ZkfbrNpvrwgjmMkMyPsU5dH9n5y1LSwWJT1brcJ",
+   "createdAt": 1794374647188,
+   "candles": 51,
+   "result": "Absturz nur 62 %"
+  },
+  {
+   "symbol": "TRENCHER",
+   "mint": "AECZAPWgZ25Gsdt3upCHWGve8WFWU4eWSFCY8q7ck7Nk",
+   "createdAt": 1794379682977,
+   "candles": 15,
+   "result": "Absturz nur 0 %, Absturz dauerte 0 min"
+  },
+  {
+   "symbol": "BITTY",
+   "mint": "4psR8MmshcvSJdyemPMMAx4dseDjdcwtVe3mz5Vmvyyq",
+   "createdAt": 1794382141242,
+   "candles": 88,
+   "result": "qualifiziert",
+   "score": 5.568
+  },
+  {
+   "symbol": "MIHAO",
+   "mint": "4EoNc1w6B1EDGukrpG1taPN7GuxEHrWHAXmamDineyJL",
+   "createdAt": 1794382670198,
+   "candles": 103,
+   "result": "Absturz nur 61 %"
+  },
+  {
+   "symbol": "GTA6",
+   "mint": "CYvkGnP3CvwucyVdadSoskh2zVrHjT9oDCKrhyP4soyq",
+   "createdAt": 1794381500417,
+   "candles": 74,
+   "result": "Absturz nur 85 %"
+  },
+  {
+   "symbol": "TIRED",
+   "mint": "s4jeWTgEQC774oLLx9c76hVFTqFfZGU2awx1Vn6erBd",
+   "createdAt": 1794370472656,
+   "candles": 60,
+   "result": "Absturz nur 86 %"
+  }
+ ],
+ "status": "case",
+ "api_requests": 51
+}
