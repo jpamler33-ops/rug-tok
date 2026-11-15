@@ -1,0 +1,424 @@
+{
+ "run": "2026-11-15_135837",
+ "search_rows": 97,
+ "search_top_keys": [
+  "data",
+  "hasMore",
+  "nextCursor",
+  "page",
+  "pages",
+  "status",
+  "total"
+ ],
+ "search_row_keys": [
+  "bundlers",
+  "buys",
+  "communityMessages",
+  "createdAt",
+  "decimals",
+  "deployer",
+  "dev",
+  "fees",
+  "freezeAuthority",
+  "hasCoinCommunity",
+  "hasSocials",
+  "holders",
+  "id",
+  "image",
+  "insiders",
+  "lastUpdated",
+  "liquidityUsd",
+  "lpBurn",
+  "market",
+  "marketCapUsd",
+  "mint",
+  "mintAuthority",
+  "name",
+  "poolAddress",
+  "priceUsd",
+  "quoteToken",
+  "riskScore",
+  "sells",
+  "snipers",
+  "socials",
+  "status",
+  "symbol",
+  "tokenDetails",
+  "top10",
+  "totalTransactions",
+  "volume",
+  "volume_12h",
+  "volume_15m",
+  "volume_1h",
+  "volume_24h",
+  "volume_30m",
+  "volume_5m",
+  "volume_6h"
+ ],
+ "skipped": [
+  {
+   "mint": "BAjH39rs721JBVnrZc6wrg5sZXZfrVFFK8FF7rFE7Nh1",
+   "symbol": "GTA$",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "4968R328cbM8NKvsJZxALZ56NTtQSK27E6JhyMaSH8Ya",
+   "symbol": "GTA$",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "BHZnjznGPjTJtm3bGYQYmZR5n2nNcW1RXcW1g2Th7daF",
+   "symbol": "GTA$",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "4RVnHu75hkYPURRCzUiNoRsDwuYrmY3MGJdL7QGDqkAB",
+   "symbol": "GTA$",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "CD3ZEVDaNniyFU5FXRJSi9qFHjyFzbreXn1ambHQwd2x",
+   "symbol": "GTA$",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "LZZ1MtZdH53z8LABuQ4VaBjGKdxK2ThjHT27kf4MkqM",
+   "symbol": "ニャジラ",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "2cHPWAynFjSn1gXvKwKuZ4fQJSfEHhcnRRqmLQg7C9HX",
+   "symbol": "GTA$",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "HiewnECDRY69mZmNogpkTDHuPwmFmK2e9mvb7FwjyNxw",
+   "symbol": "花",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "A2YANb6gsWt8Jshz5UDz2duKmncn8tiuxKNvUMFePxpV",
+   "symbol": "ニャジラ",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "EsbyQFbQ143x4FJ1BPUtteqE7p5dyCcDXqbWTR59sJBj",
+   "symbol": "GTA$",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "CTMxLgLZpF3PG9KWJLXgTkEkGwJwjJKt9jCnK9KorXaW",
+   "symbol": "花",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "biuVibRYkxGqk9wE5vtbJaoJ6JpjxGddyynAFERESHd",
+   "symbol": "ニャジラ",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "A4a271pEy8823m5Po24Bf3GoscjTWzn1ApzxNPm5rXEB",
+   "symbol": "ニャジラ",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "2C9HVom4gH4crk6caWXdzgBuf6uf6mYqgGkQcaUB8tST",
+   "symbol": "GTA$",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "CqG166bBK8eLPsAJKZiqABqZnaetW8zknRp6GNjfUKeB",
+   "symbol": "ニャジラ",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "8kz9bj3dofqKUodj1kX1KUamgMBTpGVxTA4KyK5h72Jq",
+   "symbol": "GTA$",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "4RNDgpwaPGk7tGXjHtwLBw7NBqSpHXsmS2ki7nJj5a5Z",
+   "symbol": "ニャジラ",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "gH3FdQBSKB9PSxJWVXdP3xoLgBRLBoBgsDQcrgfocbm",
+   "symbol": "GTA$",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "3zaGFgHLWKEe2vj24RLZdzo3vvewAnPhAi1ttUGNDspj",
+   "symbol": "GTA$",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "4qyk1uJexNRNUwfx9J4KKoJ1v5icmZNci42yDzgEpump",
+   "symbol": "ニャジラ",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "BJ7wYCHVCpyu49F7avQwNWzr5KjKfXkvKGFAfnWTfKuh",
+   "symbol": "我们是冠军",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "DV2nRRJ36EjCY7WgbLQVP63oYMK7psyZftrp88jYBVRg",
+   "symbol": "牛逼",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "5HbfBbQDAAUXD11dWquGqsK71DtvVnDF3VBMJ4V1mcvD",
+   "symbol": "love bill",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "7UZr4BiLkQRMfghQSkBcr1uoAKiNRWbiqydKrWWxVcgz",
+   "symbol": "我们是冠军",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "ADGSJn3TXrDgCCbZmkd9n5gA73JbZjVzfJ7mHkoGYmR",
+   "symbol": "哈基仙人",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "3yeBUj5Tr4n9kooJEkuuhxjxMgmeQXna5H1Ph7yhsnuT",
+   "symbol": "哈基仙人",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "4jiDRV1KzGUrB4sKd5zj9v7gajLSuStPEKKnoQk9jf5S",
+   "symbol": "哈基仙人",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "4nm3ozTmay5drym7CaeioJyrStmcaNyyg1qtDL5ND4G1",
+   "symbol": "哈基仙人",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "8Mahg1cuQvrQYKEpLJGqv5ebXPpWq3uBpttV9Br7kJ6B",
+   "symbol": "哈基仙人",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "7jK8BzAVGLkRvXNRHEt4HuPvziR4d4BVy2p9kVqtgjvz",
+   "symbol": "哈基仙人",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "AmnHa7DujVG2iKrEsBANXN7Mpemh7UCLr3kWadCnS73e",
+   "symbol": "哈基仙人",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "6CntT1WxZ7MzKed1sTxEM7Gr7Cxx1dumWhvw1Ldm9kUJ",
+   "symbol": "我们是冠军",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "DDrpJsHwqBY8wh4zqJ4GoeyCBEcd19mTmS4qp1k8myQg",
+   "symbol": "GTA$",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "3GDEmnYgQih9jeVVU2btvkmGrTuAnVixe5ZFyavY8ix9",
+   "symbol": "GTA$",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "72c3ujUr6QaLnYWswystGbSfaPGYnVZxFUW1an3Hz8Bi",
+   "symbol": "我们是冠军",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "5yDnf9JoY1cN3fLXRXLvPLXq1x5X8qeFNrwj9NZW5zQF",
+   "symbol": "冠军BLG",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "A9y78jg7xKinC9jX5WRtc62C6xDJnNuxuiUzyjX79HAi",
+   "symbol": "GTA6 Coin",
+   "reason": "symbol/mint/used"
+  }
+ ],
+ "candidates": [
+  {
+   "symbol": "BILL",
+   "mint": "85RhcSEMy15SNhFLmSArNm7udPKXVagVgsq4YmSopump",
+   "createdAt": 1794711886970,
+   "candles": 361,
+   "result": "Anstieg nur 17 %, Absturz nur 38 %"
+  },
+  {
+   "symbol": "FOOD",
+   "mint": "FTu55MyigXns96jz4nTCDDiTCjYJjyrHSceCgG9Upump",
+   "createdAt": 1794543717594,
+   "candles": 361,
+   "result": "Anstieg nur 0 %, Absturz nur 72 %, Hoch nach 0 min, Absturz dauerte 287 min"
+  },
+  {
+   "symbol": "SNOOPY",
+   "mint": "7mEhH5gsuwPeBC9n9C2XQJdXinWhKGfNhrt4r8db47Cn",
+   "createdAt": 1794672781971,
+   "candles": 361,
+   "result": "Anstieg nur 58 %, Absturz nur 74 %, Absturz dauerte 305 min"
+  },
+  {
+   "symbol": "OPNW",
+   "mint": "oPNWKYTYJyEs2RbpjUXfCTxrNtiTjTcz3ipvUvBBAH2",
+   "createdAt": 1794665625517,
+   "candles": 83,
+   "result": "Anstieg nur 1 %, Absturz nur 4 %"
+  },
+  {
+   "symbol": "LEONIDA",
+   "mint": "BWJfBNeXpapG7uoqByp5KSwWgCQba8QcDmA2DQiEpump",
+   "createdAt": 1794643972047,
+   "candles": 356,
+   "result": "Anstieg nur 4 %, Absturz nur 18 %, Absturz dauerte 241 min"
+  },
+  {
+   "symbol": "SOCKS",
+   "mint": "FS1pBmZKp2Qw1atC64GoLamHstECAos9ot8bGPgDpump",
+   "createdAt": 1794734174171,
+   "candles": 224,
+   "result": "Absturz nur 51 %"
+  },
+  {
+   "symbol": "OTHER",
+   "mint": "6i3oFRo48Xbnu7B9YH5DgypHRvsr47GagoJhSvs4pump",
+   "createdAt": 1794680248238,
+   "candles": 355,
+   "result": "Anstieg nur 75 %"
+  },
+  {
+   "symbol": "SOCKS",
+   "mint": "3t9KFhet8UQ9sdi2mZSqHg6w7ZUguAMeNEMXwxnXM3bF",
+   "createdAt": 1794739027762,
+   "candles": 22,
+   "result": "Absturz nur 13 %"
+  },
+  {
+   "symbol": "MIHAO",
+   "mint": "8oDM1LD6Ps6RmjvYxdtFcmTnKMRdSP9NMyJSfkZgRDJR",
+   "createdAt": 1794735279096,
+   "candles": 85,
+   "result": "Absturz nur 0 %, Absturz dauerte 0 min"
+  },
+  {
+   "symbol": "BILL",
+   "mint": "C6kQ9RKHD2ywZ8P91oqmt687JD3rhDLpYJmUPBowU2xZ",
+   "createdAt": 1794706675618,
+   "candles": 53,
+   "result": "Absturz nur 70 %"
+  },
+  {
+   "symbol": "LUCKY",
+   "mint": "Em4Bb7j92hzFbGhw3SNSFfZGjESVkWSoFH9mTAwYQr6f",
+   "createdAt": 1794737657046,
+   "candles": 47,
+   "result": "Anstieg nur 45 %, Absturz nur 4 %"
+  },
+  {
+   "symbol": "LUCKY",
+   "mint": "9o2Ef4VgKYU5Th9SVWMRh19TuwgJdMJYH1N5pUoTW4wr",
+   "createdAt": 1794732135609,
+   "candles": 45,
+   "result": "Anstieg nur 77 %, Absturz nur 4 %"
+  },
+  {
+   "symbol": "BEAR",
+   "mint": "FPRvk64Bc3LfWttcbCjasNoX4F6rsva9YMuTwZPRku8Y",
+   "createdAt": 1794707997699,
+   "candles": 45,
+   "result": "Absturz nur 0 %, Absturz dauerte 0 min"
+  },
+  {
+   "symbol": "BEAR",
+   "mint": "FxMKibHR6ZUbCioUj3RLS3hUnCHPopDLPF6tsYcQn5Ha",
+   "createdAt": 1794720531139,
+   "candles": 50,
+   "result": "Absturz nur 74 %"
+  },
+  {
+   "symbol": "BILL",
+   "mint": "FHECGK95qmHCNCEP8Xtp9Y29YsKa12BwcnDYE4PL8jF2",
+   "createdAt": 1794710128932,
+   "candles": 35,
+   "result": "Absturz nur 1 %"
+  },
+  {
+   "symbol": "BILL",
+   "mint": "Hh3KemqeU45izxBEoxoMnH1oZ1ai29oybFfkWeodMYDw",
+   "createdAt": 1794715595528,
+   "candles": 40,
+   "result": "Absturz nur 80 %"
+  },
+  {
+   "symbol": "BILL",
+   "mint": "HCUSahzyxr96JDX4fus7tJ1QTUvNM7Uzg7V9kixapN2t",
+   "createdAt": 1794720551231,
+   "candles": 53,
+   "result": "Absturz nur 61 %"
+  },
+  {
+   "symbol": "MIHAO",
+   "mint": "5kNvvU1DBzKyX4XLqG29i6kzUuTrwdS8RyMkZ5UYxzP8",
+   "createdAt": 1794731647148,
+   "candles": 96,
+   "result": "Absturz nur 64 %"
+  },
+  {
+   "symbol": "BILL",
+   "mint": "2BvcaDNB5rPpFhk67uDnuZireEcTVpJz4Fp9PuF1AAYM",
+   "createdAt": 1794714943708,
+   "candles": 211,
+   "result": "Absturz nur 84 %"
+  },
+  {
+   "symbol": "BEAR",
+   "mint": "2GKjHA4zydtLqFegLs4vin17f8Ud133Rj6WNZtJMVWkY",
+   "createdAt": 1794724345225,
+   "candles": 51,
+   "result": "Absturz nur 65 %"
+  },
+  {
+   "symbol": "SOCKS",
+   "mint": "HhTPwVNzk183hQxVzTS9p61sxhWZmVvdCqQXGLKa4ddq",
+   "createdAt": 1794738327849,
+   "candles": 100,
+   "result": "Absturz nur 68 %"
+  },
+  {
+   "symbol": "HOGE",
+   "mint": "5zQu33UEQhESEr4Vz4uxGQVktnhr3s4DQKytYq6y7qs1",
+   "createdAt": 1794728208387,
+   "candles": 63,
+   "result": "Absturz nur 60 %"
+  },
+  {
+   "symbol": "BEAR",
+   "mint": "6c4CYD1K9DZtjMsaADq5mLbyJuk8rCe2kHQT1RkyPzhC",
+   "createdAt": 1794711767609,
+   "candles": 58,
+   "result": "Absturz nur 0 %, Absturz dauerte 0 min"
+  },
+  {
+   "symbol": "HOGE",
+   "mint": "DjVohkdKoqVyLktKShMFps9i3yu8cF4tSsn56iMuC9QC",
+   "createdAt": 1794732080364,
+   "candles": 63,
+   "result": "Absturz nur 53 %"
+  },
+  {
+   "symbol": "BILL",
+   "mint": "F9gewscFprKkGuWUxbfCzzrmNDPJjPFYpLKMEYkbdPzh",
+   "createdAt": 1794731021758,
+   "candles": 170,
+   "result": "Absturz nur 83 %"
+  }
+ ],
+ "status": "no_case",
+ "api_requests": 26
+}
