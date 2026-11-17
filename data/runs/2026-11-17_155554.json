@@ -1,0 +1,349 @@
+{
+ "run": "2026-11-17_155554",
+ "search_rows": 98,
+ "search_top_keys": [
+  "data",
+  "hasMore",
+  "nextCursor",
+  "page",
+  "pages",
+  "status",
+  "total"
+ ],
+ "search_row_keys": [
+  "bundlers",
+  "buys",
+  "communityMessages",
+  "createdAt",
+  "decimals",
+  "deployer",
+  "dev",
+  "fees",
+  "freezeAuthority",
+  "hasCoinCommunity",
+  "hasSocials",
+  "holders",
+  "id",
+  "image",
+  "insiders",
+  "lastUpdated",
+  "liquidityUsd",
+  "lpBurn",
+  "market",
+  "marketCapUsd",
+  "mint",
+  "mintAuthority",
+  "name",
+  "poolAddress",
+  "priceUsd",
+  "quoteToken",
+  "riskScore",
+  "sells",
+  "snipers",
+  "socials",
+  "status",
+  "symbol",
+  "tokenDetails",
+  "top10",
+  "totalTransactions",
+  "volume",
+  "volume_12h",
+  "volume_15m",
+  "volume_1h",
+  "volume_24h",
+  "volume_30m",
+  "volume_5m",
+  "volume_6h"
+ ],
+ "skipped": [
+  {
+   "mint": "GYvqvr3mXmSP6JkPevMusav5kLAe8jdSud1CX89xYcRZ",
+   "symbol": "慌啥子嘛",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "5q1L3Yi4ErocpoVwAMVna97gyhmyzrMqLEtVt1HP31VP",
+   "symbol": "GTA$",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "H4FuCCkTJxPodQQEmXeA5cEh8USL2Lz93EjusjexMX2U",
+   "symbol": "GTA$",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "4ZpKh3SRHHwj4Nyo14pfqxM5BXGHyo2JDg3M5q1T3HDh",
+   "symbol": "中国人牛逼",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "Frakpy4BYQATMiWuouAoQJuUxEsEUoxqTcYf2GBtroGG",
+   "symbol": "Cowboy Cat",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "8JjS58Nx2cytBUtQKyva5rxEpNhHgvc9jg96EbGBFtsx",
+   "symbol": "中国人牛逼",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "5pjZUk5gdPaBdi5vtCFmQsJnBcUci4LFQBbLh84AjZqC",
+   "symbol": "中国人牛逼",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "HnSN8miyvHgDEv2Nku4jJfFSvHZ77hshU5QDuicH2QWk",
+   "symbol": "中国人牛逼",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "BKBmEiWw1zAqgxZtuTdTViWg3bZcBg45B1S4enxMKSzm",
+   "symbol": "中国人牛逼",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "9AymBfcX3fty8MVEddR3kfaC4KuNDW6hR8uvyPgRxriu",
+   "symbol": "Cowboy Cat",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "3rUHPTYKuqgbHk5JWGXpqRTEr3P9MTqHNECzHnAsZdZv",
+   "symbol": "中国牛能逼",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "6MWHQDFnwKc2Hd3ko2pnxzAsX3WqhJfx7AyfWZo4E8nY",
+   "symbol": "Cowboy Cat",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "8eWJRCiNvAhavAzEtpmiE3eNRh2pDK6sL6a8yWL8EnyN",
+   "symbol": "中国牛能逼",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "HcrY6QsE1qWnQtr9HigNjFrZUBJyBN9ViDPA3HVkvAmt",
+   "symbol": "中国人牛逼",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "APd6CzzYJxpuA9eXVRnqjJH2nAkianKrNnrKqNh3Lra",
+   "symbol": "Jeni ",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "fJ6BBkHpLwUDg6nG9P8xmMF6eBRkMyJinhCxFVGAFwj",
+   "symbol": "Cowboy Cat",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "hRiCej9UkboMoF9WJhJ1eLrToregUM9ep5pUgBR8oa8",
+   "symbol": "中国人牛逼",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "5zize2HcFWH6EZtfuYwgbhpUeH7xHzdaYd3zfefz1Z6i",
+   "symbol": "大A",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "4DpyBj5b9BM1J9DLNJ3c1nLjWdnEvdDbw2BVWWjAKbMH",
+   "symbol": "中国人牛逼",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "F2wxEJRWxuXWS8kwx6UAfTT1bisBKxagcB7g83Di5r88",
+   "symbol": "中国人牛逼",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "UCeX3VzrkZYhWRD85NuBLmXHw7EJgVag4bUUYXTCDKf",
+   "symbol": "Cowboy Cat",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "7NqYJA7LZ5AFWvFWVvRRueyHKSEzWh2Q8eaduJhzxWo",
+   "symbol": "玩币归赵",
+   "reason": "symbol/mint/used"
+  }
+ ],
+ "candidates": [
+  {
+   "symbol": "BAWSAQ",
+   "mint": "4La95NEVJdYK9kr375SfKPXnLA8ef8GtsjfVfW27pump",
+   "createdAt": 1794877250400,
+   "candles": 361,
+   "result": "Anstieg nur 15 %, Absturz nur 66 %, Absturz dauerte 267 min"
+  },
+  {
+   "symbol": "ROCKSTAR",
+   "mint": "9HFUEab7sompLDPTAaTGkryMNGbtBaFMhHMVpJEBpump",
+   "createdAt": 1794770665690,
+   "candles": 362,
+   "result": "Anstieg nur 48 %, Absturz nur 59 %, Absturz dauerte 311 min"
+  },
+  {
+   "symbol": "WANTED",
+   "mint": "9jhs5qoJnUFU7AZXbsiD1Q6De6FVsino9Ysw8QU6pump",
+   "createdAt": 1794894659208,
+   "candles": 361,
+   "result": "Anstieg nur 111 %, Absturz nur 38 %"
+  },
+  {
+   "symbol": "GTA",
+   "mint": "99aSkpMhLTkWX9iD1cFrANZHm89gb7QZxbeK1L5Y8fZm",
+   "createdAt": 1794808465093,
+   "candles": 352,
+   "result": "Anstieg nur 75 %, Absturz nur 10 %"
+  },
+  {
+   "symbol": "UODF",
+   "mint": "47fggVfjeFhHmKCUvYYpmVQ5NW7FsijouetVhNYYpump",
+   "createdAt": 1794791294963,
+   "candles": 270,
+   "result": "Absturz nur 0 %"
+  },
+  {
+   "symbol": "USOE",
+   "mint": "qPfiRryhRTATS7L8mCa9ZJLsPtYL9Sheo2QoGqYpump",
+   "createdAt": 1794757646911,
+   "candles": 40,
+   "result": "Anstieg nur 4 %, Absturz nur 0 %, Absturz dauerte 0 min"
+  },
+  {
+   "symbol": "BUL",
+   "mint": "Dys6SYbjUsy8kksaqrXqo5L2GzgCYDiguGGcS8B5rkrv",
+   "createdAt": 1794882857429,
+   "candles": 361,
+   "result": "Absturz nur 74 %, Absturz dauerte 193 min"
+  },
+  {
+   "symbol": "MARVIN",
+   "mint": "HkRQ6Qcadi5yuoNpZdA1Q7yVF3r7LdEmAw1aKkSxpump",
+   "createdAt": 1794803742654,
+   "candles": 362,
+   "result": "Absturz nur 68 %, Absturz dauerte 278 min"
+  },
+  {
+   "symbol": "MIHAO",
+   "mint": "CuMuRjXNPxz5zLfmJmiRq5sy9LV26onxsYkyNXu7jyC5",
+   "createdAt": 1794834082756,
+   "candles": 360,
+   "result": "Absturz nur 6 %"
+  },
+  {
+   "symbol": "COGE",
+   "mint": "DcdDthvdivCdFdczBUTXcM9RJs3N4z4Xr63wR5xPUZY1",
+   "createdAt": 1794853925649,
+   "candles": 21,
+   "result": "Anstieg nur 135 %, Absturz nur 35 %"
+  },
+  {
+   "symbol": "LEONIDA",
+   "mint": "AYyMsVG21ndbFMAcdVAit8ndLfX6FGPTZ4JGhtjBE26m",
+   "createdAt": 1794844437537,
+   "candles": 35,
+   "result": "Absturz nur 56 %"
+  },
+  {
+   "symbol": "ROCKSTAR",
+   "mint": "9JmEqkDXaTRrKhUQK1yqg4gxRZvZp9HCyG9FbdzocTa",
+   "createdAt": 1794840946864,
+   "candles": 46,
+   "result": "Absturz nur 84 %"
+  },
+  {
+   "symbol": "LEONIDA",
+   "mint": "CEu6FJUckA2gkjASknpcH6xEaNG4TEDkcoNJT75V1BZF",
+   "createdAt": 1794853207510,
+   "candles": 45,
+   "result": "Absturz nur 63 %"
+  },
+  {
+   "symbol": "LEONIDA",
+   "mint": "Fgi4K4PiDDTZ93YFuqAfQHghPgTmsFYqLrgXAcUHpWKr",
+   "createdAt": 1794846573199,
+   "candles": 40,
+   "result": "Absturz nur 78 %"
+  },
+  {
+   "symbol": "WIGGLES",
+   "mint": "96jiqdkCNtwyUTFSNeAkxpzjpYucLFhuLLqHaTf8tSfE",
+   "createdAt": 1794846063976,
+   "candles": 41,
+   "result": "Absturz nur 64 %"
+  },
+  {
+   "symbol": "WIGGLES",
+   "mint": "4j7EtSHXXHr6aYHegfrDNqMaC36pzY6D41SbAputWtHb",
+   "createdAt": 1794854212492,
+   "candles": 56,
+   "result": "Absturz nur 65 %"
+  },
+  {
+   "symbol": "TRADER",
+   "mint": "EChuZnpVSZvp2j1shPVJHSUfqdyEQGB955YTARrjXufi",
+   "createdAt": 1794857728243,
+   "candles": 40,
+   "result": "Absturz nur 0 %, Absturz dauerte 0 min"
+  },
+  {
+   "symbol": "SOYOUARE",
+   "mint": "323vJBeP5WEezZu98ubkZ3KF786eqtk48E6AhgTtWm2P",
+   "createdAt": 1794916771139,
+   "candles": 45,
+   "result": "Absturz nur 0 %, Absturz dauerte 0 min"
+  },
+  {
+   "symbol": "TRADER",
+   "mint": "4fQbRenFnmF6GKoUahe72vQNKEgacy6pAQaaZj4Nk3pc",
+   "createdAt": 1794862061327,
+   "candles": 41,
+   "result": "Absturz nur 0 %, Absturz dauerte 0 min"
+  },
+  {
+   "symbol": "BRAVO",
+   "mint": "9H6iCk4nVH8bJCYssDeja3g7afyDBToDSpRVZXwyTLTu",
+   "createdAt": 1794919508025,
+   "candles": 50,
+   "result": "Absturz nur 28 %"
+  },
+  {
+   "symbol": "TRADER",
+   "mint": "4ef2SjEgVs9ow9iospd6DLsVmQ3okmkjqdfZtj4ahxfX",
+   "createdAt": 1794866831208,
+   "candles": 77,
+   "result": "Absturz nur 24 %"
+  },
+  {
+   "symbol": "WIGGLES",
+   "mint": "F2kZWbX6jhWQdR6owjqjBJHYgJuzy5rFjB985Dni6aLE",
+   "createdAt": 1794848643762,
+   "candles": 61,
+   "result": "Absturz nur 9 %"
+  },
+  {
+   "symbol": "TRADER",
+   "mint": "ASg4CGmo2v5ecttk5kCnFxyrQgnhTVcpEuPCqSSFWHrU",
+   "createdAt": 1794864488928,
+   "candles": 38,
+   "result": "Anstieg nur 132 %, Absturz nur 47 %"
+  },
+  {
+   "symbol": "GROKIA",
+   "mint": "DYWzmmLqBMyC9xZiZVfuWM43st8PRPvBYEdErGxvqVTE",
+   "createdAt": 1794919233719,
+   "candles": 33,
+   "result": "Absturz nur 27 %"
+  },
+  {
+   "symbol": "BANK",
+   "mint": "HwQ2iARRSVN2TwyPgDYZSRhKFCH2fR8RQ12qWMs6jJkZ",
+   "createdAt": 1794864783204,
+   "candles": 34,
+   "result": "Anstieg nur 106 %, Absturz nur 40 %"
+  }
+ ],
+ "status": "no_case",
+ "api_requests": 26
+}
