@@ -1,0 +1,260 @@
+{
+ "run": "2026-11-20_152404",
+ "search_rows": 94,
+ "search_top_keys": [
+  "data",
+  "hasMore",
+  "nextCursor",
+  "page",
+  "pages",
+  "status",
+  "total"
+ ],
+ "search_row_keys": [
+  "bundlers",
+  "buys",
+  "communityMessages",
+  "createdAt",
+  "decimals",
+  "deployer",
+  "dev",
+  "fees",
+  "freezeAuthority",
+  "hasCoinCommunity",
+  "hasSocials",
+  "holders",
+  "id",
+  "image",
+  "insiders",
+  "lastUpdated",
+  "liquidityUsd",
+  "lpBurn",
+  "market",
+  "marketCapUsd",
+  "mint",
+  "mintAuthority",
+  "name",
+  "poolAddress",
+  "priceUsd",
+  "quoteToken",
+  "riskScore",
+  "sells",
+  "snipers",
+  "socials",
+  "status",
+  "symbol",
+  "tokenDetails",
+  "top10",
+  "totalTransactions",
+  "volume",
+  "volume_12h",
+  "volume_15m",
+  "volume_1h",
+  "volume_24h",
+  "volume_30m",
+  "volume_5m",
+  "volume_6h"
+ ],
+ "skipped": [
+  {
+   "mint": "W3XFHoNuutw1r79S3AtNX3NzR4XvMpvz4PGerUmpump",
+   "symbol": "XDC NET",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "GUNEKASqK2ZwYR6NADHw2AyPUAmvqjn16Mnw2CgBf4gF",
+   "symbol": "蚂蚁",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "FKscfuocfJg1n26Z1KvqyM9EdSs96t4mQkXJDLbVMpk6",
+   "symbol": "A&A",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "CbBn9cdVThmU2yKwMJkXCyXP6ZenkuG8FQGmdvT6S9eE",
+   "symbol": "ソトマル",
+   "reason": "symbol/mint/used"
+  }
+ ],
+ "candidates": [
+  {
+   "symbol": "DCTY",
+   "mint": "9hjBLBrc7WZW2H8UQvBAvG5WiTZotXUv2Bdcn4f4pump",
+   "createdAt": 1795022056714,
+   "candles": 362,
+   "result": "Anstieg nur 30 %, Absturz nur 23 %"
+  },
+  {
+   "symbol": "ANT",
+   "mint": "ANTBTZQ1EUuTxUs3tfeampxdqTWPHmwyJmcWj4xoAyNe",
+   "createdAt": 1795052017825,
+   "candles": 0,
+   "result": "zu wenig Kerzen (0)"
+  },
+  {
+   "symbol": "BAGSPAY",
+   "mint": "H8WTvo3ZXSYHJAcYqzCforbG8coR1FDAX2kHFfqHBAGS",
+   "createdAt": 1795092524193,
+   "candles": 170,
+   "result": "Anstieg nur 14 %, Absturz nur 17 %"
+  },
+  {
+   "symbol": "PIPI",
+   "mint": "6MKD1NkLvWRqdbFtqmgACBwUV5o6GJpZry8HkNgzpump",
+   "createdAt": 1795091061697,
+   "candles": 360,
+   "result": "Absturz nur 85 %"
+  },
+  {
+   "symbol": "RUGGED",
+   "mint": "GT8WxWKEgxzZiKL89Uu288vb8jnescwpNSrvyHzcpump",
+   "createdAt": 1795139551289,
+   "candles": 362,
+   "result": "Anstieg nur 140 %, Absturz nur 89 %, Absturz dauerte 185 min"
+  },
+  {
+   "symbol": "BUNCOIN",
+   "mint": "mXcP1bqxM8Tx6BQuFwTHqzE3m7JVMZspmxZ7pjQpump",
+   "createdAt": 1795124174722,
+   "candles": 315,
+   "result": "gewählt",
+   "score": 3.137
+  },
+  {
+   "symbol": "APOCRYCOIN",
+   "mint": "79rE2ac8JhN3U12QLhymgDmCTiwBN1d4maTcK1fhpump",
+   "createdAt": 1795016956209,
+   "candles": 328,
+   "result": "Absturz nur 85 %, Absturz dauerte 186 min"
+  },
+  {
+   "symbol": "USEF",
+   "mint": "JmBAjhHKp9btzABS5Eudfxbtg2ipqps2JrFzgTupump",
+   "createdAt": 1795140466638,
+   "candles": 59,
+   "result": "Anstieg nur 5 %, Absturz nur 0 %"
+  },
+  {
+   "symbol": "CRIME",
+   "mint": "FtB8AV62jReeicHjjyk3X3YJiFYu4S1ftSxRKoLBuzvv",
+   "createdAt": 1795140605048,
+   "candles": 51,
+   "result": "Absturz nur 25 %"
+  },
+  {
+   "symbol": "CRIME",
+   "mint": "AncNiwWs2wEF68Mw38G22pEGqcVeTAemW5DmBUKMN5ZJ",
+   "createdAt": 1795144804441,
+   "candles": 47,
+   "result": "Absturz nur 0 %, Absturz dauerte 0 min"
+  },
+  {
+   "symbol": "APCY",
+   "mint": "ApChgPtszPw9hD7zVidhJBjTskn74sf2BxFi19bCk9uq",
+   "createdAt": 1795154407478,
+   "candles": 68,
+   "result": "Absturz nur 0 %, Absturz dauerte 0 min"
+  },
+  {
+   "symbol": "DCTC",
+   "mint": "5ueQsjuWUrFKFuKveMbvd8ZtHxbqhAH4DjGFNyvWAuN1",
+   "createdAt": 1795150633847,
+   "candles": 74,
+   "result": "Absturz nur 3 %"
+  },
+  {
+   "symbol": "AI",
+   "mint": "HE8MVkyQeMeaVAfQvpyRY5Ra6wffJiJKJdy73GNQPXg7",
+   "createdAt": 1795163177497,
+   "candles": 89,
+   "result": "Absturz nur 0 %, Absturz dauerte 0 min"
+  },
+  {
+   "symbol": "CRIME",
+   "mint": "3zkimYNJT1JE3vjvjSZYm4kYmY668WWvYffP9ULXPQtc",
+   "createdAt": 1795164436956,
+   "candles": 37,
+   "result": "Absturz nur 0 %, Absturz dauerte 0 min"
+  },
+  {
+   "symbol": "APCY",
+   "mint": "3YN5vUxKF3wWur7PZd8NfKCcvCS7NH9oYHWdDkjEAguk",
+   "createdAt": 1795171518345,
+   "candles": 52,
+   "result": "Absturz nur 2 %"
+  },
+  {
+   "symbol": "AI",
+   "mint": "6gXBJm22pVwtaqZby1dxcBPnekVqTuWVa2RdyS6eH6r",
+   "createdAt": 1795154413092,
+   "candles": 122,
+   "result": "Absturz nur 16 %"
+  },
+  {
+   "symbol": "CRIME",
+   "mint": "4jEeoF4uGe7dsqbqeLxbxjLduDBbRm3z6Nj61ewQMB68",
+   "createdAt": 1795161806609,
+   "candles": 41,
+   "result": "Absturz nur 9 %"
+  },
+  {
+   "symbol": "CRIME",
+   "mint": "CP2ignAgzsVgEzRfM43GZH1a5VYqZuBtKbyWCeEfvpHr",
+   "createdAt": 1795156951963,
+   "candles": 77,
+   "result": "Absturz nur 0 %, Absturz dauerte 0 min"
+  },
+  {
+   "symbol": "CRIME",
+   "mint": "HjTgLiCgN67zac6rsNArVSqN7dYHUiXRH7g7fniSpF1r",
+   "createdAt": 1795166609049,
+   "candles": 65,
+   "result": "Absturz nur 6 %"
+  },
+  {
+   "symbol": "CRIME",
+   "mint": "2h9PgNQDwbEGge4ev4uGYez8yex3zyb7TNk7LVysCkm5",
+   "createdAt": 1795133221741,
+   "candles": 53,
+   "result": "Absturz nur 0 %, Absturz dauerte 0 min"
+  },
+  {
+   "symbol": "APCY",
+   "mint": "HjtRxwgK4zLj2wqvc3sg56sXRGU25BLpcA1MpuM5my16",
+   "createdAt": 1795160127317,
+   "candles": 97,
+   "result": "Absturz nur 70 %"
+  },
+  {
+   "symbol": "WIGGLES",
+   "mint": "5nomki8sRewBszfD4BW9PSJumRSDxiXNqGRJSzth3zbE",
+   "createdAt": 1795141305724,
+   "candles": 48,
+   "result": "Anstieg nur 132 %, Absturz nur 0 %, Absturz dauerte 0 min"
+  },
+  {
+   "symbol": "WIGGLES",
+   "mint": "FVXUPZmH6QzbqY29MNZfQC8Up3jRQqA8uNfLmDSfXDMC",
+   "createdAt": 1795146049161,
+   "candles": 60,
+   "result": "Absturz nur 51 %"
+  },
+  {
+   "symbol": "CRIME",
+   "mint": "8AwRtCN6AR7paM3BCGY4TYthZHxXemHaftnFV8Gz5mHv",
+   "createdAt": 1795136467041,
+   "candles": 69,
+   "result": "Absturz nur 12 %"
+  },
+  {
+   "symbol": "AI",
+   "mint": "6WqwfxbfWPhzXDiiHMrU4MApfEUWMB1ypHGMkKH8AovT",
+   "createdAt": 1795173435604,
+   "candles": 61,
+   "result": "Absturz nur 0 %, Absturz dauerte 0 min"
+  }
+ ],
+ "status": "case",
+ "api_requests": 51
+}
