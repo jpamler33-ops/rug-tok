@@ -1,0 +1,269 @@
+{
+ "run": "2026-11-21_144441",
+ "search_rows": 91,
+ "search_top_keys": [
+  "data",
+  "hasMore",
+  "nextCursor",
+  "page",
+  "pages",
+  "status",
+  "total"
+ ],
+ "search_row_keys": [
+  "bundlers",
+  "buys",
+  "communityMessages",
+  "createdAt",
+  "decimals",
+  "deployer",
+  "dev",
+  "fees",
+  "freezeAuthority",
+  "hasCoinCommunity",
+  "hasSocials",
+  "holders",
+  "id",
+  "image",
+  "insiders",
+  "lastUpdated",
+  "liquidityUsd",
+  "lpBurn",
+  "market",
+  "marketCapUsd",
+  "mint",
+  "mintAuthority",
+  "name",
+  "poolAddress",
+  "priceUsd",
+  "quoteToken",
+  "riskScore",
+  "sells",
+  "snipers",
+  "socials",
+  "status",
+  "symbol",
+  "tokenDetails",
+  "top10",
+  "totalTransactions",
+  "volume",
+  "volume_12h",
+  "volume_15m",
+  "volume_1h",
+  "volume_24h",
+  "volume_30m",
+  "volume_5m",
+  "volume_6h"
+ ],
+ "skipped": [
+  {
+   "mint": "9VFeVB9mhSn9Xven3DhiPYgkgGAX9E2UBqQraARsmkPf",
+   "symbol": "花",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "C26oHjQyzJshGUm9pcv2NWygQJ2kSpCosYAiEf2KqLXH",
+   "symbol": "大当り",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "HVxXzEt87QszpC95kMKAfrHdboj4K1TVxYNMzwmbpump",
+   "symbol": "apocry ",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "66DfFP76PkzWb5RmPTxcoy44wYTqG9T6LWzYymWjpump",
+   "symbol": "rape",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "EYX45DKQCMyCf7PtMyD9kKpokE9PVThVRbtUKPQvpump",
+   "symbol": "h◡sh",
+   "reason": "symbol/mint/used"
+  },
+  {
+   "mint": "ArapZ1NKA4JLb6F8NQyWNzMjmRu8RoAiTHtS5CZqpump",
+   "symbol": "\\nu",
+   "reason": "symbol/mint/used"
+  }
+ ],
+ "candidates": [
+  {
+   "symbol": "FIONA",
+   "mint": "B34nXKzCgsJb9ChLuSHPRpXLE3WFSWyeT8Cqkzzmpump",
+   "createdAt": 1795138810947,
+   "candles": 362,
+   "result": "Anstieg nur 18 %, Absturz nur 38 %"
+  },
+  {
+   "symbol": "PATRICK",
+   "mint": "8mnJZnxaNLqVwkaWWGH7dKmoEzyYzGJx5pHaCp7spump",
+   "createdAt": 1795204142762,
+   "candles": 362,
+   "result": "Anstieg nur 112 %, Absturz nur 84 %, Absturz dauerte 185 min"
+  },
+  {
+   "symbol": "MI",
+   "mint": "ud1av6EekCawmvH95mWxkp85avuhX3i5Xcf7PTub5va",
+   "createdAt": 1795227042167,
+   "candles": 80,
+   "result": "Absturz nur 13 %"
+  },
+  {
+   "symbol": "CATE",
+   "mint": "6w8HR6rAtb4YJkVTPHHVTJuPeaBqzuh1rw9CZxRoMz5g",
+   "createdAt": 1795220375922,
+   "candles": 102,
+   "result": "Absturz nur 41 %"
+  },
+  {
+   "symbol": "MI",
+   "mint": "2fC3huo7ho2uQqyTyNdSHYwaiWVHpTdjkcRGMCPVsdTT",
+   "createdAt": 1795219971468,
+   "candles": 91,
+   "result": "Absturz nur 1 %"
+  },
+  {
+   "symbol": "AUDACITY",
+   "mint": "88DQUBbxT5ChpAfFLFLqUHv3yDdhdPi1RN83vwXXFXRe",
+   "createdAt": 1795218865117,
+   "candles": 114,
+   "result": "Anstieg nur 121 %, Absturz nur 0 %, Absturz dauerte 0 min"
+  },
+  {
+   "symbol": "CATE",
+   "mint": "2D69LQUPvGXRG67YEyi73HoQPZd4arzZYVRQFYHheGRi",
+   "createdAt": 1795226524213,
+   "candles": 66,
+   "result": "Anstieg nur 111 %, Absturz nur 33 %"
+  },
+  {
+   "symbol": "AUDACITY",
+   "mint": "7og9YtYZj6jXxNX551dQcjCrYv1QAW9hT3TUjyTfFgrm",
+   "createdAt": 1795225663145,
+   "candles": 82,
+   "result": "Anstieg nur 58 %, Absturz nur 29 %"
+  },
+  {
+   "symbol": "DCTY",
+   "mint": "9oase85mMYAwRjMXLDkbA98QfzjyLvyYYPF5HMbRNLVV",
+   "createdAt": 1795240582720,
+   "candles": 249,
+   "result": "Absturz nur 70 %"
+  },
+  {
+   "symbol": "MIHAO",
+   "mint": "BYqjx25BNKAJHgB6J9e2JeZBfURFzScRvXWXtqZyTSZf",
+   "createdAt": 1795230359413,
+   "candles": 113,
+   "result": "Absturz nur 0 %, Absturz dauerte 0 min"
+  },
+  {
+   "symbol": "USELESS",
+   "mint": "DWastnCu8xp9MqvZbAHqwxEugFQ4db34erTnRpck17Gf",
+   "createdAt": 1795219859722,
+   "candles": 111,
+   "result": "Absturz nur 0 %, Absturz dauerte 0 min"
+  },
+  {
+   "symbol": "GTA6",
+   "mint": "6RHMjxLoQh5qe5dUCRvnjUPf67vbzzgPA2f9Eabw9s26",
+   "createdAt": 1795220140433,
+   "candles": 105,
+   "result": "Absturz nur 0 %, Absturz dauerte 0 min"
+  },
+  {
+   "symbol": "GTA6",
+   "mint": "7zpnr1cxRgF5WQBEJYHJyXZ2FQx1amroJXHn8TdSUYtb",
+   "createdAt": 1795226824907,
+   "candles": 58,
+   "result": "Anstieg nur 75 %, Absturz nur 28 %"
+  },
+  {
+   "symbol": "MARMO",
+   "mint": "GTQQ34CU2e278RGrXh3prUeNMT3MeTvDoC6823CtjBr2",
+   "createdAt": 1795220303152,
+   "candles": 102,
+   "result": "Absturz nur 19 %"
+  },
+  {
+   "symbol": "RINGS",
+   "mint": "8qaRQtGVBnhL4b9mNJtXPhFTW3G6wfTtv2PhcxfRQV2b",
+   "createdAt": 1795230532256,
+   "candles": 168,
+   "result": "Absturz nur 66 %"
+  },
+  {
+   "symbol": "USELESS",
+   "mint": "5wZTuz1kpjDUbBQiniL7WQY8uG1fsSbBndkyah4AwGew",
+   "createdAt": 1795229433038,
+   "candles": 187,
+   "result": "Absturz nur 83 %"
+  },
+  {
+   "symbol": "CATE",
+   "mint": "37i5qpkfifqNxpkaHgqJVqBEytPxuJvyND3JSvumnNdH",
+   "createdAt": 1795232048047,
+   "candles": 143,
+   "result": "Absturz nur 83 %"
+  },
+  {
+   "symbol": "XV",
+   "mint": "BjnxH6a3D6HQz1LRPsGX5TZmW3GwstpexSNrK2utpump",
+   "createdAt": 1795253191078,
+   "candles": 260,
+   "result": "Absturz nur 62 %, Absturz dauerte 188 min"
+  },
+  {
+   "symbol": "MIHAO",
+   "mint": "EzAif4aq4832dJDm9wMc2FKPwqbPrmvdTnF8jrYJRkQq",
+   "createdAt": 1795237087340,
+   "candles": 58,
+   "result": "Absturz nur 64 %"
+  },
+  {
+   "symbol": "AUI",
+   "mint": "8EzvGAxqNASSs1kFvN3AsjosxJcqscHuwdHCdjD77Vkf",
+   "createdAt": 1795254666503,
+   "candles": 15,
+   "result": "Absturz nur 1 %"
+  },
+  {
+   "symbol": "FLOAT",
+   "mint": "ASFPtohMLD7oXWiJ3ojpundsheZ5Z4ci6AHfbfCsBZk9",
+   "createdAt": 1795240658806,
+   "candles": 249,
+   "result": "Absturz nur 68 %"
+  },
+  {
+   "symbol": "FRITZ",
+   "mint": "GgE5kkGYTD5rcQxCnNiceK69wKN2CJMTFCHKJUXYvM24",
+   "createdAt": 1795259113246,
+   "candles": 12,
+   "result": "Absturz nur 37 %"
+  },
+  {
+   "symbol": "TY",
+   "mint": "gt32zqKVNin1owAfQVoZ8eJLSX6hid4GVGksBh3Gte2",
+   "createdAt": 1795256990544,
+   "candles": 12,
+   "result": "Absturz nur 0 %, Absturz dauerte 0 min"
+  },
+  {
+   "symbol": "MANDY",
+   "mint": "2xCd5qHX5tW6pGUo7zfgHSSAnRjJwPA7Sz1Fu4fWcJjX",
+   "createdAt": 1795076134088,
+   "candles": 361,
+   "result": "Anstieg nur 114 %, Absturz nur 22 %"
+  },
+  {
+   "symbol": "ETCHY",
+   "mint": "GM8EysYT8NRSsoULdeYShbRsUdhoUoiB9EN4eW3YETCH",
+   "createdAt": 1795212981952,
+   "candles": 202,
+   "result": "Anstieg nur 9 %, Absturz nur 44 %, Absturz dauerte 204 min"
+  }
+ ],
+ "status": "no_case",
+ "api_requests": 26
+}
